@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
 export default function Default({ children }) {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   useEffect(() => {
     if (window.location.search.includes("success=true")) {
       setVisible(false);

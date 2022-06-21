@@ -194,6 +194,9 @@ const Post = ({ article }) => {
                   ></div>
                 </div>
               </div>
+              <div className=" my-5">
+                <ArticleTags t={article.tags} />{" "}
+              </div>
             </div>
             <section>
               <div className=" space-y-2">
