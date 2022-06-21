@@ -71,6 +71,7 @@ export default function contact() {
                       id="author"
                       name="author"
                       type="text"
+                      required
                       className=" p-3 my-2 border  rounded-lg focus:outline-none"
                       placeholder="Name "
                       size="30"
@@ -81,6 +82,7 @@ export default function contact() {
                     <input
                       id="email"
                       name="email"
+                      required
                       type="text"
                       className=" p-3 my-2 border rounded-lg focus:outline-none"
                       placeholder="Email *"
