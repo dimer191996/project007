@@ -16,9 +16,9 @@ export default function ArticleCard({ article }) {
         </Link>
       </div>
       <div className="  overflow-hidden pt-4  flex flex-col justify-center">
-        <div className=" gird grid-cols-2  mb-2 line-clamp-1 ">
+        {/* <div className=" gird grid-cols-2  mb-2 line-clamp-1 ">
           <ArticleTags t={article.tags} />
-        </div>
+        </div> */}
         <Link href={`/article/${article.slug}`}>
           <p className="  line-clamp-2 leading-7 mb-2 hover:text-red-600 text-red-800 font-bold text-2xl">
             {article.title}

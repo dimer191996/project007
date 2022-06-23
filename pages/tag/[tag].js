@@ -48,7 +48,9 @@ const articles = ({ articles, param }) => {
                   <ArticleCard2 article={article} />
                 ))}
               </div>
-              <ArticlesSection2 tagPage={true} articles={articles.slice(1)} />
+              <div className=" mx-10">
+                <ArticlesSection2 tagPage={true} articles={articles.slice(1)} />
+              </div>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ export default function SocialMedia() {
     <div>
       {" "}
       <div className=" py-6">
-        <h1 className=" text-center  font-bold text-lg">JOIN US</h1>
+        <span className=" text-center  font-bold text-lg">JOIN US</span>
         <div className="flex justify-center">
           <div className="mt-4 w-1/2 items-center">
             <a

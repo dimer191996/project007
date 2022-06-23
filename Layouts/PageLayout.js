@@ -68,23 +68,7 @@ export default function PageLayout({
               <h1 className=" text-4xl font-bold">Latest</h1>
             </div>
           </div>
-          <ArticlesSection articles={articles?.slice(6, 10)} />
-
-          {articles.length > 15 && (
-            <ArticlesSection articles={articles?.slice(10, 16)} />
-          )}
-
-          {articles.length > 20 && (
-            <ArticlesSection articles={articles?.slice(16, 22)} />
-          )}
-
-          {articles.length > 26 && (
-            <ArticlesSection articles={articles?.slice(21, 27)} />
-          )}
-
-          {articles.length > 39 && (
-            <ArticlesSection articles={articles?.slice(27, 40)} />
-          )}
+          <ArticlesSection articles={articles} />
         </div>
       </div>
     </SeoPage>

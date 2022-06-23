@@ -30,12 +30,12 @@ export default function SmallCard({
             <h2 className=" line-clamp-2 hover:text-red-700 text-red-800 md:text-xl  font-bold">
               {article.title}
             </h2>{" "}
-            <p className=" line-clamp-2 text-gray-800 lg:text-lg md:text-md font-semibold leading-6  ">
+            <p className=" line-clamp-3 text-gray-800 lg:text-lg md:text-md font-semibold leading-6  ">
               {article.description}
             </p>{" "}
-            <div className=" flex items-center line-clamp-1  ">
+            {/* <div className=" flex items-center line-clamp-1  ">
               <ArticleTags t={article.tags} />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className=" flex items-center justify-center border-t my-1 pt-1 ">

@@ -62,11 +62,11 @@ const Post = ({ article }) => {
                   Category :
                   <span className=" uppercase"> {article.category}</span>
                 </div>
-
                 <h1 className="font-black text-4xl ">{article.title}</h1>
-                <div className=" my-5">
+                <div className="my-5 flex items-center">
                   <ArticleTags t={article.tags} />{" "}
                 </div>
+
                 <h2 className=" font- text-xl text-gray-700  mb-5 ">
                   {article.description}
                 </h2>
@@ -94,7 +94,8 @@ const Post = ({ article }) => {
                 <ArticleMainImage article={article} />
               </div>
             </div>
-            <div className=" border-t px-4 flex bg-white flex-row items-center justify-between  my-5 ">
+
+            <div className=" px-4 flex bg-white flex-row items-center justify-between ">
               <div className="flex flex-col   py-2 ">
                 <div className="  leading-4  font-semibold flex-grow">
                   <h3 className=" md:text-lg text-md">By {article.author}</h3>
@@ -194,7 +195,8 @@ const Post = ({ article }) => {
                   ></div>
                 </div>
               </div>
-              <div className=" my-5">
+              <div className=" flex items-center my-5">
+                <span className=" font-bold pr-3">Tags : </span>
                 <ArticleTags t={article.tags} />{" "}
               </div>
             </div>
