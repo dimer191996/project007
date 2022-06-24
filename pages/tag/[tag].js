@@ -48,8 +48,13 @@ const articles = ({ articles, param }) => {
                   <ArticleCard2 article={article} />
                 ))}
               </div>
-              <div className=" mx-10">
-                <ArticlesSection2 tagPage={true} articles={articles.slice(1)} />
+              <div className=" flex ">
+                <div className="w-full">
+                  <ArticlesSection2
+                    tagPage={true}
+                    articles={articles.slice(1)}
+                  />
+                </div>
               </div>
             </div>
           </div>

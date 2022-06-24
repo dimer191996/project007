@@ -49,6 +49,7 @@ export default function Document() {
         data-ad-client="ca-pub-4491397756399283"
         data-ad-slot="2168142036"
       ></ins>
+      <script async src="//www.instagram.com/embed.js"></script>
       <body>
         <div id="fb-root"></div>
         <script

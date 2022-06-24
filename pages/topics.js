@@ -139,7 +139,6 @@ export default function () {
             <h2 className="m-0 p-0  text-center mt-5 text-2xl">
               <span className="md:text-xl font-semibold">NEXT</span>
             </h2>
-            <MoreArticles category={"tv"} />
           </div>
         </div>
       </div>

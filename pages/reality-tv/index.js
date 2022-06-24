@@ -1,5 +1,4 @@
 import axios from "axios";
-import ArticleCard2 from "../../components/ArticleCard2";
 import PageLayout from "../../Layouts/PageLayout";
 
 export default function HomeTv({ realityTv }) {

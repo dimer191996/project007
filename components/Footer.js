@@ -6,27 +6,28 @@ export default function Footer() {
   return (
     <div>
       <footer className=" bg-white dark:bg-gray-800">
-        <div className="md:flex pb-10 pt-4 my  justify-center items-center ">
-          <SocialMedia />
-          <div className=" flex justify-center  pr-10">
-            <iframe
-              src="https://www.facebook.com/plugins/group.php?href=https%3A%2F%2Fweb.facebook.com%2Fgroups%2F1118449878512007&width=280&show_metadata=true&appId=321461765200716&height=1032"
-              width="280"
-              height="300"
-              style={{ border: "none", overflow: "hidden" }}
-              scrolling="no"
-              frameBorder="0"
-              allowFullScreen={true}
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            ></iframe>
+        <div className="md:flex  pt-4 my-5  justify-center items-center ">
+          <div className=" w-full">
+            <div className=" flex justify-center">
+              <iframe
+                src="https://www.facebook.com/plugins/group.php?href=https%3A%2F%2Fweb.facebook.com%2Fgroups%2F1118449878512007&width=280&show_metadata=true&appId=321461765200716&height=1032"
+                width="280"
+                height="310"
+                style={{ border: "none", overflow: "hidden" }}
+                scrolling="no"
+                frameBorder="0"
+                allowFullScreen={true}
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
+            </div>
           </div>
         </div>
 
-        <div className="flex mt-10 justify-center items-center">
-          <div className=" lg:w-1/2 md:w-3/4 bg-slate-100 rounded-lg ">
-            <ul className=" grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 mt-4 px-3 font-semibold   sm:justify-center sm:mt-0">
+        <div className="flex justify-center items-center">
+          <div className=" lg:w-1/2 md:w-3/4 w-full bg-slate-100 rounded-lg ">
+            <ul className=" grid lg:grid-cols-3 md:grid-cols-3 grid-cols-2 mt-4  font-semibold   sm:justify-center sm:mt-0">
               <li className=" lg:text-start text-center">
-                <Link href="/about-us" className="hover:underline">
+                <Link href="/about-us" className="hover:underline underline">
                   About Us
                 </Link>
               </li>

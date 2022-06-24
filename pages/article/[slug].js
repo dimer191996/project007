@@ -11,6 +11,7 @@ import ArticleMainImage from "../../components/ArticleMainImage";
 import Link from "next/link";
 import ArticleTags from "../../components/ArticleTags";
 import ForYouArticles from "../../components/ForYouArticles";
+import InstagramEmbed from "../../components/InstagramEmbed";
 
 export async function getServerSideProps({ params }) {
   const article = await axios
@@ -163,7 +164,13 @@ const Post = ({ article }) => {
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML2 }}
               ></div>
-
+              <InstagramEmbed
+                instagramContent={
+                  article.video1
+                    ? `https://www.instagram.com/reel/${article.video1}/?utm_source=ig_embed&amp;utm_campaign=loading`
+                    : "https://www.youtube.com/channel/UC-Cw_St0-4eCLW_5tEAIKkA?sub_confirmation=1"
+                }
+              />
               <ForYouArticles />
 
               <div
@@ -184,6 +191,10 @@ const Post = ({ article }) => {
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML4 }}
               ></div>
+              <div className=" flex items-center my-5">
+                <span className=" font-bold pr-3">Tags : </span>
+                <ArticleTags t={article.tags} />{" "}
+              </div>
               <div id="comment" className=" border-t border-b my-5">
                 <div className=" font-bold ">
                   <div
@@ -191,13 +202,10 @@ const Post = ({ article }) => {
                     data-href={`https://www.hotseatmag.com/article/${article.slug}`}
                     data-numposts="5"
                     data-width="100%"
+                    data-height="20px"
                     data-colorscheme="light"
                   ></div>
                 </div>
-              </div>
-              <div className=" flex items-center my-5">
-                <span className=" font-bold pr-3">Tags : </span>
-                <ArticleTags t={article.tags} />{" "}
               </div>
             </div>
             <section>
