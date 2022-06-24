@@ -11,6 +11,7 @@ export default function PageLayout({
   hearder,
   pageDescription,
   category,
+  short,
 }) {
   return (
     <SeoPage
@@ -68,7 +69,7 @@ export default function PageLayout({
               <h1 className=" text-4xl font-bold">Latest</h1>
             </div>
           </div>
-          <ArticlesSection articles={articles} />
+          <ArticlesSection short={short} articles={articles} />
         </div>
       </div>
     </SeoPage>

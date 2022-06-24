@@ -15,7 +15,7 @@ import InstagramEmbed from "../../components/InstagramEmbed";
 
 export async function getServerSideProps({ params }) {
   const article = await axios
-    .get(`${"https://hot-seat-app.herokuapp.com/api/"}article/` + params.slug, {
+    .get(`${"https://hot-app.herokuapp.com/api/"}article/` + params.slug, {
       timeout: 10000,
     })
     .then((res) => res.data.article)

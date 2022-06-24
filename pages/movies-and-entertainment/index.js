@@ -5,6 +5,7 @@ export default function HomeMovies({ ME }) {
   return (
     <div className=" my-10">
       <PageLayout
+        short={true}
         category="none"
         articles={ME}
         hearder={" MOVIES & ENTERTAINMENT"}
@@ -18,7 +19,7 @@ export default function HomeMovies({ ME }) {
 export async function getStaticProps() {
   const ME = await axios
     .get(
-      `${"https://hot-seat-app.herokuapp.com/api/"}articles/home/movies-entertainment`,
+      `${"https://hot-app.herokuapp.com/api/"}articles/home/movies-entertainment`,
       {
         timeout: 10000,
       }

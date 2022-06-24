@@ -26,7 +26,7 @@ export const getServerSideProps = async ({ res }) => {
     });
 
   const data = await axios
-    .get("https://hot-seat-app.herokuapp.com/api")
+    .get("https://hot-app.herokuapp.com/api")
     .then(({ data }) => {
       return data;
     });

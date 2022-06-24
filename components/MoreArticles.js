@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import FacebookGroup from "./FacebookGroup";
 import SmallCard from "./SmallCard";
-import SubscribeNewsLatter from "./SubscribeNewsLatter";
 
 export default function MoreArticles({ category }) {
   const [articles, setArticles] = useState([]);
@@ -11,7 +9,7 @@ export default function MoreArticles({ category }) {
     setLoading(true);
     axios
       .get(
-        `${"https://hot-seat-app.herokuapp.com/api/"}articles/category/${category}`
+        `${"https://hot-app.herokuapp.com/api/"}articles/category/${category}`
       )
       .then(({ data }) => {
         setArticles(data.articles);

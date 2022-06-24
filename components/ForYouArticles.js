@@ -9,7 +9,7 @@ export default function ForYouArticles() {
     setLoading(true);
     axios
       .get(
-        `${"https://hot-seat-app.herokuapp.com/api/"}articles/category/${"short"}`
+        `${"https://hot-app.herokuapp.com/api/"}articles/category/${"short"}`
       )
       .then(({ data }) => {
         setArticles(data.articles);

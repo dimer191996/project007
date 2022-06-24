@@ -6,12 +6,9 @@ import SeoPage from "../../components/SeoPage";
 
 export async function getServerSideProps({ params }) {
   const articles = await axios
-    .get(
-      `${"https://hot-seat-app.herokuapp.com/api/"}tag/articles/` + params.tag,
-      {
-        timeout: 10000,
-      }
-    )
+    .get(`${"https://hot-app.herokuapp.com/api/"}tag/articles/` + params.tag, {
+      timeout: 10000,
+    })
     .then((res) => res.data.articles)
     .catch(({ err }) => console.log(err));
 

@@ -7,7 +7,7 @@ import WithScreen from "../Layouts/WithScreen";
 
 export async function getServerSideProps() {
   const articles = await axios
-    .get(`${"https://hot-seat-app.herokuapp.com/api/hot/"}articles?page=0`, {
+    .get(`${"https://hot-app.herokuapp.com/api/hot/"}articles?page=0`, {
       timeout: 10000,
     })
     .then((res) => res.data.articles)

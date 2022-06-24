@@ -31,7 +31,7 @@ export default function HomeTv({ realityTv }) {
 }
 export async function getServerSideProps() {
   const realityTv = await axios
-    .get(`${"https://hot-seat-app.herokuapp.com/api/"}articles/tv`, {
+    .get(`${"https://hot-app.herokuapp.com/api/"}articles/tv`, {
       timeout: 10000,
     })
     .then((res) => res.data.articles)
