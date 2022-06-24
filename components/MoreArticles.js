@@ -28,7 +28,7 @@ export default function MoreArticles({ category }) {
         <div className="h-6 text-center">{loading ? "loading" : ""}</div>
         <div className="">
           {articles?.slice(0, 5).map((el, index) => (
-            <SmallCard imgShow={false} key={index} article={el} />
+            <SmallCard key={index} article={el} />
           ))}
           <ins
             class="adsbygoogle"
@@ -40,7 +40,7 @@ export default function MoreArticles({ category }) {
             data-full-width-responsive="true"
           ></ins>
           {articles?.slice(5, 10).map((el, index) => (
-            <SmallCard imgShow={false} key={index} article={el} />
+            <SmallCard key={index} article={el} />
           ))}
           <ins
             class="adsbygoogle"
@@ -52,7 +52,7 @@ export default function MoreArticles({ category }) {
             data-full-width-responsive="true"
           ></ins>
           {articles?.slice(10, 20).map((el, index) => (
-            <SmallCard key={index} imgShow={false} article={el} />
+            <SmallCard key={index} article={el} />
           ))}
         </div>
       </div>
