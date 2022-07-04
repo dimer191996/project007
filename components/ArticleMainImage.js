@@ -23,7 +23,7 @@ export default function ArticleMainImage({ article }) {
   return (
     <Image
       src={article.image}
-      className=" rounded"
+      className=" rounded-lg "
       objectFit="cover"
       layout="fill"
       placeholder="blur"

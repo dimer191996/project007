@@ -13,7 +13,6 @@ export default function InstagramEmbed({ instagramContent }) {
           border: "0",
           borderRadius: "3px",
           boxShadow: "0 0 1px 0 rgba(0,0,0,0.5),0 1px 1px 0 rgba(0,0,0,0.15)",
-
           padding: "0",
         }}
       >

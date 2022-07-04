@@ -1,6 +1,4 @@
 import axios from "axios";
-import Image from "next/image";
-import Head from "next/head";
 import moment from "moment";
 import MoreArticles from "../../components/MoreArticles";
 import SeoArticle from "../../components/SeoArticles";
@@ -12,6 +10,7 @@ import Link from "next/link";
 import ArticleTags from "../../components/ArticleTags";
 import ForYouArticles from "../../components/ForYouArticles";
 import InstagramEmbed from "../../components/InstagramEmbed";
+import Ads24 from "../../components/Ads24";
 
 export async function getServerSideProps({ params }) {
   const article = await axios
@@ -118,7 +117,20 @@ const Post = ({ article }) => {
             </div>
           </section>
 
-          <div className="separator"></div>
+          <ins
+            className="adsbygoogle"
+            style={{
+              display: "block",
+              textAlign: "center",
+              overflow: "hidden",
+              backgroundColor: "#eeee",
+            }}
+            data-ad-layout="in-article"
+            data-ad-format="fluid"
+            data-ad-client="ca-pub-4491397756399283"
+            data-ad-slot="2168142036"
+            data-full-width-responsive="true"
+          ></ins>
 
           <br />
           <ins
@@ -171,22 +183,14 @@ const Post = ({ article }) => {
                     : "https://www.youtube.com/channel/UC-Cw_St0-4eCLW_5tEAIKkA?sub_confirmation=1"
                 }
               />
-              <ForYouArticles />
 
               <div
                 className="prose prose-xl py-2 mt-5  lg:prose-xl   first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML3 }}
               ></div>
-              <div className="separator"></div>
-              <ins
-                class="adsbygoogle"
-                style={{ display: "block" }}
-                data-ad-client="ca-pub-4491397756399283"
-                data-ad-slot="3538660225"
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              ></ins>
-              <div className="separator"></div>
+
+              <Ads24 />
+
               <div
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML4 }}

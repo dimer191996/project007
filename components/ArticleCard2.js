@@ -4,13 +4,13 @@ import React from "react";
 import ArticleMainImage from "./ArticleMainImage";
 import ArticleTags from "./ArticleTags";
 
-export default function ArticleCard2({ article, h, scroll }) {
+export default function ArticleCard2({ article, h = "h-64", scroll }) {
   return (
-    <div>
-      <div className="relative w-full h-64 rounded-lg overflow-hidden   cursor-pointer ">
+    <div className={`rounded-lg  overflow-hidden  cursor-pointer `}>
+      <div className={`relative ${h} w-full`}>
         <ArticleMainImage article={article} />
         <Link href={`/article/${article.slug}`}>
-          <div className=" h-full w-full bg-gradient-to-t from-black opacity-80 "></div>
+          <div className=" h-full w-full bg-gradient-to-t from-black opacity-95 "></div>
         </Link>
 
         <div className="absolute bottom-0 left-0 px-6 py-4">

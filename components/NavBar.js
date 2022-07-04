@@ -15,12 +15,16 @@ export default function NavBar() {
   const [showMenu, setShowMenu] = useState(false);
   const categories = [
     {
+      label: "Home",
+      link: "/",
+    },
+    {
       label: "Reality Tv",
       link: "/reality-tv",
     },
     {
       label: "Movies & Enter...",
-      link: "/movies-and-entertainement",
+      link: "/movies-and-entertainment",
     },
 
     {
@@ -53,14 +57,16 @@ export default function NavBar() {
   ];
   return (
     <nav className=" fixed w-full top-0 md:flex justify-center space-x-4  z-50 bg-white  border-b">
-      <div className="relative lg:h-28 h-10 md:h-24 md:w-20  rounded-lg ">
-        <Image
-          src="https://res.cloudinary.com/dggjlyw5e/image/upload/v1634447165/THE_HOT_SEAT_1_yubb8j.png"
-          className=" p-2"
-          objectFit="contain"
-          layout="fill"
-        />
-      </div>
+      <Link href="/">
+        <div className="relative lg:h-28 h-10 md:h-24 md:w-20  rounded-lg ">
+          <Image
+            src="https://res.cloudinary.com/dggjlyw5e/image/upload/v1634447165/THE_HOT_SEAT_1_yubb8j.png"
+            className=" p-2"
+            objectFit="contain"
+            layout="fill"
+          />
+        </div>
+      </Link>
       <div>
         <div className=" py-2 px-5 md:px-0  bg-white ">
           <div className=" flex justify-center  md:py-4 md:px-5">
@@ -79,7 +85,7 @@ export default function NavBar() {
             {!showMenu && (
               <div
                 onClick={() => setShowMenu(true)}
-                className="flex bg-red-700 text-white font-bold rounded cursor-pointer  md:hidden items-center  justify-star space-x-2"
+                className="flex bg-red-700 text-white font-bold  cursor-pointer  md:hidden items-center  justify-star space-x-2"
               >
                 <div className=" flex items-center space-x-2 p-1 rounded-full">
                   MENU

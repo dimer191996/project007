@@ -26,7 +26,7 @@ export default function MoreArticles({ category }) {
         <div className="h-6 text-center">{loading ? "loading" : ""}</div>
         <div className="">
           {articles?.slice(0, 5).map((el, index) => (
-            <SmallCard key={index} article={el} />
+            <SmallCard showTitle={false} key={index} article={el} />
           ))}
           <ins
             class="adsbygoogle"
