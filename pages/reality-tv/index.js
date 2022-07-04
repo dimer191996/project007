@@ -19,7 +19,7 @@ export default function TV({}) {
   const [pageCount, setPageCount] = useState(0);
 
   const { data, error, mutate, size, setSize, isValidating } = useSWRInfinite(
-    `http://localhost:3020/api/hot/tv/articles?page=${page}`,
+    `https://hot-app.herokuapp.com/api/hot/tv/articles?page=${page}`,
     fetcher,
     {
       revalidateOnFocus: false,
