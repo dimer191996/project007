@@ -45,18 +45,11 @@ export default function Ads24() {
   return (
     <div>
       <div className="mt-4 mb-3">
-        <div className=" separator font-bold">
-          <div className=" border p-1 rounded-lg text-xl">
-            {/* <span className=" text-red-500">Sorry to interupt ,</span> <br /> */}
-            Do you have a new <span className=" text-red-700">puppy</span> in
-            your house?
-          </div>
-        </div>
         <div className="not-prose relative  overflow-hidden">
           <div className="relative overflow-auto">
             <div className="   mx-auto   min-w-0 ">
-              <div className="snap-x overflow-x-auto  scrollbar-hide md:scrollbar-default  flex">
-                {ads.map((data, index) => (
+              <div className="flex justify-center">
+                {ads.slice(4, 5).map((data, index) => (
                   <div
                     key={index}
                     className=" snap-center flex-none  rounded overflow-hidden m-2  "
@@ -89,14 +82,7 @@ export default function Ads24() {
             </div>
           </div>
         </div>
-        <div className=" separator font-bold">
-          <div className=" border p-1 rounded-lg text-lg">
-            {/* <span className=" text-red-500">Sorry to interupt ,</span> <br /> */}
-            Does your <span className=" text-red-700">cute little</span> friend
-            need an outlet for their energy ? Is it time to train your{" "}
-            <span className=" text-red-700">puppy</span> to behave properly ?
-          </div>
-        </div>
+        <div className=" separator font-bold"></div>
       </div>
     </div>
   );

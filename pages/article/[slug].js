@@ -116,7 +116,7 @@ const Post = ({ article }) => {
               </div>
             </div>
           </section>
-
+          <div className="separator"></div>
           <ins
             className="adsbygoogle"
             style={{
@@ -133,6 +133,7 @@ const Post = ({ article }) => {
           ></ins>
 
           <br />
+
           <ins
             className="adsbygoogle"
             style={{ display: "block", backgroundColor: "#eeee" }}

@@ -38,7 +38,7 @@ export default function MoreArticles({ category }) {
             data-full-width-responsive="true"
           ></ins>
           {articles?.slice(5, 10).map((el, index) => (
-            <SmallCard key={index} article={el} />
+            <SmallCard showTitle={false} key={index} article={el} />
           ))}
           <ins
             class="adsbygoogle"
@@ -50,7 +50,7 @@ export default function MoreArticles({ category }) {
             data-full-width-responsive="true"
           ></ins>
           {articles?.slice(10, 20).map((el, index) => (
-            <SmallCard key={index} article={el} />
+            <SmallCard showTitle={false} key={index} article={el} />
           ))}
         </div>
       </div>

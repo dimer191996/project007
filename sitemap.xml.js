@@ -16,6 +16,8 @@ export const getServerSideProps = async ({ res }) => {
         "_error.js",
         "sitemap.xml.js",
         "api",
+        "500.js",
+        "404.js",
         "article",
         "index.js",
         "tag",
