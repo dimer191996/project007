@@ -24,7 +24,7 @@ const tagsPage = () => {
     fetcher,
     {
       revalidateOnFocus: false,
-      revalidateOnMount: false,
+      revalidateOnMount: true,
       revalidateOnReconnect: false,
     }
   );
