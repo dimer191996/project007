@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
+
+const fs = require("fs");
+
 const nextConfig = {
+  env: {
+    rawJsFromFile: fs.readFileSync("./rawJsFromFile.js").toString(),
+  },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
