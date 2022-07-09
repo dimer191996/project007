@@ -26,7 +26,7 @@ const SeoArticle = ({ article, children }) => (
       titleTemplate={article.title}
       defaultTitle={article.title}
       description={article.description}
-      canonical={`https://www.hotseatmag.com/${conanical(article.category)}`}
+      canonical={`https://www.hotseatmag.com`}
       openGraph={{
         title: article.title,
         description: article.description,
