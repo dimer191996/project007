@@ -171,14 +171,15 @@ const Post = ({ article }) => {
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML2 }}
               ></div>
-              <InstagramEmbed
-                instagramContent={
-                  article.video1
-                    ? `https://www.instagram.com/reel/${article.video1}/?utm_source=ig_embed&amp;utm_campaign=loading`
-                    : "https://web.facebook.com/groups/1118449878512007"
-                }
-              />
-
+              {article.video1 && (
+                <InstagramEmbed
+                  instagramContent={
+                    article.video1
+                      ? `https://www.instagram.com/reel/${article.video1}/?utm_source=ig_embed&amp;utm_campaign=loading`
+                      : "https://web.facebook.com/groups/1118449878512007"
+                  }
+                />
+              )}
               <div
                 className="prose prose-xl py-2 mt-5  lg:prose-xl   first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML3 }}
