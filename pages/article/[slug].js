@@ -11,6 +11,7 @@ import ArticleTags from "../../components/ArticleTags";
 import ForYouArticles from "../../components/ForYouArticles";
 import InstagramEmbed from "../../components/InstagramEmbed";
 import Ads24 from "../../components/Ads24";
+import PopularArticle from "../../components/PopularArticle";
 
 export async function getServerSideProps({ params }) {
   const article = await axios
@@ -162,20 +163,8 @@ const Post = ({ article }) => {
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML1 }}
               ></div>
               <div className="separator"></div>
-              <ins
-                className="adsbygoogle"
-                style={{
-                  display: "block",
-                  textAlign: "center",
-                  overflow: "hidden",
-                  backgroundColor: "#eeee",
-                }}
-                data-ad-layout="in-article"
-                data-ad-format="fluid"
-                data-ad-client="ca-pub-4491397756399283"
-                data-ad-slot="2168142036"
-                data-full-width-responsive="true"
-              ></ins>
+
+              <ForYouArticles />
 
               <div className="separator"></div>
               <div
@@ -195,7 +184,22 @@ const Post = ({ article }) => {
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML3 }}
               ></div>
 
-              <ForYouArticles />
+              <div className="separator"></div>
+              <ins
+                className="adsbygoogle"
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  overflow: "hidden",
+                  backgroundColor: "#eeee",
+                }}
+                data-ad-layout="in-article"
+                data-ad-format="fluid"
+                data-ad-client="ca-pub-4491397756399283"
+                data-ad-slot="2168142036"
+                data-full-width-responsive="true"
+              ></ins>
+              <div className="separator"></div>
 
               <div
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
