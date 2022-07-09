@@ -48,7 +48,7 @@ export default function NavBar() {
       icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
     },
     {
-      name: "Stories ",
+      name: "Cinema & Entertainment ",
       link: "/movies-and-entertainment",
       icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
     },

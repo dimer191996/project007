@@ -66,7 +66,9 @@ const Post = ({ article }) => {
                 <div className="my-5 flex items-center">
                   <ArticleTags t={article.tags} />{" "}
                 </div>
-
+                {article.sanitizedHTML && (
+                  <YoutubeChannel title={article.title} video={article.video} />
+                )}
                 <h2 className=" font- text-xl text-gray-700  mb-5 ">
                   {article.description}
                 </h2>
@@ -132,16 +134,6 @@ const Post = ({ article }) => {
             data-full-width-responsive="true"
           ></ins>
 
-          <br />
-
-          <ins
-            className="adsbygoogle"
-            style={{ display: "block", backgroundColor: "#eeee" }}
-            data-ad-client="ca-pub-4491397756399283"
-            data-ad-slot="3538660225"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          ></ins>
           <div className="separator"></div>
 
           <section className="px-4 md:px-0">
@@ -169,10 +161,23 @@ const Post = ({ article }) => {
                 className="prose prose-xl py-2   lg:prose-xl first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML1 }}
               ></div>
-              {article.sanitizedHTML && (
-                <YoutubeChannel title={article.title} video={article.video} />
-              )}
+              <div className="separator"></div>
+              <ins
+                className="adsbygoogle"
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  overflow: "hidden",
+                  backgroundColor: "#eeee",
+                }}
+                data-ad-layout="in-article"
+                data-ad-format="fluid"
+                data-ad-client="ca-pub-4491397756399283"
+                data-ad-slot="2168142036"
+                data-full-width-responsive="true"
+              ></ins>
 
+              <div className="separator"></div>
               <div
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML2 }}
@@ -181,7 +186,7 @@ const Post = ({ article }) => {
                 instagramContent={
                   article.video1
                     ? `https://www.instagram.com/reel/${article.video1}/?utm_source=ig_embed&amp;utm_campaign=loading`
-                    : "https://www.youtube.com/channel/UC-Cw_St0-4eCLW_5tEAIKkA?sub_confirmation=1"
+                    : "https://web.facebook.com/groups/1118449878512007"
                 }
               />
 
@@ -190,7 +195,7 @@ const Post = ({ article }) => {
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML3 }}
               ></div>
 
-              <Ads24 />
+              <ForYouArticles />
 
               <div
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"

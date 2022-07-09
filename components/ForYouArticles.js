@@ -43,7 +43,7 @@ export default function ForYouArticles() {
                     data-ad-slot="6878692325"
                   ></ins>
                 </div>
-                {articles.slice(5).map((article) => (
+                {articles.map((article) => (
                   <div
                     key={article._id}
                     className=" snap-center flex-none  h-64 w-64 rounded overflow-hidden m-2 "
