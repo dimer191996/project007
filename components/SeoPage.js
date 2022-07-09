@@ -45,8 +45,8 @@ const SeoPage = ({ article, hearder, category, description, children }) => (
         images: [
           {
             url: article?.image,
-            width: 850,
-            height: 650,
+            width: 800,
+            height: 600,
             alt: article?.description,
           },
         ],

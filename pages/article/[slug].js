@@ -12,6 +12,7 @@ import ForYouArticles from "../../components/ForYouArticles";
 import InstagramEmbed from "../../components/InstagramEmbed";
 import Ads24 from "../../components/Ads24";
 import PopularArticle from "../../components/PopularArticle";
+import Multiplexads from "../../components/Multiplexads";
 
 export async function getServerSideProps({ params }) {
   const article = await axios
@@ -54,8 +55,8 @@ const Post = ({ article }) => {
     <SeoArticle article={article}>
       <WithScreen width=" relative w-full  lg:w-[45%] md:w-[55%] ">
         <div className="lg:mx-12  relative md:mx-0  sm:ml-0 ">
+          <Multiplexads />
           <ShareArticle slug={article.slug} />
-
           <section className=" flex flex-col">
             <header className="flex p-3">
               <div className=" w-full ">
@@ -67,12 +68,12 @@ const Post = ({ article }) => {
                 <div className="my-5 flex items-center">
                   <ArticleTags t={article.tags} />{" "}
                 </div>
-                {article.sanitizedHTML && (
-                  <YoutubeChannel title={article.title} video={article.video} />
-                )}
                 <h2 className=" font- text-xl text-gray-700  mb-5 ">
                   {article.description}
                 </h2>
+                {article.sanitizedHTML && (
+                  <YoutubeChannel title={article.title} video={article.video} />
+                )}
               </div>
             </header>
           </section>
@@ -171,7 +172,7 @@ const Post = ({ article }) => {
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML2 }}
               ></div>
-              {article.video1 && (
+              {!!article.video1 && (
                 <InstagramEmbed
                   instagramContent={
                     article.video1

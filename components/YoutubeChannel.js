@@ -9,7 +9,7 @@ export default function YoutubeChannel(props) {
             <div className=" border rounded-lg">Video</div>
           </div>
 
-          <div className=" flex justify-center items-center">
+          <div className=" flex justify-center mb-2 items-center">
             <iframe
               height="315"
               src={`https://www.youtube.com/embed/${props.video}`}
@@ -20,7 +20,7 @@ export default function YoutubeChannel(props) {
               allowFullScreen
             ></iframe>
           </div>
-          <a
+          {/* <a
             href="https://www.youtube.com/channel/UC-Cw_St0-4eCLW_5tEAIKkA?sub_confirmation=1"
             className=" rounded-lg flex justify-center items-center w-full shadow-sm  my-5 overflow-hidden "
           >
@@ -36,7 +36,7 @@ export default function YoutubeChannel(props) {
                 </div>
               </div>
             </button>
-          </a>
+          </a> */}
         </>
       )}
     </>
