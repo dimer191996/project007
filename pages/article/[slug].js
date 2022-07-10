@@ -146,19 +146,19 @@ const Post = ({ article }) => {
               ></div>
               <div className="separator"></div>
               <ins
-                className="adsbygoogle"
+                class="adsbygoogle"
                 style={{
                   display: "block",
                   textAlign: "center",
                   overflow: "hidden",
                   backgroundColor: "#eeee",
                 }}
-                data-ad-layout="in-article"
-                data-ad-format="fluid"
                 data-ad-client="ca-pub-4491397756399283"
-                data-ad-slot="2168142036"
+                data-ad-slot="3538660225"
+                data-ad-format="auto"
                 data-full-width-responsive="true"
               ></ins>
+              <div className="separator"></div>
               <div
                 id="chapter-1"
                 className="prose prose-xl py-2   lg:prose-xl first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
@@ -174,7 +174,7 @@ const Post = ({ article }) => {
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML2 }}
               ></div>
-              {!!article.video1 && (
+              {!!article.video1 ? (
                 <InstagramEmbed
                   instagramContent={
                     article.video1
@@ -182,6 +182,24 @@ const Post = ({ article }) => {
                       : "https://web.facebook.com/groups/1118449878512007"
                   }
                 />
+              ) : (
+                <div>
+                  <div className="separator"></div>
+                  <ins
+                    class="adsbygoogle"
+                    style={{
+                      display: "block",
+                      textAlign: "center",
+                      overflow: "hidden",
+                      backgroundColor: "#eeee",
+                    }}
+                    data-ad-client="ca-pub-4491397756399283"
+                    data-ad-slot="3538660225"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"
+                  ></ins>
+                  <div className="separator"></div>
+                </div>
               )}
               <div
                 id="chapter-3"
@@ -207,7 +225,7 @@ const Post = ({ article }) => {
               <div className="separator"></div>
 
               <div
-                id="chapter-4"
+                id="#chapter-4"
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML4 }}
               ></div>
