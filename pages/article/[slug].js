@@ -160,6 +160,7 @@ const Post = ({ article }) => {
                 data-full-width-responsive="true"
               ></ins>
               <div
+                id="chapter-1"
                 className="prose prose-xl py-2   lg:prose-xl first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML1 }}
               ></div>
@@ -169,6 +170,7 @@ const Post = ({ article }) => {
 
               <div className="separator"></div>
               <div
+                id="chapter-2"
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML2 }}
               ></div>
@@ -182,6 +184,7 @@ const Post = ({ article }) => {
                 />
               )}
               <div
+                id="chapter-3"
                 className="prose prose-xl py-2 mt-5  lg:prose-xl   first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML3 }}
               ></div>
@@ -204,6 +207,7 @@ const Post = ({ article }) => {
               <div className="separator"></div>
 
               <div
+                id="chapter-4"
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML4 }}
               ></div>
