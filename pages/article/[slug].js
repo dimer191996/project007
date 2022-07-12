@@ -55,7 +55,6 @@ const Post = ({ article }) => {
     <SeoArticle article={article}>
       <WithScreen width=" relative w-full  lg:w-[45%] md:w-[55%] ">
         <div className="lg:mx-12  relative md:mx-0  sm:ml-0 ">
-          <Multiplexads />
           <ShareArticle slug={article.slug} />
           <section className=" flex flex-col">
             <header className="flex p-3">
@@ -122,17 +121,16 @@ const Post = ({ article }) => {
           </section>
           <div className="separator"></div>
           <ins
-            className="adsbygoogle"
+            class="adsbygoogle"
             style={{
               display: "block",
               textAlign: "center",
               overflow: "hidden",
               backgroundColor: "#eeee",
             }}
-            data-ad-layout="in-article"
-            data-ad-format="fluid"
             data-ad-client="ca-pub-4491397756399283"
-            data-ad-slot="2168142036"
+            data-ad-slot="3538660225"
+            data-ad-format="auto"
             data-full-width-responsive="true"
           ></ins>
 
@@ -145,21 +143,7 @@ const Post = ({ article }) => {
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML }}
               ></div>
               <div className="separator"></div>
-              <ins
-                className="adsbygoogle"
-                style={{
-                  display: "block",
-                  textAlign: "center",
-                  overflow: "hidden",
-                  backgroundColor: "#eeee",
-                }}
-                data-ad-layout="in-article"
-                data-ad-format="fluid"
-                data-ad-client="ca-pub-4491397756399283"
-                data-ad-slot="2168142036"
-                data-full-width-responsive="true"
-              ></ins>
-              <br />
+
               <ins
                 class="adsbygoogle"
                 style={{
