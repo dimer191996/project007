@@ -16,7 +16,7 @@ import Multiplexads from "../../components/Multiplexads";
 
 export async function getServerSideProps({ params }) {
   const article = await axios
-    .get(`${"https://hot-app.herokuapp.com/api/"}article/` + params.slug, {
+    .get(`${"https://hot-data.herokuapp.com/api/"}article/` + params.slug, {
       timeout: 10000,
     })
     .then((res) => res.data.article)

@@ -9,7 +9,7 @@ export default function MoreArticles({ category }) {
     setLoading(true);
     axios
       .get(
-        `${"https://hot-app.herokuapp.com/api/"}articles/category/${category}`
+        `${"https://hot-data.herokuapp.com/api/"}articles/category/${category}`
       )
       .then(({ data }) => {
         setArticles(data.articles);

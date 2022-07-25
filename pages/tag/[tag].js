@@ -20,7 +20,7 @@ const tagsPage = () => {
   const [pageCount, setPageCount] = useState(0);
 
   const { data, error, mutate, size, setSize, isValidating } = useSWRInfinite(
-    `${"https://hot-app.herokuapp.com/api/"}hot/tag/${tag}/articles?page=${page}`,
+    `${"https://hot-data.herokuapp.com/api/"}hot/tag/${tag}/articles?page=${page}`,
     fetcher,
     {
       revalidateOnFocus: false,
