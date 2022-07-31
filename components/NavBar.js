@@ -52,6 +52,11 @@ export default function NavBar() {
       link: "/movies-and-entertainment",
       icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
     },
+    {
+      name: "How To ",
+      link: "/howto",
+      icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
+    },
 
     // { name: "Food & Recipes" },
   ];

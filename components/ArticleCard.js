@@ -5,6 +5,7 @@ import Link from "next/link";
 import ArticleTags from "./ArticleTags";
 import ArticleMainImage from "./ArticleMainImage";
 import moment from "moment";
+import { GiftIcon } from "@heroicons/react/solid";
 
 export default function ArticleCard({
   article,
@@ -37,11 +38,19 @@ export default function ArticleCard({
           </p>
         </Link> */}
         <Link href={`/article/${article.slug}`}>
-          <p
-            className={`line-clamp-3 leading-7 mb-2 hover:text-red-600 text-red-800 font-bold ${textSize}`}
-          >
-            {article.title}
-          </p>
+          <div className="">
+            {article.category === "howto" && (
+              <div className=" flex items-center justify-start">
+                <GiftIcon className="h-8 text-green-600" />
+                <ArticleTags t={article.tags} />
+              </div>
+            )}
+            <p
+              className={`line-clamp-3 leading-7 mb-2  hover:text-red-600 text-red-800 font-bold ${textSize}`}
+            >
+              {article.title}
+            </p>
+          </div>
         </Link>{" "}
       </div>
     </div>

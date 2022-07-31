@@ -1,4 +1,4 @@
-import { ChevronDoubleRightIcon } from "@heroicons/react/solid";
+import { ChevronDoubleRightIcon, GiftIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -32,7 +32,14 @@ export default function SmallCard({
               {article.title}
             </h2>{" "}
             <div className=" flex items-center line-clamp-1  ">
-              <ArticleTags t={article.tags} />
+              {article.category === "howto" ? (
+                <div className=" flex items-center justify-start">
+                  <GiftIcon className="h-8 text-green-600" />
+                  <ArticleTags t={article.tags} />
+                </div>
+              ) : (
+                <ArticleTags t={article.tags} />
+              )}
             </div>
           </div>
         </div>
