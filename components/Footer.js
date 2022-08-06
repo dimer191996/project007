@@ -5,15 +5,14 @@ export default function Footer() {
     <div>
       <footer className=" bg-gray-100 shadow-lg border-t dark:bg-gray-800">
         <div className="md:flex  pt-4 my-5  justify-center items-center ">
-          <div className=" md:w-2/3 md:flex ">
+          <div className="  ">
             <div className=" w-full">
               <h2 className=" text-lg text-center font-bold">Popular Tags</h2>
-              <ul className=" text-center border-t border-b py-5 grid grid-cols-1">
+              <ul className=" text-center mb-5 ">
                 <li className="m-1">
                   <a className="" href="https://www.hotseatmag.com/tag/lpbw">
                     <span className=" p-1 bg-red-600 text-white text-sm font-bold rounded">
-                      {" "}
-                      LPBW{" "}
+                      LPBW
                     </span>
                   </a>
                 </li>

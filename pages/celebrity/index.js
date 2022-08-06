@@ -17,7 +17,7 @@ export default function Howto({}) {
   const [pageCount, setPageCount] = useState(0);
 
   const { data, error, mutate, size, setSize, isValidating } = useSWRInfinite(
-    `https://hot-data.herokuapp.com/api/hot/howto/articles?page=${page}`,
+    `https://hot-data.herokuapp.com/api/hot/celebrity/articles?page=${page}`,
     fetcher,
     {
       revalidateOnFocus: false,
@@ -67,7 +67,7 @@ export default function Howto({}) {
       <section className="">
         <div className=" mt-12 mb-12">
           <div className="  flex justify-center text-left">
-            <h1 className=" text-4xl font-bold">#1 Amazon, Marketing & More</h1>
+            <h1 className=" text-4xl font-bold">#1 Celebrity News & More</h1>
           </div>
         </div>
 

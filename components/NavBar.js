@@ -23,8 +23,13 @@ export default function NavBar() {
       link: "/reality-tv",
     },
     {
-      label: "Movies & Enter...",
+      label: "Movies",
       link: "/movies-and-entertainment",
+    },
+
+    {
+      label: "Lifestyle",
+      link: "/howto",
     },
 
     {
@@ -53,8 +58,8 @@ export default function NavBar() {
       icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
     },
     {
-      name: "How To ",
-      link: "/howto",
+      name: "Celebrity News",
+      link: "/celebrity",
       icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
     },
 

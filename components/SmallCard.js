@@ -28,7 +28,7 @@ export default function SmallCard({
             } flex flex-col  pl-2 leading-tight`}
           >
             {" "}
-            <h2 className=" line-clamp-3 hover:text-red-700  md:text-xl  font-bold">
+            <h2 className=" line-clamp-4 hover:text-red-700  md:text-2xl font-black">
               {article.title}
             </h2>{" "}
             <div className=" flex items-center line-clamp-1  ">
@@ -44,7 +44,7 @@ export default function SmallCard({
           </div>
         </div>
 
-        <div className=" flex items-center justify-center border-t my-1 pt-1 ">
+        <div className=" flex items-center justify-center  my-1 pt-1 ">
           {showTitle && (
             <div className="  leading-4 text-sm font-semibold flex-grow">
               <h2 className=" text-[14px]">By {article.author}</h2>

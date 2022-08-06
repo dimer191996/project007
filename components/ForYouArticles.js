@@ -9,7 +9,7 @@ export default function ForYouArticles() {
     setLoading(true);
     axios
       .get(
-        `${"https://hot-data.herokuapp.com/api/"}articles/category/${"short"}`
+        `${"https://hot-data.herokuapp.com/api/"}articles/category/${"howto"}`
       )
       .then(({ data }) => {
         setArticles(data.articles);
@@ -23,16 +23,18 @@ export default function ForYouArticles() {
   return (
     <div>
       <div className="mt-4 mb-3">
-        <div className=" separator font-bold">
-          <div className=" border p-1 rounded-lg">
-            {/* <span className=" text-red-500">Sorry to interupt ,</span> <br /> */}
-            Articles Recomended For You .{loading && "loading..."}
-          </div>
-        </div>
         <div className="not-prose relative  overflow-hidden">
           <div className="relative overflow-auto">
             <div className="   mx-auto   min-w-0 ">
               <div className="snap-x overflow-x-auto scrollbar-hide md:scrollbar-default flex">
+                {articles.map((article) => (
+                  <div
+                    key={article._id}
+                    className=" snap-center flex-none  h-64 w-64 rounded overflow-hidden m-2 "
+                  >
+                    <ArticleCard2 scroll={true} article={article} />
+                  </div>
+                ))}
                 <div className=" snap-center flex-none  h-64 w-64 rounded overflow-hidden m-2 ">
                   <ins
                     class="adsbygoogle"
@@ -43,14 +45,6 @@ export default function ForYouArticles() {
                     data-ad-slot="6878692325"
                   ></ins>
                 </div>
-                {articles.map((article) => (
-                  <div
-                    key={article._id}
-                    className=" snap-center flex-none  h-64 w-64 rounded overflow-hidden m-2 "
-                  >
-                    <ArticleCard2 scroll={true} article={article} />
-                  </div>
-                ))}
               </div>
             </div>
           </div>

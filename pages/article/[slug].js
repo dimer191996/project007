@@ -167,7 +167,6 @@ const Post = ({ article }) => {
 
               <ForYouArticles />
 
-              <div className="separator"></div>
               <div
                 id="chapter-2"
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"

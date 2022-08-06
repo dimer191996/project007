@@ -8,8 +8,6 @@ import PopularArticle from "../components/PopularArticle";
 import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
 } from "@heroicons/react/solid";
 import Ads24 from "../components/Ads24";
 
@@ -77,41 +75,20 @@ export default function Home({}) {
 
         <div className=" md:flex justify-center my-5 ">
           <div className=" lg:w-[50rem]">
-            <div className=" md:grid md:grid-cols-7  ">
-              <div className="row-start-2 sm:row-start-auto col-span-3  space-y-2 px-2">
-                <div className=" sticky top-20">
-                  <div className=" mb-5">
-                    <div className="  text-left">
-                      <h1 className=" border-t">
-                        <span className=" bg-red-700  text-white border-b  py-1 px-4">
-                          Popular Reality TV
-                        </span>
-                      </h1>
-                    </div>
-                  </div>
-                  <div>
-                    <PopularArticle category={"tv"} />
-                  </div>
-                  <Ads24 />
-                  <div className="">
-                    <div className=" mb-5">
-                      <div className="  text-left">
-                        <h1 className=" border-t">
-                          <span className=" bg-red-700  text-white border-b  py-1 px-4">
-                            Stories & Cinema
-                          </span>
-                        </h1>
-                      </div>
-                    </div>
-                    <PopularArticle category={"short"} />
-                    <div></div>
-                  </div>
-                </div>
+            <div className=" mb-5">
+              <div className="  text-left">
+                <h1 className=" border-t">
+                  <span className=" bg-red-700  text-white border-b  py-1 px-4">
+                    Cinema & Movies
+                  </span>
+                </h1>
               </div>
-              <div
-                id={`${page}`}
-                className=" col-span-4 px-2  border-l border-r  "
-              >
+            </div>
+            <div>
+              <PopularArticle category={"short"} />
+            </div>
+            <div className=" flex justify-center  ">
+              <div id={`${page}`} className=" md:w-2/3 px-2   ">
                 <div>
                   <div className=" mb-5">
                     <div className="  text-left">
@@ -141,48 +118,79 @@ export default function Home({}) {
                     <SmallCard
                       showTitle={false}
                       imgShow={true}
-                      imgSize=" h-26 w-1/3"
+                      imgSize=" h-32 w-1/2"
                       key={data._id}
                       article={data}
                     />
                   ))}
+                  <div className=" flex justify-center my-10 items-center">
+                    {page !== 1 && (
+                      <ul className=" flex  mx-1  items-center bg-gray-100 hover:bg-gray-200 ease-in-out duration-500  justify-center rounded   ">
+                        <li
+                          disabled={page === 1}
+                          className={`px-2 py-2  flex  text-red-800 ${
+                            page === 1
+                              ? " text-gray-400 cursor-not-allowed"
+                              : "cursor-pointer "
+                          } `}
+                          onClick={handlePreviousPage}
+                        >
+                          <ChevronDoubleLeftIcon className=" h-6" />{" "}
+                          <span>Previous </span>
+                        </li>
+                      </ul>
+                    )}
+                    <ul className=" flex  w-full mx-1 items-center bg-gray-100 hover:bg-gray-200 ease-in-out duration-500  justify-center rounded   ">
+                      <li
+                        className={`md:px-2 flex py-2 text-blue-600 hover:text-blue-700 ${
+                          page === pageCount
+                            ? " text-gray-800"
+                            : "cursor-pointer "
+                        }`}
+                        disabled={page === pageCount}
+                        onClick={handleNextPage}
+                      >
+                        <a href={`#${page}`} className=" flex">
+                          <span>Load more</span>
+                          <ChevronDoubleRightIcon className=" h-6" />
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="row-start-2 mt-5 sm:row-start-auto col-span-3  space-y-2 px-2">
+              <div className=" sticky top-20">
+                <div className="">
+                  <div className=" mb-5">
+                    <div className="  text-left">
+                      <h1 className=" border-t">
+                        <span className=" bg-red-700  text-white border-b  py-1 px-4">
+                          Popular Reality TV
+                        </span>
+                      </h1>
+                    </div>
+                  </div>
+                  <PopularArticle category={"tv"} />
+                  <div></div>
+                </div>
+                <div className="">
+                  <div className=" mb-5">
+                    <div className="  text-left">
+                      <h1 className=" border-t">
+                        <span className=" bg-red-700  text-white border-b  py-1 px-4">
+                          Improve Your Life
+                        </span>
+                      </h1>
+                    </div>
+                  </div>
+                  <PopularArticle category={"howto"} />
+                  <div></div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className=" flex justify-center my-10 items-center">
-          {page !== 1 && (
-            <ul className=" flex lg:w-1/6 mx-1  items-center bg-gray-100 hover:bg-gray-200 ease-in-out duration-500  justify-center rounded   ">
-              <li
-                disabled={page === 1}
-                className={`px-2 py-2  flex  text-red-800 ${
-                  page === 1
-                    ? " text-gray-400 cursor-not-allowed"
-                    : "cursor-pointer "
-                } `}
-                onClick={handlePreviousPage}
-              >
-                <ChevronDoubleLeftIcon className=" h-6" />{" "}
-                <span>Previous </span>
-              </li>
-            </ul>
-          )}
-          <ul className=" flex  lg:w-1/6 w-full mx-1 items-center bg-gray-100 hover:bg-gray-200 ease-in-out duration-500  justify-center rounded   ">
-            <li
-              className={`md:px-2 flex py-2 text-blue-600 hover:text-blue-700 ${
-                page === pageCount ? " text-gray-800" : "cursor-pointer "
-              }`}
-              disabled={page === pageCount}
-              onClick={handleNextPage}
-            >
-              <a href={`#${page}`} className=" flex">
-                <span>Load more</span>
-                <ChevronDoubleRightIcon className=" h-6" />
-              </a>
-            </li>
-          </ul>
         </div>
       </section>
     </SeoPage>

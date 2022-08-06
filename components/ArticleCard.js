@@ -17,13 +17,9 @@ export default function ArticleCard({
   };
   return (
     <div className=" cursor-pointer   mb-4  ">
-      <div
-        className={` relative w-auto h-${h}  bg-gray-100  hover:shadow-md  overflow-hidden`}
-      >
+      <div className={` relative w-auto h-${h}    overflow-hidden`}>
         <Link href={`/article/${article.slug}`}>
-          <div>
-            <ArticleMainImage article={article} />
-          </div>
+          <ArticleMainImage article={article} />
         </Link>
       </div>
       <div className="  overflow-hidden pt-4  flex flex-col justify-center">
