@@ -67,7 +67,9 @@ export default function Howto({}) {
       <section className="">
         <div className=" mt-12 mb-12">
           <div className="  flex justify-center text-left">
-            <h1 className=" text-4xl font-bold">#1 Celebrity News & More</h1>
+            <h1 className=" text-4xl uppercase font-bold">
+              #1 Celebrity News & More
+            </h1>
           </div>
         </div>
 
@@ -103,14 +105,18 @@ export default function Howto({}) {
                     <div className="  text-left">
                       <h1 className=" border-t">
                         <span className=" bg-red-700  text-white border-b  py-1 px-4">
-                          Latest
+                          New Story
                         </span>
                       </h1>
                     </div>
                   </div>
 
                   {articles?.slice(0, 1).map((data, index) => (
-                    <ArticleCard key={data._id} article={data} />
+                    <ArticleCard
+                      key={data._id}
+                      textSize="text-3xl"
+                      article={data}
+                    />
                   ))}
                 </div>
                 {!data && (
@@ -135,7 +141,7 @@ export default function Howto({}) {
                   <div className="  text-left">
                     <h2 className=" border-t">
                       <span className=" bg-red-700  text-white border-b  py-1 px-4">
-                        Learn How
+                        Latest
                       </span>
                     </h2>
                   </div>

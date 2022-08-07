@@ -21,7 +21,7 @@ export default function ArticleCard2({ article, h = "h-64", scroll }) {
             <h4
               className={`mb-2  ${
                 !scroll ? "text-2xl" : ""
-              } font-semibold tracking-tight text-white`}
+              } font-black line-clamp-4 tracking-tight text-white`}
             >
               {article.title}
             </h4>

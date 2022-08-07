@@ -10,7 +10,7 @@ import { GiftIcon } from "@heroicons/react/solid";
 export default function ArticleCard({
   article,
   h = 64,
-  textSize = "text-2xl",
+  textSize = "text-3xl",
 }) {
   const cleanDate = (date) => {
     return moment(date).fromNow();
@@ -42,7 +42,7 @@ export default function ArticleCard({
               </div>
             )}
             <p
-              className={`line-clamp-3 leading-7 mb-2  hover:text-red-600 text-red-800 font-bold ${textSize}`}
+              className={`line-clamp-3 leading-7 mb-2 font-black  hover:text-red-600 text-red-800 ${textSize}`}
             >
               {article.title}
             </p>
