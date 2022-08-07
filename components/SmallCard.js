@@ -28,7 +28,7 @@ export default function SmallCard({
             } flex flex-col  pl-2 leading-tight`}
           >
             {" "}
-            <h2 className=" line-clamp-4 hover:text-red-700  md:text-2xl font-black">
+            <h2 className=" line-clamp-4 hover:text-red-700 text-2xl font-black">
               {article.title}
             </h2>{" "}
             <div className=" flex items-center line-clamp-1  ">

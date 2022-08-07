@@ -165,7 +165,7 @@ const Post = ({ article }) => {
               ></div>
               <div className="separator"></div>
 
-              <ForYouArticles />
+              {article.category !== "howto" && <ForYouArticles />}
 
               <div
                 id="chapter-2"

@@ -26,25 +26,19 @@ export default function ForYouArticles() {
         <div className="not-prose relative  overflow-hidden">
           <div className="relative overflow-auto">
             <div className="   mx-auto   min-w-0 ">
-              <div className="snap-x overflow-x-auto scrollbar-hide md:scrollbar-default flex">
+              <div className="snap-x overflow-x-auto scrollbar-hide md:scrollbar-default flex justify-center">
                 {articles.map((article) => (
                   <div
                     key={article._id}
-                    className=" snap-center flex-none  h-64 w-64 rounded overflow-hidden m-2 "
+                    className=" snap-center flex-none  h-wull w-full rounded overflow-hidden m-2 "
                   >
-                    <ArticleCard2 scroll={true} article={article} />
+                    <ArticleCard2
+                      h="h-96 text-2xl"
+                      scroll={true}
+                      article={article}
+                    />
                   </div>
                 ))}
-                <div className=" snap-center flex-none  h-64 w-64 rounded overflow-hidden m-2 ">
-                  <ins
-                    class="adsbygoogle"
-                    style={{ display: "block", backgroundColor: "#eee" }}
-                    data-ad-format="fluid"
-                    data-ad-layout-key="-77+eq+28-5k+1i"
-                    data-ad-client="ca-pub-4491397756399283"
-                    data-ad-slot="6878692325"
-                  ></ins>
-                </div>
               </div>
             </div>
           </div>

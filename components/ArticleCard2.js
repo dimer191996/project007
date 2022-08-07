@@ -6,7 +6,7 @@ import ArticleTags from "./ArticleTags";
 
 export default function ArticleCard2({ article, h = "h-64", scroll }) {
   return (
-    <div className={`rounded-lg  overflow-hidden  cursor-pointer `}>
+    <div className={` overflow-hidden  cursor-pointer `}>
       <div className={`relative ${h} w-full`}>
         <ArticleMainImage article={article} />
         <Link href={`/article/${article.slug}`}>
@@ -14,14 +14,14 @@ export default function ArticleCard2({ article, h = "h-64", scroll }) {
         </Link>
 
         <div className="absolute bottom-0 left-0 px-6 py-4">
-          <h4 className=" font-semibold   uppercase text-green-100">
-            {article.category}
+          <h4 className=" font-semibold text-xs  uppercase text-green-100">
+            By {article.author}
           </h4>
           <Link href={`/article/${article.slug}`}>
             <h4
               className={`mb-2  ${
                 !scroll ? "text-2xl" : ""
-              } font-black line-clamp-4 tracking-tight text-white`}
+              } font-black line-clamp-4 tracking-tight text-gray-200`}
             >
               {article.title}
             </h4>
