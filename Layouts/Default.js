@@ -14,14 +14,13 @@ export default function Default({ children }) {
   return (
     <>
       <div className="">
-        {/* <NavBar /> */}
-        {/* <main className="container m-auto"> {children}</main> <Footer /> */}
-        Click To Continue
-        {/* <FloatingButton
+        <NavBar />
+        <main className="container m-auto"> {children}</main> <Footer />
+        <FloatingButton
           hidebutton={() => setVisible(false)}
           showbutton={() => setVisible(true)}
           hideHeader={visible}
-        /> */}
+        />
       </div>
     </>
   );

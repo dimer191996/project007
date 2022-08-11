@@ -51,7 +51,7 @@ const Post = ({ article }) => {
 
   return (
     <SeoArticle article={article}>
-      {/* <WithScreen width=" relative w-full  lg:w-[45%] md:w-[55%] ">
+      <WithScreen width=" relative w-full  lg:w-[45%] md:w-[55%] ">
         <div className="lg:mx-12  relative md:mx-0  sm:ml-0 ">
           <ShareArticle slug={article.slug} />
           <section className=" flex flex-col">
@@ -249,7 +249,7 @@ const Post = ({ article }) => {
         <section>
           <MoreArticles category={article.category} />
         </section>
-      </WithScreen> */}
+      </WithScreen>
     </SeoArticle>
   );
 };
