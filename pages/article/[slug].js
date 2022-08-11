@@ -10,9 +10,7 @@ import Link from "next/link";
 import ArticleTags from "../../components/ArticleTags";
 import ForYouArticles from "../../components/ForYouArticles";
 import InstagramEmbed from "../../components/InstagramEmbed";
-import Ads24 from "../../components/Ads24";
-import PopularArticle from "../../components/PopularArticle";
-import Multiplexads from "../../components/Multiplexads";
+import { ChevronDoubleRightIcon } from "@heroicons/react/solid";
 
 export async function getServerSideProps({ params }) {
   const article = await axios
@@ -53,7 +51,7 @@ const Post = ({ article }) => {
 
   return (
     <SeoArticle article={article}>
-      <WithScreen width=" relative w-full  lg:w-[45%] md:w-[55%] ">
+      {/* <WithScreen width=" relative w-full  lg:w-[45%] md:w-[55%] ">
         <div className="lg:mx-12  relative md:mx-0  sm:ml-0 ">
           <ShareArticle slug={article.slug} />
           <section className=" flex flex-col">
@@ -105,12 +103,6 @@ const Post = ({ article }) => {
                 </div>
                 <div className="  leading-4  flex-grow">
                   <h3 className="">{cleanDate(article.createdAt)}</h3>
-                </div>
-                <div className=" bg-emerald-100 px-2 rounded-md">
-                  {/* <h3 className="font-bold text-gray-600 hover:text-emerald-700 text-sm flex items-center">
-                <span>{"Read More"}</span>{" "}
-                <ChevronDoubleRightIcon className=" h-5" />{" "}
-              </h3> */}
                 </div>
               </div>
               <div></div>
@@ -257,7 +249,7 @@ const Post = ({ article }) => {
         <section>
           <MoreArticles category={article.category} />
         </section>
-      </WithScreen>
+      </WithScreen> */}
     </SeoArticle>
   );
 };

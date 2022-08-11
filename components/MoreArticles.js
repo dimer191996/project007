@@ -26,19 +26,21 @@ export default function MoreArticles({ category }) {
         <div className="h-6 text-center">{loading ? "loading" : ""}</div>
         <div className="">
           {articles?.slice(0, 5).map((el, index) => (
-            <SmallCard showTitle={false} key={index} article={el} />
+            <SmallCard
+              imgSize=" w-1/3 "
+              showTitle={false}
+              key={index}
+              article={el}
+            />
           ))}
-          <ins
-            class="adsbygoogle"
-            style={{ display: "block", backgroundColor: "#eeee" }}
-            data-ad-format="fluid"
-            data-ad-layout-key="-gq+t-1c-fj+xa"
-            data-ad-client="ca-pub-4491397756399283"
-            data-ad-slot="9911443569"
-            data-full-width-responsive="true"
-          ></ins>
+
           {articles?.slice(5, 10).map((el, index) => (
-            <SmallCard showTitle={false} key={index} article={el} />
+            <SmallCard
+              imgSize=" w-1/3 "
+              showTitle={false}
+              key={index}
+              article={el}
+            />
           ))}
           <ins
             class="adsbygoogle"
@@ -50,7 +52,12 @@ export default function MoreArticles({ category }) {
             data-full-width-responsive="true"
           ></ins>
           {articles?.slice(10, 20).map((el, index) => (
-            <SmallCard showTitle={false} key={index} article={el} />
+            <SmallCard
+              imgSize=" w-1/3 "
+              showTitle={false}
+              key={index}
+              article={el}
+            />
           ))}
         </div>
       </div>
