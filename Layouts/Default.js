@@ -17,11 +17,11 @@ export default function Default({ children }) {
         {/* <NavBar /> */}
         {/* <main className="container m-auto"> {children}</main> <Footer /> */}
         Click To Continue
-        <FloatingButton
+        {/* <FloatingButton
           hidebutton={() => setVisible(false)}
           showbutton={() => setVisible(true)}
           hideHeader={visible}
-        />
+        /> */}
       </div>
     </>
   );
