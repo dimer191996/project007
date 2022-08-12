@@ -26,11 +26,11 @@ export default function Default({ children }) {
   return (
     <>
       <div className="">
-        {!showArticle && (
+        {/* {!showArticle && (
           <>
          
             <div className=" flex relative justify-center items-center">
-              <div className=" absolute text-white">Click to continue or wait 20s</div>
+              <div className=" absolute text-white">lick to continue or wait 20s</div>
               <progress
                 className="w-full"
                 value="0"
@@ -39,7 +39,7 @@ export default function Default({ children }) {
               ></progress>
             </div>
           </>
-        )}
+        )} */}
        
        {showArticle && <> <NavBar /> <main className="container m-auto"> {children}</main>
         <Footer />
