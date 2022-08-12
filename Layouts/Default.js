@@ -15,7 +15,8 @@ export default function Default({ children }) {
     <>
       <div className="">
         <NavBar />
-        <main className="container m-auto"> {children}</main> <Footer />
+        <main className="container m-auto"> {children}</main>
+        {/* <Footer /> */}
         <FloatingButton
           hidebutton={() => setVisible(false)}
           showbutton={() => setVisible(true)}

@@ -26,6 +26,10 @@ export default function NavBar() {
       label: "Movies",
       link: "/movies-and-entertainment",
     },
+    {
+      label: "Celebrity",
+      link: "/celebrity",
+    },
 
     {
       label: "Lifestyle",
@@ -33,7 +37,7 @@ export default function NavBar() {
     },
 
     {
-      label: "Member Login",
+      label: "Log in",
       link: "/login",
     },
     {
@@ -53,12 +57,12 @@ export default function NavBar() {
       icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
     },
     {
-      name: "Cinema & Entertainment ",
+      name: "Cinema",
       link: "/movies-and-entertainment",
       icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
     },
     {
-      name: "Celebrity News",
+      name: "Celebrity",
       link: "/celebrity",
       icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
     },
