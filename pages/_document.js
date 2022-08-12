@@ -16,13 +16,13 @@ export default function Document() {
       <meta name="p:domain_verify" content={process.env.P_DOMAIN_VERIFY} />
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
- 
+
       <meta property="og:site_name" content="hotseatmag" />
-      <script
+      {/* <script
         type="text/javascript"
         data-cfasync="false"
         dangerouslySetInnerHTML={{ __html: process.env.rawJsFromFile }}
-      ></script>
+      ></script> */}
 
       <link rel="canonical" href="https://www.hotseatmag.com/" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,6 +41,7 @@ export default function Document() {
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4491397756399283`}
         crossOrigin="anonymous"
       ></script>
+
       <div className=" sm:mt-20 mt-24 md:mt-32"></div>
 
       <ins
