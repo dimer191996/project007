@@ -18,13 +18,13 @@ export default function ArticleCard2({ article, h = "h-64", scroll }) {
             By {article.author}
           </h4>
           <Link href={`/article/${article.slug}`}>
-            <h4
+            <h2
               className={`mb-2  ${
                 !scroll ? "text-2xl" : ""
               } font-black line-clamp-4 tracking-tight text-gray-200`}
             >
               {article.title}
-            </h4>
+            </h2>
           </Link>
           <div className=" gird grid-cols-2  mb-2 line-clamp-1 ">
             <ArticleTags t={article.tags} />

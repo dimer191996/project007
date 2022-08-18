@@ -12,6 +12,7 @@ import ArticleTags from "../../components/ArticleTags";
 import ForYouArticles from "../../components/ForYouArticles";
 import InstagramEmbed from "../../components/InstagramEmbed";
 import { ChevronDoubleRightIcon } from "@heroicons/react/solid";
+import Ads24 from "../../components/Ads24";
 
 export async function getServerSideProps({ params }) {
   
@@ -180,7 +181,7 @@ const Post = ({ article }) => {
                 ></div>
                 <div className="separator"></div>
 
-                {article.category !== "howto" && <ForYouArticles />}
+                { <Ads24 />}
 
                 <div
                   id="chapter-2"

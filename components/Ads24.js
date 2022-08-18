@@ -6,40 +6,11 @@ import ArticleMainImage from "./ArticleMainImage";
 export default function Ads24() {
   const ads = [
     {
-      image: "https://i.ibb.co/0FyynNx/Capas-PLR-4-min.webp",
-      title: "how to train your dog",
+      image: "https://i.imgur.com/IlH8tTT.jpg",
+      title:
+        "Monobeach Princess Tent Girls Large Playhouse Kids Castle Play Tent with Star Lights Toy for Children Indoor",
       link: "https://www.digistore24.com/redir/434590/db191996/",
-    },
-
-    {
-      image: "https://i.ibb.co/tL10x04/Capas-PLR-3-min.webp",
-      title: "how to train your dog",
-      link: "https://www.digistore24.com/redir/434590/db191996/",
-    },
-    {
-      image: "https://i.ibb.co/rFkwY93/Capas-PLR-2-min.webp",
-      title: "how to train your dog",
-      link: "https://www.digistore24.com/redir/434590/db191996/",
-    },
-    {
-      image: "https://i.ibb.co/gDFwRj1/Capas-PLR-1-min.webp",
-      title: "how to train your dog",
-      link: "https://www.digistore24.com/redir/434590/db191996/",
-    },
-    {
-      image: "https://i.ibb.co/HFw8J87/005-min.webp",
-      title: "how to train your dog",
-      link: "https://www.digistore24.com/redir/434590/db191996/",
-    },
-    {
-      image: "https://i.ibb.co/dkqFngf/003-min.webp",
-      title: "how to train your dog",
-      link: "https://www.digistore24.com/redir/434590/db191996/",
-    },
-    {
-      image: "https://i.ibb.co/WGgTpR8/004-min.webp",
-      title: "how to train your dog",
-      link: "https://www.digistore24.com/redir/434590/db191996/",
+      order: "https://i.imgur.com/g58QRg2.png",
     },
   ];
   return (
@@ -49,35 +20,46 @@ export default function Ads24() {
           <div className="relative overflow-auto">
             <div className="   mx-auto   min-w-0 ">
               <div className="flex justify-center">
-                {ads.slice(4, 5).map((data, index) => (
-                  <div
-                    key={index}
-                    className=" snap-center flex-none  rounded overflow-hidden m-2  "
-                  >
-                    <Link href={data.link} class="py-1">
-                      <div class="flex space-x-4">
-                        <div class="flex-1 space-y-6 py-1">
-                          <div class="  rounded">
-                            <div
-                              className={`rounded-lg overflow-hidden  cursor-pointer `}
-                            >
-                              <div className={`relative  h-64 w-64 `}>
-                                <Image
-                                  src={data.image}
-                                  className=" rounded-lg "
-                                  objectFit="cover"
-                                  layout="fill"
-                                  position="relative"
-                                  alt={data.title}
-                                />
-                              </div>
+                <div className="snap-x overflow-x-auto scrollbar-hide  flex justify-center ">
+                  {ads.map((data, index) => (
+                    <div className=" snap-center shadow p-2 cursor-pointer flex-none rounded overflow-hidden m-2 ">
+                      <Link href={data.link} class="py-1">
+                        <div className="relative h-64 w-64">
+                          <Image
+                            src={data.image}
+                            className=" rounded-lg "
+                            objectFit="contain"
+                            layout="fill"
+                            position="relative"
+                            alt={data.title}
+                          />
+                          <div className=" absolute">
+                            <div className=" rounded text-white bg-red-700 font-black px-2">
+                              -34% $28.95
                             </div>
                           </div>
                         </div>
+                      </Link>
+                      <div className=" w-64">
+                        <h2 className=" line-clamp-3 font-bold hover:text-red-700">
+                          {data.title}...
+                        </h2>
                       </div>
-                    </Link>
-                  </div>
-                ))}
+                      <Link href={data.link} class="py-1">
+                        <div className="relative h-20 w-64">
+                          <Image
+                            src={data.order}
+                            className=" rounded-lg "
+                            objectFit="contain"
+                            layout="fill"
+                            position="relative"
+                            alt={data.title}
+                          />
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
