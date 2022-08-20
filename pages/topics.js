@@ -64,7 +64,7 @@ export default function () {
             })
               .slice(0, 20)
               .map((post, index) => (
-                <Link href={`/article/${post.slug}`} key={index}>
+                <Link href={`${post.link}`} key={index}>
                   <ul className={` m-4 bg-${post.color}-600`}>
                     {post.article && (
                       <li
