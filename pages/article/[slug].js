@@ -179,9 +179,9 @@ const Post = ({ article }) => {
                   className="prose prose-xl py-2   lg:prose-xl first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
                   dangerouslySetInnerHTML={{ __html: article.sanitizedHTML1 }}
                 ></div>
-                <div className="separator"></div>
+                {/* <div className="separator"></div>
 
-                { <Ads24 />}
+                {<ForYouArticles/>} */}
 
                 <div
                   id="chapter-2"

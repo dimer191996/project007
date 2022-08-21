@@ -9,7 +9,7 @@ import React from "react";
 
 export default function FloatingButton({ hidebutton, showbutton, hideHeader }) {
   return (
-    <div className="  border-t  flex w-full justify-center  fixed bottom-0 bg-white z-30">
+    <div className="     shadow flex w-full justify-center  fixed bottom-0 bg-white z-30">
       {hideHeader && (
         <div className="  absolute right-4  top-2 items-center flex justify-center z-40">
           <button
