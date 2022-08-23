@@ -3,13 +3,16 @@ import React, { useEffect, useState } from "react";
 import SmallCard from "./SmallCard";
 
 export default function MoreArticles({ category }) {
+  console.log("====================dddd================");
+  console.log();
+  console.log("====================================");
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
     axios
       .get(
-        `${"https://hot-data.herokuapp.com/api/"}articles/category/${category}`
+        `${"https://god-in-control.herokuapp.com/api/"}articles/category/${category}`
       )
       .then(({ data }) => {
         setArticles(data.articles);
@@ -18,7 +21,7 @@ export default function MoreArticles({ category }) {
       .catch((err) => {
         setLoading(null);
       });
-  }, [articles.length]);
+  }, []);
 
   return (
     <div className=" flex  justify-center">

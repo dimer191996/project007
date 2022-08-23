@@ -17,7 +17,7 @@ import Ads24 from "../../components/Ads24";
 export async function getServerSideProps({ params }) {
   
   const article = await axios
-    .get(`${"https://hot-data.herokuapp.com/api/"}article/` + params.slug, {
+    .get(`${"https://god-in-control.herokuapp.com/api/"}article/` + params.slug, {
       timeout: 10000,
     })
     .then((res) => res.data.article)
@@ -179,9 +179,9 @@ const Post = ({ article }) => {
                   className="prose prose-xl py-2   lg:prose-xl first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
                   dangerouslySetInnerHTML={{ __html: article.sanitizedHTML1 }}
                 ></div>
-                {/* <div className="separator"></div>
+                <div className="separator"></div>
 
-                {<ForYouArticles/>} */}
+                {article.related1 && <ForYouArticles slug1={article.related1} />}
 
                 <div
                   id="chapter-2"
@@ -264,13 +264,12 @@ const Post = ({ article }) => {
                 <div className=" space-y-2">
                   <p className=" text-3xl font-bold">
                     Not sure what to read next ?
+                 {article.related2 && <ForYouArticles slug1={article.related2} />}
                   </p>
-                  <p className=" text-lg">We can help.</p>
                 </div>
               </section>
             </section>
        
-        
         </div>
         <section>
           <MoreArticles category={article.category} />

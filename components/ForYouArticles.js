@@ -1,44 +1,54 @@
 import axios from "axios";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import ArticleCard2 from "./ArticleCard2";
+import ArticleTags from "./ArticleTags";
 
-export default function ForYouArticles() {
-  const [articles, setArticles] = useState([]);
+export default function ForYouArticles({ slug1 }) {
+  const [article, setArticle] = useState({});
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
     axios
       .get(
-        `${"https://hot-data.herokuapp.com/api/"}articles/category/${"howto"}`
+        `${"https://god-in-control.herokuapp.com/api/"}article/related/${slug1}`
       )
       .then(({ data }) => {
-        setArticles(data.articles);
+        setArticle(data.article);
         setLoading(false);
       })
       .catch((err) => {
-        setLoading(null);
+        setLoading(true);
       });
-  }, [articles.length]);
+  }, []);
 
   return (
     <div>
       <div className="mt-4 mb-3">
         <div className="not-prose relative  overflow-hidden">
-          <div className="relative overflow-auto">
+          <div className="relative">
             <div className="   mx-auto   min-w-0 ">
-              <div className="snap-x overflow-x-auto scrollbar-hide md:scrollbar-default flex justify-center">
-                {articles.map((article) => (
-                  <div
-                    key={article._id}
-                    className=" snap-center flex-none  h-wull w-full rounded overflow-hidden m-2 "
-                  >
-                    <ArticleCard2
-                      h="h-96 text-2xl"
-                      scroll={true}
-                      article={article}
-                    />
+              <div
+                key={article._id}
+                className=" snap-center flex-none  h-wull w-full rounded overflow-hidden m-2 "
+              >
+                {loading ? (
+                  ""
+                ) : (
+                  <div>
+                    {" "}
+                    <Link href={`/article/${article.slug}`}>
+                      <div className=" cursor-pointer">
+                        <h2
+                          className={`mb-2 font-black text-xl line-clamp-4 tracking-tight`}
+                        >
+                          <span className=" text-gray-600">Related -</span>
+                          <span className=" text-red-800">{article.title}</span>
+                        </h2>
+                      </div>
+                    </Link>
                   </div>
-                ))}
+                )}
               </div>
             </div>
           </div>
