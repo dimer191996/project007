@@ -6,7 +6,7 @@ import ArticleCard2 from "./ArticleCard2";
 
 export default function ({ category }) {
   const { data, error } = useSWR(
-    `https://hot-data.herokuapp.com/api/articles/${category}/popular`,
+    `https://god-in-control.herokuapp.com/api/articles/${category}/popular`,
     fetcher,
     {
       revalidateOnFocus: false,
