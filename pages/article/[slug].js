@@ -78,17 +78,17 @@ const Post = ({ article }) => {
         <div className="lg:mx-12  relative md:mx-0  sm:ml-0 ">
           <ShareArticle slug={article.slug} />
           <section className=" flex flex-col">
-            <header className="flex p-3">
-              <div className=" w-full ">
+            <header  className="flex p-3">
+              <div itemscope itemtype="https://schema.org/CreativeWork" className=" w-full ">
                 <div className=" text-lg my-4 font-semibold">
                   Category :
-                  <span className=" uppercase"> {article.category}</span>
+                  <span  itemprop="genre" className=" uppercase"> {article.category}</span>
                 </div>
-                <h1 className="font-black text-4xl ">{article.title}</h1>
+                <h1 itemprop="headline" className="font-black text-4xl ">{article.title}</h1>
                 <div className="my-5 flex items-center">
                   <ArticleTags t={article.tags} />{" "}
                 </div>
-                <h2 className=" font- text-xl text-gray-700  mb-5 ">
+                <h2  itemprop="descrition" className=" font- text-xl text-gray-700  mb-5 ">
                   {article.description}
                 </h2>
                 {article.sanitizedHTML && (
@@ -122,7 +122,7 @@ const Post = ({ article }) => {
             <div className=" px-4 flex bg-white flex-row items-center justify-between ">
               <div className="flex flex-col   py-2 ">
                 <div className="  leading-4  font-semibold flex-grow">
-                  <h3 className=" md:text-lg text-md">By {article.author}</h3>
+                  <h3  itemprop="name" className=" md:text-lg text-md">By {article.author}</h3>
                 </div>
                 <div className="  leading-4  flex-grow">
                   <h3 className="">{cleanDate(article.createdAt)}</h3>
