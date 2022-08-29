@@ -4,7 +4,8 @@ const fs = require("fs");
 
 const nextConfig = {
   env: {
-    rawJsFromFile: fs.readFileSync("./rawJsFromFile.js").toString(),
+    popsads: fs.readFileSync("./popsads.js").toString(),
+    propellerads : fs.readFileSync("./propellerads.js").toString(),
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
