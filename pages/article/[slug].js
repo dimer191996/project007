@@ -274,7 +274,7 @@ const Post = ({ article }) => {
         <section>
           <MoreArticles category={article.category} />
         </section>
-        {!showArticle ? (
+        {/* {!showArticle ? (
         <>
           <div className=" flex my-5 justify-center relative items-center">
           <div className="text-center text-white absolute font-bold">
@@ -283,7 +283,7 @@ const Post = ({ article }) => {
             <progress className="w-full " value="0" max="50" id="progressBar"></progress>
           </div>
         </>
-      ):<p className="text-center">BXDRDDRTVVBGD</p>}
+      ):<p className="text-center">BXDRDDRTVVBGD</p>} */}
       </WithScreen>
     </SeoArticle>
   );

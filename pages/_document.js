@@ -23,7 +23,7 @@ export default function Document() {
         data-cfasync="false"
         dangerouslySetInnerHTML={{ __html: process.env.rawJsFromFile }}
       ></script> */}
-
+      <meta name="propeller" content="9bda4c19f4d705f818970a18d4183f6d"></meta>
       <link rel="canonical" href="https://www.hotseatmag.com/" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link

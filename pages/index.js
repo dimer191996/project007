@@ -180,6 +180,19 @@ export default function Home({}) {
                     <div className="  text-left">
                       <h1 className=" border-t">
                         <span className=" bg-red-700  text-white border-b  py-1 px-4">
+                         Celebrity
+                        </span>
+                      </h1>
+                    </div>
+                  </div>
+                  <PopularArticle category={"celebrity"} />
+                  <div></div>
+                </div>
+                <div className="">
+                  <div className=" mb-5">
+                    <div className="  text-left">
+                      <h1 className=" border-t">
+                        <span className=" bg-red-700  text-white border-b  py-1 px-4">
                           Improve Your Life
                         </span>
                       </h1>
@@ -188,6 +201,7 @@ export default function Home({}) {
                   <PopularArticle category={"howto"} />
                   <div></div>
                 </div>
+              
               </div>
             </div>
           </div>

@@ -75,87 +75,50 @@ export default function Howto({}) {
 
         <div className=" md:flex justify-center my-5 ">
           <div className=" lg:w-[50rem]">
-            <div className=" md:grid md:grid-cols-7  ">
-              <div className="row-start-2 sm:row-start-auto col-span-3  space-y-2 px-2">
-                <div className=" sticky top-20">
-                  <div></div>
-                  <div className="">
-                    <div className=" mb-5">
-                      <div className="  text-left">
-                        <h1 className=" border-t">
-                          <span className=" bg-red-700  text-white border-b  py-1 px-4">
-                            Popular
-                          </span>
-                        </h1>
-                      </div>
-                    </div>
-                    <PopularArticle category={"marketing"} />
-                    <div>
-                      <Ads24 />
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="  ">
               <div
                 id={`${page}`}
-                className=" col-span-4 px-2  border-l border-r  "
+                className=" col-span-12 px-2   "
               >
                 <div>
                   <div className=" mb-5">
                     <div className="  text-left">
                       <h1 className=" border-t">
                         <span className=" bg-red-700  text-white border-b  py-1 px-4">
-                          New Story
+                          New Stories
                         </span>
                       </h1>
                     </div>
                   </div>
-
-                  {articles?.slice(0, 1).map((data, index) => (
-                    <ArticleCard
-                      key={data._id}
-                      textSize="text-3xl"
-                      article={data}
-                    />
-                  ))}
-                </div>
-                {!data && (
-                  <div className="mt-4 mb-3">
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((data, index) => (
-                      <div
-                        key={index}
-                        className=" snap-center flex-none  h-64 w-auto rounded overflow-hidden m-2  "
-                      >
-                        <div class="py-1">
-                          <div class="animate-pulse flex space-x-4">
-                            <div class="flex-1 space-y-6 py-1">
-                              <div class="h-64 bg-slate-200 rounded"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                  <div className="md:grid md:grid-cols-2 gap-4">
+                    {articles?.map((data, index) => (
+                      <ArticleCard
+                        key={data._id}
+                        textSize="text-3xl"
+                        article={data}
+                      />
                     ))}
                   </div>
-                )}
-                <div className=" mb-5">
-                  <div className="  text-left">
-                    <h2 className=" border-t">
-                      <span className=" bg-red-700  text-white border-b  py-1 px-4">
-                        Latest
-                      </span>
-                    </h2>
-                  </div>
-                </div>
-                <div>
-                  {articles?.slice(1).map((data, index) => (
-                    <SmallCard
-                      showTitle={false}
-                      imgShow={true}
-                      imgSize=" h-26 w-1/3"
-                      key={data._id}
-                      article={data}
-                    />
-                  ))}
+                  {!data && (
+                    <div className="mt-4 mb-3">
+                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(
+                        (data, index) => (
+                          <div
+                            key={index}
+                            className=" snap-center flex-none  h-64 w-auto rounded overflow-hidden m-2  "
+                          >
+                            <div class="py-1">
+                              <div class="animate-pulse flex space-x-4">
+                                <div class="flex-1 space-y-6 py-1">
+                                  <div class="h-64 bg-slate-200 rounded"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

@@ -77,7 +77,6 @@ export default function Stories({}) {
 
         <div className=" md:flex justify-center my-5 ">
           <div className=" lg:w-[50rem]">
-            <div className=" md:grid md:grid-cols-7  ">
               <div className="row-start-2 sm:row-start-auto col-span-3  space-y-2 px-2">
                 <div className=" sticky top-20">
                   <div></div>
@@ -92,15 +91,15 @@ export default function Stories({}) {
                       </div>
                     </div>
                     <PopularArticle category={"short"} />
-                    <div>
-                      <Ads24 />
-                    </div>
+                    
                   </div>
                 </div>
               </div>
+            <div className=" md:grid md:grid-cols-12  ">
+              <div className="col-span-2"></div>
               <div
                 id={`${page}`}
-                className=" col-span-4 px-2  border-l border-r  "
+                className=" col-span-8 px-2   "
               >
                 <div>
                   <div className=" mb-5">
@@ -149,13 +148,14 @@ export default function Stories({}) {
                     <SmallCard
                       showTitle={false}
                       imgShow={true}
-                      imgSize=" h-26 w-1/3"
+                      imgSize=" h-26 w-1/2"
                       key={data._id}
                       article={data}
                     />
                   ))}
                 </div>
               </div>
+              <div className="col-span-2"></div>
             </div>
           </div>
         </div>

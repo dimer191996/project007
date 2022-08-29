@@ -3,9 +3,6 @@ import React, { useEffect, useState } from "react";
 import SmallCard from "./SmallCard";
 
 export default function MoreArticles({ category }) {
-  console.log("====================dddd================");
-  console.log();
-  console.log("====================================");
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -25,26 +22,19 @@ export default function MoreArticles({ category }) {
 
   return (
     <div className=" flex  justify-center">
-      <div className=" w-[90%]   mb-5">
+      <div className="    mb-5">
         <div className="h-6 text-center">{loading ? "loading" : ""}</div>
         <div className="">
-          {articles?.slice(0, 5).map((el, index) => (
+          {articles?.slice(0, 10).map((el, index) => (
             <SmallCard
-              imgSize=" w-1/3 "
+              imgSize=" w-1/2 "
               showTitle={false}
               key={index}
               article={el}
             />
           ))}
 
-          {articles?.slice(5, 10).map((el, index) => (
-            <SmallCard
-              imgSize=" w-1/3 "
-              showTitle={false}
-              key={index}
-              article={el}
-            />
-          ))}
+          
           <ins
             class="adsbygoogle"
             style={{ display: "block", backgroundColor: "#eeee" }}
@@ -56,7 +46,7 @@ export default function MoreArticles({ category }) {
           ></ins>
           {articles?.slice(10, 20).map((el, index) => (
             <SmallCard
-              imgSize=" w-1/3 "
+              imgSize=" w-1/2  "
               showTitle={false}
               key={index}
               article={el}
