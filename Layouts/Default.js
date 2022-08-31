@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
 export default function Default({ children }) {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   useEffect(() => {
     if (window.location.search.includes("success=true")) {
       setVisible(false);
@@ -18,7 +18,7 @@ export default function Default({ children }) {
         <main className="container m-auto"> {children}</main>
         <Footer />
         <FloatingButton
-          hidebutton={() => setVisible(false)}
+          hidebutton={() => setVisible(true)}
           showbutton={() => setVisible(true)}
           hideHeader={visible}
         />
