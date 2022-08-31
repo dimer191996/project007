@@ -18,7 +18,7 @@ export default function Default({ children }) {
         <main className="container m-auto"> {children}</main>
         <Footer />
         <FloatingButton
-          hidebutton={() => setVisible(true)}
+          hidebutton={() => setVisible(false)}
           showbutton={() => setVisible(true)}
           hideHeader={visible}
         />
