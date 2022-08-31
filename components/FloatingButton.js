@@ -48,9 +48,7 @@ export default function FloatingButton({ hidebutton, showbutton, hideHeader }) {
               updates, delivered directly in your inbox.{" "}
             </span>
             <br /> <br />
-            <span className=" text-green-700 text-2xl border-t border-b my-2">
-              Only 2 articles per week.
-            </span>
+            
           </p>
         )}
 
