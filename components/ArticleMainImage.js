@@ -31,7 +31,10 @@ export default function ArticleMainImage({ article }) {
         height="368"
         layout="fill"
         placeholder="blur"
+        sizes="320 640 750"
+        quality={100}
         position="relative"
+        loading="lazy"
         blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
         alt={article.title}
       />
