@@ -8,18 +8,16 @@ import PopularArticle from "../../components/PopularArticle";
 import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
 } from "@heroicons/react/solid";
 import Ads24 from "../../components/Ads24";
 
-export default function Stories({}) {
+export default function Howto({}) {
   const [page, setPage] = useState(1);
 
   const [pageCount, setPageCount] = useState(0);
 
   const { data, error, mutate, size, setSize, isValidating } = useSWRInfinite(
-    `https://god-in-control.herokuapp.com/api/hot/short/articles?page=${page}`,
+    `https://god-in-control.herokuapp.com/api/hot/lifestyle/articles?page=${page}`,
     fetcher,
     {
       revalidateOnFocus: false,
@@ -58,25 +56,24 @@ export default function Stories({}) {
   return (
     <SeoPage
       description={
-        "   Your source for Entertainment news, Stories , Celebrities, Reality Tv more...!"
+        "   If you like to nerd out about self-development as much as I do, you're in a wight place ."
       }
       article={articles[0]}
       hearder={
-        " Your source for entertainment , celebrities ,Reality Tv , and much more"
+        "  We share productivity tips, career advice and lifestyle hacks, so we can become happier and more successful versions of ourselves... together 🤗"
       }
-      category={"MOVIE, TV NEWS , STORIES"}
+      category={"Lifestyle hacks, Self-development"}
     >
       <section className="">
         <div className=" mt-12 mb-12">
           <div className="  flex justify-center text-left">
-            <h1 className=" text-4xl font-bold">
-              #1 MOVIE, TV NEWS & STORIES WEBSITE
-            </h1>
+            <h1 className=" text-4xl font-bold">#1 Lifestyle hacks, Self-development & More</h1>
           </div>
         </div>
 
         <div className=" md:flex justify-center my-5 ">
           <div className=" lg:w-[50rem]">
+            <div className=" md:grid md:grid-cols-7  ">
               <div className="row-start-2 sm:row-start-auto col-span-3  space-y-2 px-2">
                 <div className=" sticky top-20">
                   <div></div>
@@ -84,22 +81,20 @@ export default function Stories({}) {
                     <div className=" mb-5">
                       <div className="  text-left">
                         <h1 className=" border-t">
-                          <span className=" bg-red-700  text-white border-b  py-1 px-4">
-                            Stories & Cinema
+                          <span className=" bg-red-700  text-white py-1 px-4">
+                            Popular
                           </span>
                         </h1>
                       </div>
                     </div>
-                    <PopularArticle category={"short"} />
+                    <PopularArticle category={"lifestyle"} />
                     
                   </div>
                 </div>
               </div>
-            <div className=" md:grid md:grid-cols-12  ">
-              <div className="col-span-2"></div>
               <div
                 id={`${page}`}
-                className=" col-span-8 px-2   "
+                className=" col-span-4 px-2  border-l border-r  "
               >
                 <div>
                   <div className=" mb-5">
@@ -138,7 +133,7 @@ export default function Stories({}) {
                   <div className="  text-left">
                     <h2 className=" border-t">
                       <span className=" bg-red-700  text-white border-b  py-1 px-4">
-                        Breaking Stories
+                        Learn How
                       </span>
                     </h2>
                   </div>
@@ -148,14 +143,13 @@ export default function Stories({}) {
                     <SmallCard
                       showTitle={false}
                       imgShow={true}
-                      imgSize=" h-26 w-1/2"
+                      imgSize=" h-26 w-1/3"
                       key={data._id}
                       article={data}
                     />
                   ))}
                 </div>
               </div>
-              <div className="col-span-2"></div>
             </div>
           </div>
         </div>

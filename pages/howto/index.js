@@ -56,13 +56,13 @@ export default function Howto({}) {
   return (
     <SeoPage
       description={
-        "   Your source for Entertainment news, Stories , Celebrities, Reality Tv more...!"
+        "  How to market a product on Amazone & Ebay more...!"
       }
       article={articles[0]}
       hearder={
-        " Your source for entertainment , celebrities ,Reality Tv , and much more"
+        "Amazon include: Email marketing; Product listing Q&As; Limited-time ..."
       }
-      category={"none"}
+      category={"Amazon & Marketing"}
     >
       <section className="">
         <div className=" mt-12 mb-12">

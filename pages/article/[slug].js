@@ -13,6 +13,7 @@ import ForYouArticles from "../../components/ForYouArticles";
 import InstagramEmbed from "../../components/InstagramEmbed";
 import { ChevronDoubleRightIcon } from "@heroicons/react/solid";
 import Ads24 from "../../components/Ads24";
+import LinkedArticle from "../../components/LinkedArticle";
 
 export async function getServerSideProps({ params }) {
   
@@ -72,7 +73,7 @@ const Post = ({ article }) => {
   }, [])
   
   return (
-    <SeoArticle article={article}>
+    <SeoArticle article={article} category={article.category}>
  
       <WithScreen width=" relative w-full  lg:w-[45%] md:w-[55%] ">
         <div className="lg:mx-12  relative md:mx-0  sm:ml-0 ">
@@ -136,7 +137,7 @@ const Post = ({ article }) => {
           </section>
           <div className="separator"></div>
           <ins
-            class="adsbygoogle"
+            className="adsbygoogle"
             style={{
               display: "block",
               textAlign: "center",
@@ -161,7 +162,7 @@ const Post = ({ article }) => {
                 <div className="separator"></div>
 
                 <ins
-                  class="adsbygoogle"
+                  className="adsbygoogle"
                   style={{
                     display: "block",
                     textAlign: "center",
@@ -182,7 +183,7 @@ const Post = ({ article }) => {
                 <div className="separator"></div>
 
                 {article.related1 && <ForYouArticles slug1={article.related1} />}
-
+                {article.category !== "lifestyle" && <LinkedArticle/>}
                 <div
                   id="chapter-2"
                   className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
@@ -200,7 +201,7 @@ const Post = ({ article }) => {
                   <div>
                     <div className="separator"></div>
                     <ins
-                      class="adsbygoogle"
+                      className="adsbygoogle"
                       style={{
                         display: "block",
                         textAlign: "center",

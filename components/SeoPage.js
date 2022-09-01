@@ -22,9 +22,7 @@ const SeoPage = ({ article, hearder, category, description, children }) => (
       titleTemplate={hearder}
       defaultTitle={article?.title}
       description={description}
-      canonical={`https://www.hotseatmag.com/${conanical(
-        category || article?.category
-      )}`}
+      canonical={`https://www.hotseatmag.com/`}
       openGraph={{
         title: article?.title,
         description: article?.description,
@@ -40,7 +38,7 @@ const SeoPage = ({ article, hearder, category, description, children }) => (
               .trim()
               .replace(/ /g, "-")}`,
           ],
-          tags: [`${article?.tags}`],
+          tags: [`${article?.tags}, + ${category} `],
         },
         images: [
           {

@@ -75,18 +75,73 @@ export default function Home({}) {
 
         <div className=" md:flex justify-center my-5 ">
           <div className=" lg:w-[50rem]">
-            <div className=" mb-5">
-              <div className="  text-left">
-                <h1 className=" border-t">
-                  <span className=" bg-red-700  text-white border-b  py-1 px-4">
-                    Cinema & Movies
-                  </span>
-                </h1>
+            <div>
+              <div className=" mb-5">
+                <div className="  text-left">
+                  <h1 className=" border-t">
+                    <span className=" bg-red-700  text-white border-b  py-1 px-4">
+                      Cinema & Movies
+                    </span>
+                  </h1>
+                </div>
+              </div>
+              <div>
+                <PopularArticle category={"short"} />
               </div>
             </div>
-            <div>
-              <PopularArticle category={"short"} />
-            </div>
+            <div className="">
+                  <div className=" mb-5">
+                    <div className="  text-left">
+                      <h1 className=" border-t">
+                        <span className=" bg-red-700  text-white border-b  py-1 px-4">
+                          Reality TV News
+                        </span>
+                      </h1>
+                    </div>
+                  </div>
+                  <PopularArticle category={"tv"} />
+                  <div></div>
+                </div>
+                <div className="">
+                  <div className=" mb-5">
+                    <div className="  text-left">
+                      <h1 className=" border-t">
+                        <span className=" bg-red-700  text-white border-b  py-1 px-4">
+                         Celebrity News
+                        </span>
+                      </h1>
+                    </div>
+                  </div>
+                  <PopularArticle category={"celebrity"} />
+                  <div></div>
+                </div>
+                <div className="">
+                  <div className=" mb-5">
+                    <div className="  text-left">
+                      <h1 className=" border-t">
+                        <span className=" bg-red-700  text-white border-b  py-1 px-4">
+                        Marketing | How To
+                        </span>
+                      </h1>
+                    </div>
+                  </div>
+                  <PopularArticle category={"howto"} />
+                  <div></div>
+                </div>
+
+                <div className="">
+                  <div className=" mb-5">
+                    <div className="  text-left">
+                      <h1 className=" border-t">
+                        <span className=" bg-red-700  text-white border-b  py-1 px-4">
+                         How To Improve Your Life
+                        </span>
+                      </h1>
+                    </div>
+                  </div>
+                  <PopularArticle category={"lifestyle"} />
+                  <div></div>
+                </div>
             <div className=" flex justify-center  ">
               <div id={`${page}`} className=" md:w-2/3 px-2   ">
                 <div>
@@ -161,48 +216,7 @@ export default function Home({}) {
               </div>
             </div>
             <div className="row-start-2 mt-5 sm:row-start-auto col-span-3  space-y-2 px-2">
-              <div className=" sticky top-20">
-                <div className="">
-                  <div className=" mb-5">
-                    <div className="  text-left">
-                      <h1 className=" border-t">
-                        <span className=" bg-red-700  text-white border-b  py-1 px-4">
-                          Popular Reality TV
-                        </span>
-                      </h1>
-                    </div>
-                  </div>
-                  <PopularArticle category={"tv"} />
-                  <div></div>
-                </div>
-                <div className="">
-                  <div className=" mb-5">
-                    <div className="  text-left">
-                      <h1 className=" border-t">
-                        <span className=" bg-red-700  text-white border-b  py-1 px-4">
-                         Celebrity
-                        </span>
-                      </h1>
-                    </div>
-                  </div>
-                  <PopularArticle category={"celebrity"} />
-                  <div></div>
-                </div>
-                <div className="">
-                  <div className=" mb-5">
-                    <div className="  text-left">
-                      <h1 className=" border-t">
-                        <span className=" bg-red-700  text-white border-b  py-1 px-4">
-                          Improve Your Life
-                        </span>
-                      </h1>
-                    </div>
-                  </div>
-                  <PopularArticle category={"howto"} />
-                  <div></div>
-                </div>
-              
-              </div>
+             
             </div>
           </div>
         </div>

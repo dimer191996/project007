@@ -33,6 +33,10 @@ export default function NavBar() {
 
     {
       label: "Lifestyle",
+      link: "/lifestyle",
+    },
+    {
+      label: "How To Do",
       link: "/howto",
     },
 
