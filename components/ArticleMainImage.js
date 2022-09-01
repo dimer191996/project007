@@ -27,6 +27,8 @@ export default function ArticleMainImage({ article }) {
         src={article.image}
         className=" rounded "
         objectFit="cover"
+        width="500"
+        height="368"
         layout="fill"
         placeholder="blur"
         position="relative"
