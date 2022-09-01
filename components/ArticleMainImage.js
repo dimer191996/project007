@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { Link } from "next/link";
 
 export default function ArticleMainImage({ article }) {
   const shimmer = (w, h) => `
@@ -21,15 +22,17 @@ export default function ArticleMainImage({ article }) {
       ? Buffer.from(str).toString("base64")
       : window.btoa(str);
   return (
-    <Image
-      src={article.image}
-      className=" rounded "
-      objectFit="cover"
-      layout="fill"
-      placeholder="blur"
-      position="relative"
-      blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
-      alt={article.title}
-    />
+   
+      <Image
+        src={article.image}
+        className=" rounded "
+        objectFit="cover"
+        layout="fill"
+        placeholder="blur"
+        position="relative"
+        blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+        alt={article.title}
+      />
+   
   );
 }

@@ -116,7 +116,9 @@ const Post = ({ article }) => {
 
             <div className=" md:flex justify-center md:p-2">
               <div className="relative h-[20rem] w-full ">
+              <a href={article.image}>
                 <ArticleMainImage article={article} />
+                </a>
               </div>
             </div>
 
