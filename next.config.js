@@ -62,7 +62,7 @@ const nextConfig = {
     ];
   },
   images: {
-    disableStaticImages: true,
+  
     domains: [
       "links.papareact.com",
       "res.cloudinary.com",
