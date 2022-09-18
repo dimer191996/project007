@@ -17,7 +17,7 @@ export default function Howto({}) {
   const [pageCount, setPageCount] = useState(0);
 
   const { data, error, mutate, size, setSize, isValidating } = useSWRInfinite(
-    `https://god-in-control.herokuapp.com/api/hot/howto/articles?page=${page}`,
+    `/api/articles/pages?page=${page}&category=howto`,
     fetcher,
     {
       revalidateOnFocus: false,

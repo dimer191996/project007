@@ -17,7 +17,7 @@ export default function Home({}) {
   const [pageCount, setPageCount] = useState(0);
 
   const { data, error, mutate, size, setSize, isValidating } = useSWRInfinite(
-    `https://god-in-control.herokuapp.com/api/hot/articles?page=${page}`,
+    `/api/home?page=${page}`,
     fetcher,
     {
       revalidateOnFocus: false,

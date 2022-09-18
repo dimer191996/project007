@@ -19,7 +19,7 @@ export default function Stories({}) {
   const [pageCount, setPageCount] = useState(0);
 
   const { data, error, mutate, size, setSize, isValidating } = useSWRInfinite(
-    `https://god-in-control.herokuapp.com/api/hot/short/articles?page=${page}`,
+    `/api/articles/pages?page=${page}&category=short`,
     fetcher,
     {
       revalidateOnFocus: false,
