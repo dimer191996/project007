@@ -77,8 +77,8 @@ const Post = ({ article }) => {
  
       <WithScreen width=" relative w-full  lg:w-[45%] md:w-[55%] ">
         <div className="lg:mx-12  relative md:mx-0  sm:ml-0 ">
-          <ShareArticle slug={article.slug} />
           <section className=" flex flex-col">
+          <ShareArticle slug={article.slug} />
             <header  className="flex p-3">
               <div itemscope itemtype="https://schema.org/CreativeWork" className=" w-full ">
                 <div className=" text-lg my-4 font-semibold">
