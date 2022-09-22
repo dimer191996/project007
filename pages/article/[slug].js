@@ -185,7 +185,7 @@ const Post = ({ article }) => {
                 <div className="separator"></div>
 
                 {article.related1 && <ForYouArticles slug1={article.related1} />}
-                <div id="rumble_v1iecmt"></div>
+                <iframe src="https://rumble.com/v1l0ikb-drinking-at-least-four-cups-of-some-teas-linked-to-reduced-diabetes-risk-re.html?mref=1eog47&mc=6rc8q" frameborder="0" allowfullscreen></iframe>
                 <div
                   id="chapter-2"
                   className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
