@@ -27,18 +27,19 @@ export default function MoreArticles({ category }) {
         <div className="h-6 text-center">{loading ? "loading" : ""}</div>
         <div className="">
           <ol class="relative border-l mx-2 border-gray-200 dark:border-gray-700">
-            {articles.map((el, index) => (
-              <li class="mb-10 ml-4">
+            {articles.slice(1).map((el, index) => (
+              <li key={index} class="mb-10 ml-4">
                 <SmallCard
                   imgSize=" w-1/2 "
                   showTitle={false}
-                  key={index}
+                
                   article={el}
                 />
                 <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
                 <time class="mb-1 text-sm font-bold leading-none text-gray-700 dark:text-gray-700">
-                {moment(el.createdAt).fromNow()}
+                  {moment(el.createdAt).fromNow()}
                 </time>
+                
                 {/* <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                   Application UI code in Tailwind CSS
                 </h3> */}
@@ -46,7 +47,7 @@ export default function MoreArticles({ category }) {
                  {el.description}
                 </p>
                 <a
-                  href="#"
+                  href={'/article/'+el.slug}
                   class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                 >
                   Learn more{" "}

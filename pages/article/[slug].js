@@ -185,7 +185,7 @@ const Post = ({ article }) => {
                 <div className="separator"></div>
 
                 {article.related1 && <ForYouArticles slug1={article.related1} />}
-                {article.category !== "lifestyle" && <LinkedArticle/>}
+                <div id="rumble_v1iecmt"></div>
                 <div
                   id="chapter-2"
                   className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
