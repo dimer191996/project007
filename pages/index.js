@@ -169,6 +169,7 @@ export default function Home({}) {
                   </div>
                 </div>
                 <div>
+                <ol class="relative border-l mx-2 border-gray-200 dark:border-gray-700">
                   {articles?.slice(1).map((data, index) => (
                     <SmallCard
                       showTitle={false}
@@ -178,6 +179,7 @@ export default function Home({}) {
                       article={data}
                     />
                   ))}
+                  </ol>
                   <div className=" flex justify-center my-10 items-center">
                     {page !== 1 && (
                       <ul className=" flex  mx-1  items-center bg-gray-100 hover:bg-gray-200 ease-in-out duration-500  justify-center rounded   ">

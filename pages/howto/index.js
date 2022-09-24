@@ -141,6 +141,7 @@ export default function Howto({}) {
                   </div>
                 </div>
                 <div>
+                <ol class="relative border-l mx-2 border-gray-200 dark:border-gray-700">
                   {articles?.slice(1).map((data, index) => (
                     <SmallCard
                       showTitle={false}
@@ -150,6 +151,7 @@ export default function Howto({}) {
                       article={data}
                     />
                   ))}
+                  </ol>
                 </div>
               </div>
             </div>

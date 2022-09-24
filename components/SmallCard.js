@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import ArticleMainImage from "./ArticleMainImage";
 import ArticleTags from "./ArticleTags";
+import moment  from 'moment';
 
 export default function SmallCard({
   article,
@@ -12,9 +13,10 @@ export default function SmallCard({
   showTitle = true,
 }) {
   return (
+    <li  class="mb-10 ml-4">
     <Link href={`/article/${article.slug}`}>
       {/* hover:scale-105 transition transform ease-out duration-200 */}
-      <div className=" flex flex-col space-x-2  my-2  hover:bg-gray-50 ease-out duration-500  rounded-lg cursor-pointer">
+      <div className=" flex flex-col space-x-2 mb-2 p-1  hover:bg-gray-50 ease-out duration-500  rounded-lg cursor-pointer">
         <div className={`${imgShow ? "flex" : ""}  p-1 `}>
           {imgShow && (
             <div className={"relative " + imgSize}>
@@ -27,7 +29,7 @@ export default function SmallCard({
               imgShow && "w-4/5"
             } flex flex-col  pl-2 leading-tight`}
           >
-            {" "}
+          
             <h2 className=" line-clamp-4 hover:text-red-700 text-2xl font-black">
               {article.title}
             </h2>{" "}
@@ -44,7 +46,7 @@ export default function SmallCard({
           </div>
         </div>
 
-        <div className=" flex items-center justify-center  my-1 pt-1 ">
+        <div className=" flex items-center justify-center  pt-1 ">
           {showTitle && (
             <div className="  leading-4 text-sm font-semibold flex-grow">
               <h2 className=" text-[14px]">By {article.author}</h2>
@@ -62,5 +64,15 @@ export default function SmallCard({
         </div>
       </div>
     </Link>
+    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+
+<p class="mb-4 text-base bg-gray-100 rounded-lg p-2  border-b font-normal text-gray-500 dark:text-gray-400">
+  <time class="mb-1 px-2 text-sm font-bold leading-none text-gray-700 dark:text-gray-700">
+    {moment(article.createdAt).fromNow()}
+  </time>
+  {article.description}
+</p>
+
+    </li>
   );
 }

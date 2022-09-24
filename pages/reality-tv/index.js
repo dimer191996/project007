@@ -101,7 +101,7 @@ export default function TV({}) {
               </div>
               <div
                 id={`${page}`}
-                className=" col-span-4 px-2  border-l border-r  "
+                className=" col-span-4  "
               >
                 <div>
                   <div className=" mb-5">
@@ -146,6 +146,7 @@ export default function TV({}) {
                   </div>
                 </div>
                 <div>
+                <ol class="relative border-l mx-1 border-gray-200 dark:border-gray-700">
                   {articles?.slice(1).map((data, index) => (
                     <SmallCard
                       showTitle={false}
@@ -155,6 +156,7 @@ export default function TV({}) {
                       article={data}
                     />
                   ))}
+                  </ol>
                 </div>
               </div>
             </div>
