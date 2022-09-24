@@ -18,7 +18,7 @@ import LinkedArticle from "../../components/LinkedArticle";
 export async function getServerSideProps({ params }) {
   
   const article = await axios
-    .get(`${"https://god-in-control.herokuapp.com/api/"}article/` + params.slug, {
+    .get(`${"http://localhost:3000/api/articles/article/"}${params.slug}`, {
       timeout: 10000,
     })
     .then((res) => res.data.article)

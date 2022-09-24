@@ -10,7 +10,7 @@ export default function MoreArticles({ category }) {
     setLoading(true);
     axios
       .get(
-        `${"https://god-in-control.herokuapp.com/api/"}articles/category/${category}`
+        `${"/api/articles/article/more/"}${category}`
       )
       .then(({ data }) => {
         setArticles(data.articles);
