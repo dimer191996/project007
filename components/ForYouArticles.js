@@ -4,14 +4,14 @@ import React, { useEffect, useState } from "react";
 import ArticleCard2 from "./ArticleCard2";
 import ArticleTags from "./ArticleTags";
 
-export default function ForYouArticles({ slug1 }) {
+export default function ForYouArticles({ slug }) {
   const [article, setArticle] = useState({});
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
     axios
       .get(
-        `${"https://god-in-control.herokuapp.com/api/"}article/related/${slug1}`
+        `${"/api/"}articles/article/related/${slug}`
       )
       .then(({ data }) => {
         setArticle(data.article);

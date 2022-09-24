@@ -18,7 +18,7 @@ import LinkedArticle from "../../components/LinkedArticle";
 export async function getServerSideProps({ params }) {
   
   const article = await axios
-    .get(`${"https://hotseatmag.com/api/articles/article/"}${params.slug}`, {
+    .get(`${"https://www.hotseatmag.com/api/articles/article/"}${params.slug}`, {
       timeout: 10000,
     })
     .then((res) => res.data.article)
@@ -184,8 +184,8 @@ const Post = ({ article }) => {
                 ></div>
                 <div className="separator"></div>
 
-                {article.related1 && <ForYouArticles slug1={article.related1} />}
-                <iframe src="https://rumble.com/v1l0ikb-drinking-at-least-four-cups-of-some-teas-linked-to-reduced-diabetes-risk-re.html?mref=1eog47&mc=6rc8q" frameborder="0" allowfullscreen></iframe>
+                {article.related1 && <ForYouArticles slug={article.related1} />}
+                
                 <div
                   id="chapter-2"
                   className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
@@ -267,7 +267,7 @@ const Post = ({ article }) => {
                 <div className=" space-y-2">
                   <p className=" text-3xl font-bold">
                     Not sure what to read next ?
-                 {article.related2 && <ForYouArticles slug1={article.related2} />}
+                 {article.related2 && <ForYouArticles slug={article.related2} />}
                   </p>
                 </div>
               </section>
