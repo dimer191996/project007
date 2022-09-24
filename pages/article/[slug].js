@@ -18,7 +18,7 @@ import LinkedArticle from "../../components/LinkedArticle";
 export async function getServerSideProps({ params }) {
   
   const article = await axios
-    .get(`${"http://localhost:3000/api/articles/article/"}${params.slug}`, {
+    .get(`${"https://hotseatmag.com/api/articles/article/"}${params.slug}`, {
       timeout: 10000,
     })
     .then((res) => res.data.article)
