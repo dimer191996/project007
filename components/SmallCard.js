@@ -64,14 +64,13 @@ export default function SmallCard({
         </div>
       </div>
     </Link>
-    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+    <div class="absolute w-3 h-3 bg-gray-50 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
 
-<p class="mb-4 text-base bg-gray-100 rounded-lg p-2  border-b font-normal text-gray-500 dark:text-gray-400">
-  <time class="mb-1 px-2 text-sm font-bold leading-none text-gray-700 dark:text-gray-700">
-    {moment(article.createdAt).fromNow()}
-  </time>
-  {article.description}
-</p>
+    <p class="mb-4 text-base bg-gray-50 rounded-lg p-2  border-b font-normal text-gray-500 dark:text-gray-400">
+      
+      <span className=" line-clamp-2">{article.description}</span>
+      
+    </p>
 
     </li>
   );
