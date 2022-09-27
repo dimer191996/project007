@@ -1,10 +1,8 @@
-/*<![CDATA[/* */ 
-(function (s, u, z, p) {
-  (s.src = u), s.setAttribute("data-zone", z), p.appendChild(s);
-})(
-  document.createElement("script"),
-  "https://inklinkor.com/tag.min.js",
-  5344727,
-  document.body || document.documentElement
-);
-/*]]>/* */
+
+	(function() {
+		var zergnet = document.createElement('script');
+		zergnet.type = 'text/javascript'; zergnet.async = true;
+		zergnet.src = (document.location.protocol == "https:" ? "https:" : "http:") + '//www.zergnet.com/zerg.js?id=90952';
+		var znscr = document.getElementsByTagName('script')[0];
+		znscr.parentNode.insertBefore(zergnet, znscr);
+	})();
