@@ -275,6 +275,9 @@ const Post = ({ article }) => {
        
         </div>
         <section>
+          <div className="flex justify-center">
+            <div id="zergnet-widget-90952"></div>
+          </div>
           <MoreArticles category={article.category} />
         </section>
         {/* {!showArticle ? (
