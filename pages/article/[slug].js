@@ -155,7 +155,7 @@ const Post = ({ article }) => {
           <div className="separator"></div>
 
           
-            <section className="px-4 md:px-0">
+            <div className="px-4 md:px-0">
               <div className="mt-5">
                 <div
                   className="prose py-2  has-dropcap prose-xl mt-6  lg:prose-xl   prose-a:text-red-800"
@@ -263,25 +263,25 @@ const Post = ({ article }) => {
                   </div>
                 </div>
               </div>
-              <section>
+              <div>
                 <div className=" space-y-2">
                   <p className=" text-3xl font-bold">
                     Not sure what to read next ?
                  {article.related2 && <ForYouArticles slug={article.related2} />}
                   </p>
                 </div>
-              </section>
-            </section>
+              </div>
+            </div>
        
         </div>
         <section>
-            <div id="zergnet-widget-90952"></div>
-          <MoreArticles category={article.category} />
-            <ins class="adsbygoogle"
+           <ins class="adsbygoogle"
             style={{display:"block"}}
             data-ad-format="autorelaxed"
             data-ad-client="ca-pub-4491397756399283"
             data-ad-slot="4620672919"></ins>
+            <MoreArticles category={article.category} />
+     <div id="zergnet-widget-90952"></div>
         </section>
         {/* {!showArticle ? (
         <>
