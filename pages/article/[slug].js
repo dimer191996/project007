@@ -275,10 +275,13 @@ const Post = ({ article }) => {
        
         </div>
         <section>
-          
             <div id="zergnet-widget-90952"></div>
-         
           <MoreArticles category={article.category} />
+            <ins class="adsbygoogle"
+            style={{display:"block"}}
+            data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-4491397756399283"
+            data-ad-slot="4620672919"></ins>
         </section>
         {/* {!showArticle ? (
         <>

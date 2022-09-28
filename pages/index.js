@@ -159,6 +159,12 @@ export default function Home({}) {
                     <ArticleCard key={data._id} article={data} />
                   ))}
                 </div>
+                <ins class="adsbygoogle"
+                style={{display:"block"}}
+                data-ad-client="ca-pub-4491397756399283"
+                data-ad-slot="3538660225"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
                 <div className=" mb-5">
                   <div className="  text-left">
                     <h2 className=" border-t">
@@ -215,6 +221,11 @@ export default function Home({}) {
                     </ul>
                   </div>
                 </div>
+                <ins class="adsbygoogle"
+                style={{display:"block"}}
+                data-ad-format="autorelaxed"
+                data-ad-client="ca-pub-4491397756399283"
+                data-ad-slot="4620672919"></ins>
               </div>
             </div>
             <div className="row-start-2 mt-5 sm:row-start-auto col-span-3  space-y-2 px-2">
