@@ -26,7 +26,7 @@ export async function getServerSideProps({ params }) {
 
   if (!article) {
     return {
-      notfound: true,
+      notFound: true,
     };
   }
   return {
