@@ -1,55 +1,35 @@
 import { NextSeo } from "next-seo";
+import Head from "next/head";
 
-let conanical = (category) => {
-  switch (category) {
-    case "tv":
-      return "reality-tv";
-    case "movie-review":
-      return "movies-and-entertainment";
-    case "truecrime":
-      return "movies-and-entertainment";
-    case "short":
-      return "movies-and-entertainment";
-    default:
-      return "";
-  }
-};
 
-const SeoPage = ({ article, hearder, category, description, children }) => (
+const SeoPage = ({ article, hearder, category, tags, description, children }) => (
+
+
   <>
-    <NextSeo
-      title={hearder}
-      titleTemplate={hearder}
-      defaultTitle={article?.title}
-      description={description}
-      canonical={`https://www.hotseatmag.com/`}
-      openGraph={{
-        title: article?.title,
-        description: article?.description,
-        url: `https://www.hotseatmag.com/article/${article?.slug}`,
-        type: "article",
-        article: {
-          publishedTime: article?.createdAt,
-          // modifiedTime: "2018-01-21T18:04:43Z",
-          // expirationTime: "2022-12-21T22:04:11Z",
-          // section: "Section II",
-          authors: [
-            `https://www.hotseatmag.com/author/${article?.author
-              .trim()
-              .replace(/ /g, "-")}`,
-          ],
-          tags: [`${article?.tags}, + ${category} `],
-        },
-        images: [
-          {
-            url: article?.image,
-            width: 800,
-            height: 600,
-            alt: article?.description,
-          },
-        ],
-      }}
-    />
+<Head>
+          <title>{tags?.map((el) => (`${el.split("-")} , `))}</title>
+          <meta name="description" content={article?.description}/>
+          <meta name="keywords" content={tags?.map((el) => (`${el.split("-")} , `))}/>
+          <meta name="article:tag" content={tags?.map((el) =>(`${el.split("-")} , `))} />
+          <meta name="author" content={article?.author}/>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          <link rel="canonical" href={`https://www.hotseatmag.com/article/${article?.slug}`}/>
+          <meta property="og:type" content="article"/>
+          <meta property="og:title" content={article?.title}/>
+          <meta property="og:description" content={article?.description}/>
+          <meta property="og:url" content={`https://www.hotseatmag.com/article/${article?.slug}`}/>
+          <meta property="og:image" content={article?.image}/>
+          <meta name="twitter:card" content="summary"/>
+          <meta name="twitter:title" content={article?.title}/>
+          <meta name="twitter:description" content={article?.description}/>
+          <meta name="twitter:image" content={article?.image}/>
+          <meta name="robots" content="index,follow"/>
+          <meta name="googlebot" content="index,follow"/>
+          <meta name="referrer" content="origin"/>
+          <meta name="language" content="en"/>
+          <meta name="copyright" content={`Copyright ${article?.author}`}/>
+          <meta name="rating" content="general"/>
+</Head>
     {children}
   </>
 );

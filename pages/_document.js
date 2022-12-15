@@ -24,11 +24,11 @@ export default function Document() {
         dangerouslySetInnerHTML={{ __html: process.env.popsads }}
       ></script>
 
-       <script
+       {/* <script
         type="text/javascript"
         data-cfasync="false"
         dangerouslySetInnerHTML={{ __html: process.env.propellerads }}
-      ></script> 
+      ></script>  */}
 
       <meta name="propeller" content="9bda4c19f4d705f818970a18d4183f6d"></meta>
       <link rel="canonical" href="https://www.hotseatmag.com/" />
