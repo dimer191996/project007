@@ -43,15 +43,7 @@ const Post = ({ article }) => {
 
   const tags = article.tags;
   const tagsArray = tags.split(" , ");
-  const tagsEl = () => {
-    return tagsArray.map((el) => (
-      <Link href={`/tag/${el}`}>
-        <span className="px-2 cursor-pointer underline text-cyan-600">
-          #{el.split("-")}
-        </span>
-      </Link>
-    ));
-  };
+ 
 
   const [showArticle, setShowArticle] = useState(false);
   const [timer , setTimer ] = useState();
@@ -73,7 +65,7 @@ const Post = ({ article }) => {
   }, [])
   
   return (
-    <SeoArticle article={article} category={article.category}>
+    <SeoArticle article={article} tags={tagsArray} category={article.category}>
  
       <WithScreen width=" relative w-full  lg:w-[45%] md:w-[55%] ">
         <div className="lg:mx-12  relative md:mx-0  sm:ml-0 ">

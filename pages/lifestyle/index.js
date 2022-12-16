@@ -62,7 +62,7 @@ export default function Howto({}) {
       hearder={
         "  We share productivity tips, career advice and lifestyle hacks, so we can become happier and more successful versions of ourselves... together 🤗"
       }
-      category={"Lifestyle hacks, Self-development"}
+      category={"movies-and-entertainment"}
     >
       <section className="">
         <div className=" mt-12 mb-12">

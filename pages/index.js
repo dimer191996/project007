@@ -58,11 +58,12 @@ export default function Home({}) {
       description={
         "   Your source for Entertainment news, Stories , Celebrities, Reality Tv more...!"
       }
-      article={articles[0]}
       hearder={
         " Your source for entertainment , celebrities ,Reality Tv , and much more"
       }
-      category={"none"}
+      tags={'Reality Tv'}
+      keyword=""
+      category={""}
     >
       <section className="">
         <div className=" mt-12 mb-12">

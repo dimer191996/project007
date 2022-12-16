@@ -42,7 +42,7 @@ const SeoArticle = ({ article, children }) => (
               .trim()
               .replace(" ", "-")}`,
           ],
-          tags: [`90 Day Fiance : ${article.category}`],
+          tags: [article?.tags.split('-') ],
         },
         images: [
           {

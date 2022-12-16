@@ -62,7 +62,7 @@ export default function Howto({}) {
       hearder={
         " Your source for entertainment , celebrities ,Reality Tv , and much more"
       }
-      category={"none"}
+      category={"celebrity"}
     >
       <section className="">
         <div className=" mt-12 mb-12">

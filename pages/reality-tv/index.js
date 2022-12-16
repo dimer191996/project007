@@ -64,7 +64,7 @@ export default function TV({}) {
       hearder={
         " Your source for entertainment , celebrities ,Reality Tv , and much more"
       }
-      category={"none"}
+      category={"reality-tv"}
     >
       <section className="">
         <div className=" mt-12 mb-12">

@@ -62,7 +62,7 @@ export default function Howto({}) {
       hearder={
         "Amazon include: Email marketing; Product listing Q&As; Limited-time ..."
       }
-      category={"Amazon & Marketing"}
+      category={"howto"}
     >
       <section className="">
         <div className=" mt-12 mb-12">
