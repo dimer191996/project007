@@ -10,6 +10,7 @@ import {
   ChevronDoubleRightIcon,
 } from "@heroicons/react/solid";
 import Ads24 from "../components/Ads24";
+import ArticleCard2 from "../components/ArticleCard2";
 
 export default function Home({}) {
   const [page, setPage] = useState(1);
@@ -160,12 +161,6 @@ export default function Home({}) {
                     <ArticleCard key={data._id} article={data} />
                   ))}
                 </div>
-                <ins class="adsbygoogle"
-                style={{display:"block"}}
-                data-ad-client="ca-pub-4491397756399283"
-                data-ad-slot="3538660225"
-                data-ad-format="auto"
-                data-full-width-responsive="true"></ins>
                 <div className=" mb-5">
                   <div className="  text-left">
                     <h2 className=" border-t">
@@ -176,17 +171,20 @@ export default function Home({}) {
                   </div>
                 </div>
                 <div>
-                <ol class="relative border-l mx-2 border-gray-200 dark:border-gray-700">
+              
                   {articles?.slice(1).map((data, index) => (
-                    <SmallCard
-                      showTitle={false}
-                      imgShow={true}
-                      imgSize=" h-32 w-1/2"
-                      key={data._id}
-                      article={data}
-                    />
+                    <div className="my-2 rounded overflow-hidden">
+
+                      <ArticleCard2
+                        showTitle={false}
+                        imgShow={true}
+                        imgSize=" h-32 w-1/2"
+                        key={data._id}
+                        article={data}
+                      />
+                    </div>
                   ))}
-                  </ol>
+                
                   <div className=" flex justify-center my-10 items-center">
                     {page !== 1 && (
                       <ul className=" flex  mx-1  items-center bg-gray-100 hover:bg-gray-200 ease-in-out duration-500  justify-center rounded   ">
@@ -222,11 +220,7 @@ export default function Home({}) {
                     </ul>
                   </div>
                 </div>
-                <ins class="adsbygoogle"
-                style={{display:"block"}}
-                data-ad-format="autorelaxed"
-                data-ad-client="ca-pub-4491397756399283"
-                data-ad-slot="4620672919"></ins>
+              
               </div>
             </div>
             <div className="row-start-2 mt-5 sm:row-start-auto col-span-3  space-y-2 px-2">

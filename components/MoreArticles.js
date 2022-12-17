@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import SmallCard from "./SmallCard";
 import moment from "moment";
 import Link from "next/link";
+import ArticleCard2 from "./ArticleCard2";
 
 export default function MoreArticles({ category }) {
   const [articles, setArticles] = useState([]);
@@ -21,26 +22,42 @@ export default function MoreArticles({ category }) {
   }, []);
 
   return (
-    <div className=" flex  justify-center">
-      <div className="    mb-5">
-        <div className="h-6 text-center">{loading ? "loading" : ""}</div>
-        <div className="">
-          <ol class="relative border-l mx-2 border-gray-200 dark:border-gray-700">
-            {articles.slice(1).map((el, index) => (
-              
-                <SmallCard key={index} imgSize=" w-1/2 " showTitle={false} article={el} />
-              
-            ))}
-          </ol>
-          <ins
-            class="adsbygoogle"
-            style={{ display: "block", backgroundColor: "#eeee" }}
-            data-ad-format="fluid"
-            data-ad-layout-key="-gq+t-1c-fj+xa"
-            data-ad-client="ca-pub-4491397756399283"
-            data-ad-slot="9911443569"
-            data-full-width-responsive="true"
-          ></ins>
+    <div>
+      {loading && (
+        <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-10 mb-10">
+
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13].map((data, index) => (
+            <div
+              key={index}
+              className=" snap-center flex-none  h-64 w-auto rounded overflow-hidden m-2  "
+            >
+              <div class="py-1">
+                <div class="animate-pulse flex space-x-4">
+                  <div class="flex-1 space-y-6 py-1">
+                    <div class="h-64 bg-slate-200 rounded"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+        </div>
+      )}
+
+      <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mx-10 mb-10">
+
+        {articles?.slice(2).map((el, index) => (
+
+          <ArticleCard2 key={index}
+            imgShow={true}
+            imgSize=" h-26 w-1/3" article={el} />
+
+        ))}
+
+      </div>
+      <div className="text-center w-full py-4 border-t border-b">
+        <div className="font-bold text-lg">
+          <Link href={"/"}><div>{"Read More >>"}</div></Link>
         </div>
       </div>
     </div>

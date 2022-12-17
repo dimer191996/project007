@@ -74,7 +74,7 @@ export default function NavBar() {
     // { name: "Food & Recipes" },
   ];
   return (
-    <nav className=" fixed w-full top-0 md:flex justify-center space-x-4  z-50 bg-white  border-b">
+    <nav className=" w-full top-0 md:flex justify-center space-x-4  z-50 bg-white  border-b">
       <Link href="/">
         <div className="relative lg:h-28 h-10 md:h-24 md:w-20  rounded-lg ">
           <Image

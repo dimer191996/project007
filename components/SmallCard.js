@@ -13,7 +13,7 @@ export default function SmallCard({
   showTitle = true,
 }) {
   return (
-    <li  class="mb-10 ml-4">
+    <div  class="mb-10 ml-4">
     <Link href={`/article/${article.slug}`}>
       {/* hover:scale-105 transition transform ease-out duration-200 */}
       <div className=" flex flex-col space-x-2 mb-2 p-1  hover:bg-gray-50 ease-out duration-500  rounded-lg cursor-pointer">
@@ -72,6 +72,6 @@ export default function SmallCard({
       
     </p>
 
-    </li>
+    </div>
   );
 }

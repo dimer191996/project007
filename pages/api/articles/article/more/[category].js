@@ -28,7 +28,7 @@ export default async (req, res) => {
     .sort({
       createdAt: -1,
     })
-    .limit(15)
+    .limit(17)
     .toArray()
 
   return res.status(201).send({ articles });

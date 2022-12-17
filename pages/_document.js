@@ -49,19 +49,8 @@ export default function Document() {
         crossOrigin="anonymous"
       ></script>
 
-      <div className=" sm:mt-20 mt-24 md:mt-32"></div>
+      <div className=" sm:mt-20 mt-38s md:mt-32"></div>
 
-      <ins
-        className="adsbygoogle"
-        style={{
-          display: "block",
-          backgroundColor: "#eee9",
-        }}
-        data-ad-layout="in-article"
-        data-ad-format="fluid"
-        data-ad-client="ca-pub-4491397756399283"
-        data-ad-slot="2168142036"
-      ></ins>
       <script async src="//www.instagram.com/embed.js"></script>
       <body>
         <div id="fb-root"></div>

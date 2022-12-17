@@ -16,7 +16,7 @@ import Ads24 from "../../components/Ads24";
 import LinkedArticle from "../../components/LinkedArticle";
 
 export async function getServerSideProps({ params }) {
-  
+
   const article = await axios
     .get(`${"https://www.hotseatmag.com/api/articles/article/"}${params.slug}`, {
       timeout: 10000,
@@ -43,45 +43,45 @@ const Post = ({ article }) => {
 
   const tags = article.tags;
   const tagsArray = tags.split(" , ");
- 
+
 
   const [showArticle, setShowArticle] = useState(false);
-  const [timer , setTimer ] = useState();
+  const [timer, setTimer] = useState();
 
   useEffect(() => {
-    
-       const timeleft = 50;
-       const downloadTimer = setInterval(function () {
-         if (timeleft <= 0) {
-           setShowArticle(true);
-           clearInterval(downloadTimer);
-         }
-         document.getElementById("progressBar")?.value = 50 - timeleft;
-         timeleft -= 1;
-         setTimer(timeleft)
-       }, 2000);
-    
-  
+
+    const timeleft = 50;
+    const downloadTimer = setInterval(function () {
+      if (timeleft <= 0) {
+        setShowArticle(true);
+        clearInterval(downloadTimer);
+      }
+      document.getElementById("progressBar")?.value = 50 - timeleft;
+      timeleft -= 1;
+      setTimer(timeleft)
+    }, 2000);
+
+
   }, [])
-  
+
   return (
     <SeoArticle article={article} tags={tagsArray} category={article.category}>
- 
+
       <WithScreen width=" relative w-full  lg:w-[45%] md:w-[55%] ">
         <div className="lg:mx-12  relative md:mx-0  sm:ml-0 ">
           <section className=" flex flex-col">
-          <ShareArticle slug={article.slug} />
-            <header  className="flex p-3">
+            <ShareArticle slug={article.slug} />
+            <header className="flex p-3">
               <div itemscope itemtype="https://schema.org/CreativeWork" className=" w-full ">
                 <div className=" text-lg my-4 font-semibold">
                   Category :
-                  <span  itemprop="genre" className=" uppercase"> {article.category}</span>
+                  <span itemprop="genre" className=" uppercase"> {article.category}</span>
                 </div>
                 <h1 itemprop="headline" className="font-black text-4xl ">{article.title}</h1>
                 <div className="my-5 flex items-center">
                   <ArticleTags t={article.tags} />{" "}
                 </div>
-                <h2  itemprop="descrition" className=" font- text-xl text-gray-700  mb-5 ">
+                <h2 itemprop="descrition" className=" font- text-xl text-gray-700  mb-5 ">
                   {article.description}
                 </h2>
                 {article.sanitizedHTML && (
@@ -108,8 +108,8 @@ const Post = ({ article }) => {
 
             <div className=" md:flex justify-center md:p-2">
               <div className="relative h-[20rem] w-full ">
-              <a href={article.image}>
-                <ArticleMainImage article={article} />
+                <a href={article.image}>
+                  <ArticleMainImage article={article} />
                 </a>
               </div>
             </div>
@@ -117,7 +117,7 @@ const Post = ({ article }) => {
             <div className=" px-4 flex bg-white flex-row items-center justify-between ">
               <div className="flex flex-col   py-2 ">
                 <div className="  leading-4  font-semibold flex-grow">
-                  <h3  itemprop="name" className=" md:text-lg text-md">By {article.author}</h3>
+                  <h3 itemprop="name" className=" md:text-lg text-md">By {article.author}</h3>
                 </div>
                 <div className="  leading-4  flex-grow">
                   <h3 className="">{cleanDate(article.createdAt)}</h3>
@@ -143,145 +143,121 @@ const Post = ({ article }) => {
             data-ad-format="auto"
             data-full-width-responsive="true"
           ></ins>
-     
+
           <div className="separator"></div>
 
-          
-            <div className="px-4 md:px-0">
-              <div className="mt-5">
-                <div
-                  className="prose py-2  has-dropcap prose-xl mt-6  lg:prose-xl   prose-a:text-red-800"
-                  dangerouslySetInnerHTML={{ __html: article.sanitizedHTML }}
-                ></div>
-                <div className="separator"></div>
 
-                <ins
-                  className="adsbygoogle"
-                  style={{
-                    display: "block",
-                    textAlign: "center",
-                    overflow: "hidden",
-                    backgroundColor: "#eeee",
-                  }}
-                  data-ad-client="ca-pub-4491397756399283"
-                  data-ad-slot="3538660225"
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"
-                ></ins>
-                <div className="separator"></div>
-                <div
-                  id="chapter-1"
-                  className="prose prose-xl py-2   lg:prose-xl first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
-                  dangerouslySetInnerHTML={{ __html: article.sanitizedHTML1 }}
-                ></div>
-                <div className="separator"></div>
+          <div className="px-4 md:px-0">
+            <div className="mt-5">
+              <div
+                className="prose py-2  has-dropcap prose-xl mt-6  lg:prose-xl   prose-a:text-red-800"
+                dangerouslySetInnerHTML={{ __html: article.sanitizedHTML }}
+              ></div>
+              <div className="separator"></div>
 
-                {article.related1 && <ForYouArticles slug={article.related1} />}
-                
-                <div
-                  id="chapter-2"
-                  className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
-                  dangerouslySetInnerHTML={{ __html: article.sanitizedHTML2 }}
-                ></div>
-                {!!article.video1 ? (
-                  <InstagramEmbed
-                    instagramContent={
-                      article.video1
-                        ? `https://www.instagram.com/reel/${article.video1}/?utm_source=ig_embed&amp;utm_campaign=loading`
-                        : "https://web.facebook.com/groups/1118449878512007"
-                    }
-                  />
-                ) : (
-                  <div>
-                    <div className="separator"></div>
-                    <ins
-                      className="adsbygoogle"
-                      style={{
-                        display: "block",
-                        textAlign: "center",
-                        overflow: "hidden",
-                        backgroundColor: "#eeee",
-                      }}
-                      data-ad-client="ca-pub-4491397756399283"
-                      data-ad-slot="3538660225"
-                      data-ad-format="auto"
-                      data-full-width-responsive="true"
-                    ></ins>
-                    <div className="separator"></div>
-                  </div>
-                )}
-                <div
-                  id="chapter-3"
-                  className="prose prose-xl py-2 mt-5  lg:prose-xl   first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
-                  dangerouslySetInnerHTML={{ __html: article.sanitizedHTML3 }}
-                ></div>
 
-                <div className="separator"></div>
-                <ins
-                  className="adsbygoogle"
-                  style={{
-                    display: "block",
-                    textAlign: "center",
-                    overflow: "hidden",
-                    backgroundColor: "#eeee",
-                  }}
-                  data-ad-layout="in-article"
-                  data-ad-format="fluid"
-                  data-ad-client="ca-pub-4491397756399283"
-                  data-ad-slot="2168142036"
-                  data-full-width-responsive="true"
-                ></ins>
-                <div className="separator"></div>
+              <div className="separator"></div>
+              <div
+                id="chapter-1"
+                className="prose prose-xl py-2   lg:prose-xl first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
+                dangerouslySetInnerHTML={{ __html: article.sanitizedHTML1 }}
+              ></div>
+              <div className="separator"></div>
 
-                <div
-                  id="#chapter-4"
-                  className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
-                  dangerouslySetInnerHTML={{ __html: article.sanitizedHTML4 }}
-                ></div>
-                <div className=" flex items-center my-5">
-                  <span className=" font-bold pr-3">Tags : </span>
-                  <ArticleTags t={article.tags} />{" "}
+              {article.related1 && <ForYouArticles slug={article.related1} />}
+
+              <div
+                id="chapter-2"
+                className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
+                dangerouslySetInnerHTML={{ __html: article.sanitizedHTML2 }}
+              ></div>
+              {!!article.video1 ? (
+                <InstagramEmbed
+                  instagramContent={
+                    article.video1
+                      ? `https://www.instagram.com/reel/${article.video1}/?utm_source=ig_embed&amp;utm_campaign=loading`
+                      : "https://web.facebook.com/groups/1118449878512007"
+                  }
+                />
+              ) : (
+                <div>
+                  <div className="separator"></div>
+
+                  <div className="separator"></div>
                 </div>
-                <div id="comment" className=" border-t border-b my-5">
-                  <div className=" font-bold ">
-                    <div
-                      className="fb-comments"
-                      data-href={`https://www.hotseatmag.com/article/${article.slug}`}
-                      data-numposts="5"
-                      data-width="100%"
-                      data-height="20px"
-                      data-colorscheme="light"
-                    ></div>
-                  </div>
-                </div>
+              )}
+              <div
+                id="chapter-3"
+                className="prose prose-xl py-2 mt-5  lg:prose-xl   first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
+                dangerouslySetInnerHTML={{ __html: article.sanitizedHTML3 }}
+              ></div>
+
+              <div className="separator"></div>
+              <ins
+                className="adsbygoogle"
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  overflow: "hidden",
+                  backgroundColor: "#eeee",
+                }}
+                data-ad-layout="in-article"
+                data-ad-format="fluid"
+                data-ad-client="ca-pub-4491397756399283"
+                data-ad-slot="2168142036"
+                data-full-width-responsive="true"
+              ></ins>
+              <div className="separator"></div>
+
+              <div
+                id="#chapter-4"
+                className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
+                dangerouslySetInnerHTML={{ __html: article.sanitizedHTML4 }}
+              ></div>
+              <div className=" flex items-center my-5">
+                <span className=" font-bold pr-3">Tags : </span>
+                <ArticleTags t={article.tags} />{" "}
               </div>
-              <div>
-                <div className=" space-y-2">
-                  <p className=" text-3xl font-bold">
-                    Not sure what to read next ?
-                 {article.related2 && <ForYouArticles slug={article.related2} />}
-                  </p>
+              <div id="comment" className=" border-t border-b my-5">
+                <div className=" font-bold ">
+                  <div
+                    className="fb-comments"
+                    data-href={`https://www.hotseatmag.com/article/${article.slug}`}
+                    data-numposts="5"
+                    data-width="100%"
+                    data-height="20px"
+                    data-colorscheme="light"
+                  ></div>
                 </div>
               </div>
             </div>
-       
+            <div>
+              <div className=" space-y-2">
+                <p className=" text-3xl font-bold">
+                  Not sure what to read next ?
+                  {article.related2 && <ForYouArticles slug={article.related2} />}
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <section>
-          
-            <MoreArticles category={article.category} />
-    
-        </section>
         {/* {!showArticle ? (
         <>
-          <div className=" flex my-5 justify-center relative items-center">
+        <div className=" flex my-5 justify-center relative items-center">
           <div className="text-center text-white absolute font-bold">
-           {"Wait for the Code "} - {timer}
+          {"Wait for the Code "} - {timer}
           </div>
-            <progress className="w-full " value="0" max="50" id="progressBar"></progress>
+          <progress className="w-full " value="0" max="50" id="progressBar"></progress>
           </div>
-        </>
-      ):<p className="text-center">BXDRDDRTVVBGD</p>} */}
+          </>
+        ):<p className="text-center">BXDRDDRTVVBGD</p>} */}
       </WithScreen>
+
+
+      <MoreArticles category={article.category} />
+
+
     </SeoArticle>
   );
 };
