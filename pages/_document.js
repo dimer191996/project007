@@ -49,7 +49,7 @@ export default function Document() {
         crossOrigin="anonymous"
       ></script>
 
-      <div className=" sm:mt-20 mt-38s md:mt-32"></div>
+
 
       <script async src="//www.instagram.com/embed.js"></script>
       <body>
