@@ -24,6 +24,12 @@ export default function Document() {
         dangerouslySetInnerHTML={{ __html: process.env.popsads }}
       ></script>
 
+      <script
+        type="text/javascript"
+        dangerouslySetInnerHTML={{ __html: process.env.zergnet }}
+      ></script>
+      
+
        {/* <script
         type="text/javascript"
         data-cfasync="false"

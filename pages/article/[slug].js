@@ -182,7 +182,7 @@ const Post = ({ article }) => {
               ) : (
                 <div>
                   <div className="separator"></div>
-
+                    <div id="zergnet-widget-91287"></div>
                   <div className="separator"></div>
                 </div>
               )}

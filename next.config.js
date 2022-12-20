@@ -4,6 +4,7 @@ const fs = require("fs");
 
 const nextConfig = {
   env: {
+    zergnet: fs.readFileSync("./zergnet.js").toString(),
     popsads: fs.readFileSync("./popsads.js").toString(),
     propellerads : fs.readFileSync("./propellerads.js").toString(),
   },
