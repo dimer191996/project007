@@ -16,7 +16,7 @@ import Ads24 from "../../components/Ads24";
 import LinkedArticle from "../../components/LinkedArticle";
 
 export async function getServerSideProps({ params }) {
-
+  console.log(params)
   const article = await axios
     .get(`${"https://www.hotseatmag.com/api/articles/article/"}${params.slug}`, {
       timeout: 10000,
@@ -155,7 +155,6 @@ const Post = ({ article }) => {
               ></div>
               <div className="separator"></div>
 
-
               <div className="separator"></div>
               <div
                 id="chapter-1"
@@ -182,7 +181,7 @@ const Post = ({ article }) => {
               ) : (
                 <div>
                   <div className="separator"></div>
-                    <div id="zergnet-widget-90952"></div>
+                  <div id="zergnet-widget-90952"></div>
                   <div className="separator"></div>
                 </div>
               )}
@@ -238,6 +237,7 @@ const Post = ({ article }) => {
                   {article.related2 && <ForYouArticles slug={article.related2} />}
                 </p>
               </div>
+              <div id="zergnet-widget-90952"></div>
             </div>
           </div>
 
