@@ -1,4 +1,5 @@
 module.exports = {
-  siteUrl: "http://localhost:3000/",
-  generateRobotsTxt: false,
+  siteUrl: process.env.SITE_URL || 'https://example.com',
+  generateRobotsTxt: true, // (optional)
+
 };
