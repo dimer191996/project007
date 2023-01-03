@@ -32,7 +32,7 @@ export default function ShareArticle({ slug }) {
   }
 
   return (
-    <div className=" sticky top-20 sm:top-0 z-30 ">
+    <div className=" md:sticky md:top-0 lg:top-0 z-30 ">
       <div
         onClick={share}
         className=" md:absolute md:-left-24 -left-10 pt-4  bg-white shadow md:shadow-none border-r   p-1 top-24 sm:mt-28 "

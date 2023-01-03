@@ -9,7 +9,7 @@ import React from "react";
 
 export default function FloatingButton({ hidebutton, showbutton, hideHeader }) {
   return (
-    <div className="     shadow flex w-full justify-center  fixed bottom-0 bg-white z-30">
+    <div className="     shadow flex w-full justify-center  fixed bottom-0 border-t-2 border-black bg-white z-30">
       {hideHeader && (
         <div className="  absolute right-4  top-2 items-center flex justify-center z-40">
           <button
@@ -21,7 +21,7 @@ export default function FloatingButton({ hidebutton, showbutton, hideHeader }) {
         </div>
       )}
       {!hideHeader && (
-        <div className=" absolute right-50 -top-4 items-center flex justify-center z-40">
+        <div className=" absolute right-50 -top-4 border-2 border-black rounded-full items-center flex justify-center z-40">
           <button
             onClick={showbutton}
             className=" bg-green-800 font-bold  rounded-full px-4 text-white"
@@ -53,9 +53,9 @@ export default function FloatingButton({ hidebutton, showbutton, hideHeader }) {
         )}
 
         <Link href="/subscription">
-          <div className=" h-8 text-gray-100 flex justify-center items-center px-3 border border-green-700 w-full rounded bg-green-600 ">
+          <div className="  border-2 border-black  h-8 text-gray-100 flex justify-center items-center px-3  w-full rounded bg-green-600 ">
             {hideHeader && "Click Here To Subscribe"}{" "}
-            {!hideHeader && "Subscribe Newsletter"}
+            {!hideHeader && "Subscribe To Newsletter"}
           </div>
         </Link>
       </div>

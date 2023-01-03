@@ -3,10 +3,11 @@ import useSWR from "swr";
 import { fetcher } from "../lib/utils";
 import ArticleCard from "./ArticleCard";
 import ArticleCard2 from "./ArticleCard2";
+import Carousel from "./Carousel";
 
 export default function ({ category }) {
   const { data, error } = useSWR(
-    `/api/articles/popular?category=${category}`,
+    `/api/home/latest`,
     fetcher,
     {
       revalidateOnFocus: false,
@@ -22,7 +23,7 @@ export default function ({ category }) {
       <div className="mt-4 mx-5 mb-3">
 
         <div className="">
-          {[1, 2, 3, 4].map((data, index) => (
+          {[1].map((data, index) => (
             <div
               key={index}
               className=" snap-center flex-none  h-64 w-full rounded overflow-hidden m-2  "
@@ -41,19 +42,5 @@ export default function ({ category }) {
 
     );
   }
-  return (
-    <div className="mx-5">
-      {data?.articles?.map((article) => (
-        <ArticleCard
-          h={36}
-          imgShow={false}
-          textSize="text-lg leading-normal"
-          showTitle={false}
-          key={article._id}
-          article={article}
-        />
-
-      ))}
-    </div>
-  );
+  return (<Carousel items={data.articles} />);
 }

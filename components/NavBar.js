@@ -1,54 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  CameraIcon,
   HomeIcon,
-  LockClosedIcon,
   MenuIcon,
-  PhotographIcon,
   SearchIcon,
   VideoCameraIcon,
 } from "@heroicons/react/solid";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useRouter } from "next/router";
+
+
+function NavLink({ href, label }) {
+  const router = useRouter();
+  const className = router.pathname === href ? 'text-red-600' : 'text-white';
+
+  return (
+    <Link href={href}>
+      <li className={`hover:text-red-700 ${className} text-2xl md:text-xl lg:text-1xl xl:text-3xl py-2 font-black cursor-pointer lg:px-4 items-center justify-center flex`}>
+        {label}
+      </li>
+    </Link>
+  );
+}
+
 
 export default function NavBar() {
   const [showMenu, setShowMenu] = useState(false);
-  const categories = [
-    {
-      label: "Home",
-      link: "/",
-    },
-    {
-      label: "Reality Tv",
-      link: "/reality-tv",
-    },
-    {
-      label: "Movies",
-      link: "/movies-and-entertainment",
-    },
-    {
-      label: "Celebrity",
-      link: "/celebrity",
-    },
-
-    {
-      label: "Lifestyle",
-      link: "/lifestyle",
-    },
-    {
-      label: "How To Do",
-      link: "/howto",
-    },
-
-    {
-      label: "Log in",
-      link: "/login",
-    },
-    {
-      label: "Become Member",
-      link: "/register",
-    },
-  ];
+  
   const navEl = [
     {
       name: "Home",
@@ -70,135 +48,81 @@ export default function NavBar() {
       link: "/celebrity",
       icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
     },
-
+    {
+      name: "Lifestyle",
+      link: "/lifestyle",
+      icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
+    },
+    {
+      name: "How To Do",
+      link: "/howto",
+      icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
+    },
     // { name: "Food & Recipes" },
   ];
   return (
-    <nav className=" w-full top-0 md:flex justify-center space-x-4  z-50 bg-white  border-b">
-      <Link href="/">
-        <div className="relative lg:h-28 h-10 md:h-24 md:w-20  rounded-lg ">
-          <Image
-            src="https://res.cloudinary.com/dggjlyw5e/image/upload/v1634447165/THE_HOT_SEAT_1_yubb8j.png"
-            className=" p-2"
-            objectFit="contain"
-            layout="fill"
-          />
+
+    <div className=" ">
+      <header className="bg-black">
+        <div className="flex justify-center md:mb-5 md:pb-5">
+
+          <Link href="/">
+            <div className="relative h-36 w-36  rounded-lg ">
+              <Image
+                src="https://res.cloudinary.com/dggjlyw5e/image/upload/v1634447165/THE_HOT_SEAT_1_yubb8j.png"
+                className=" p-2"
+                objectFit="contain"
+                layout="fill"
+                alt="HotSeatMag Logo"
+              />
+            </div>
+          </Link>
         </div>
-      </Link>
-      <div>
-        <div className=" py-2 px-5 md:px-0  bg-white ">
-          <div className=" flex justify-center  md:py-4 md:px-5">
-            <Link href={"/topics"}>
-              <button className=" w-full  flex  items-center   md:border-2  rounded-full ">
-                <input
-                  className="ml-4  flex-grow mr-2  text-black focus:outline-none py-1 transparent"
-                  type="text"
-                  placeholder="Start your search"
-                />
+        <div className="flex justify-center pb-5">
+          <Link href={"/topics"}>
+            <button className=" w-1/2 flex  items-center  border-2  rounded-full ">
+              <input
+                className="ml-4  flex-grow mr-2 bg-black text-black focus:outline-none py-1 transparent"
+                type="text"
+                placeholder="Start your search"
+              />
 
-                <SearchIcon className="  hidden md:inline-flex h-7 cursor-pointer rounded-full  bg-red-700 p-1 text-white" />
-              </button>
-            </Link>
-
-            {!showMenu && (
-              <div
-                onClick={() => setShowMenu(true)}
-                className="flex bg-red-700 text-white font-bold  cursor-pointer  md:hidden items-center  justify-star space-x-2"
-              >
-                <div className=" flex items-center space-x-2 p-1 rounded-full">
-                  MENU
-                  <MenuIcon className="h-6" />
-                </div>
-              </div>
-            )}
-            {showMenu && (
-              <div
-                onClick={() => setShowMenu(false)}
-                className="flex  bg-red-700 text-white font-bold rounded cursor-pointer  md:hidden items-center  justify-star space-x-2"
-              >
-                <div className=" flex items-center space-x-2 p-1 rounded-full">
-                  CLOSE
-                  <span className=" font-black px-2">{"X"}</span>
-                </div>
-              </div>
-            )}
+              <SearchIcon className="inline-flex h-7 cursor-pointer rounded-full  bg-red-700 p-1 text-white" />
+            </button>
+          </Link>
+        </div>
+      </header>
+      <nav className="sticky top-0 bg-black w-full z-50">
+        <div className={` block sm:hidden items-center text-gray-900 justify-center`}>
+          <div
+            onClick={() => setShowMenu(!showMenu)}
+            className="w-full text-2xl bg-red-700 text-white cursor-pointer font-bold flex items-center justify-center "
+          >
+            MENU
+            <MenuIcon className="h-6" />
           </div>
         </div>
-        <div className=" ease-in-out duration-500 transition bg-white">
-          {showMenu ? (
-            <ul className=" grid grid-cols-2 m-2 ">
-              {categories.map((el, n) => (
-                <ul key={n} className="  ml-5 px-2 space-y-4">
-                  <Link href={el.link}>
-                    <li className="cursor-pointer text-blue-900 hover:to-blue-700  text-lg font-bold border-b  line-clamp-1">
-                      {el.label}
-                    </li>
-                  </Link>
-                  <ul className=" space-y-3">
-                    {el.topics?.map((topic, n) => (
-                      <li key={n} className=" ">
-                        <Link href={topic.link}>
-                          <span className=" hover:bg-red-50 cursor-pointer ease-in-out duration-500 px-2 rounded text-sm font-semibold">
-                            {topic.label}
-                          </span>
-                        </Link>
-                        <ul className=" space-y-2 mt-2 ml-2">
-                          {topic.tags?.map((tag, n) => (
-                            <li key={n} className=" ">
-                              <Link href={tag.link}>
-                                <span className=" px-2 cursor-pointer rounded text-sm font-semibold">
-                                  {">>"} {tag.label}
-                                </span>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </li>
-                    ))}
-                  </ul>
-                </ul>
-              ))}
-            </ul>
-          ) : (
-            ""
-          )}
+        {/* P menu */}
+        <div className="sm:flex hidden   border-black justify-center w-full lg:px-5">
+          <ul className=" sm:grid sm:grid-cols-1 md:grid md:grid-cols-6 md:space-x-6  md:items-center md:justify-end relative ">
+            {navEl.map((el, index) => (
+              <NavLink key={index} href={el.link} label={el.name} />
+            ))}
+          </ul>
         </div>
-        <div className=" md:flex  hidden  ">
-          <div className=" flex border-black  justify-center w-full lg:px-5">
-            <ul className="md:flex  md:space-x-6 border-t  md:items-center  md:justify-end grid grid-cols-5 md:grid-cols-3">
-              {navEl.map((el, index) => (
-                <Link key={index} href={`${el.link}`}>
-                  <li className="hover:bg-gray-200    py-2   font-semibold cursor-pointer  lg:px-4 items-center justify-center flex">
-                    {el.name}
-                  </li>
-                </Link>
-              ))}
-              {!showMenu && (
-                <div
-                  onClick={() => setShowMenu(true)}
-                  className=" items-center text-gray-900 justify-star space-x-2"
-                >
-                  <div className=" bg-red-700 text-white cursor-pointer font-bold flex items-center space-x-2 p-1 rounded">
-                    MENU
-                    <MenuIcon className="h-6" />
-                  </div>
-                </div>
-              )}
-              {showMenu && (
-                <div
-                  onClick={() => setShowMenu(false)}
-                  className=" items-center text-gray-900 justify-star space-x-2"
-                >
-                  <div className=" bg-red-800 text-white font-bold cursor-pointer flex items-center space-x-2 p-1 rounded">
-                    CLOSE
-                    <span className=" font-black px-2">{"X"}</span>
-                  </div>
-                </div>
-              )}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
+        {/* Mobile menu */}
+        {showMenu && <div className=" block sm:hidden border-black justify-center w-full lg:px-5">
+          <ul className=" sm:grid sm:grid-cols-1 md:grid md:grid-cols-6 md:space-x-6  md:items-center md:justify-end relative ">
+            {navEl.map((el, index) => (
+              <Link key={index} href={`${el.link}`}>
+                <li className="hover:bg-gray-900 text-white text-2xl py-2 font-black cursor-pointer lg:px-4 items-center justify-center flex">
+                  {el.name}
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>}
+      </nav>
+    </div>
   );
 }

@@ -4,7 +4,7 @@ const Sitemap = require('next-sitemap');
 
 module.exports = async () => {
   // Fetch the data that you want to include in the sitemap
-  const products = await axios.get('/api/articles').then((response) => {
+  const products = await axios.get('https://www.hotseatmag.com/api/articles').then((response) => {
     return response.data
   })
 

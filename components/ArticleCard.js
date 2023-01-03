@@ -17,37 +17,25 @@ export default function ArticleCard({
   };
   return (
     <div className=" cursor-pointer   mb-4  ">
-      <div className={` relative w-auto h-${h}    overflow-hidden`}>
-        <Link href={`/article/${article.slug}`}>
-          <ArticleMainImage article={article} />
-        </Link>
-      </div>
       <div className="  overflow-hidden pt-4  flex flex-col justify-center">
-        {/* <div className=" gird grid-cols-2  mb-2 line-clamp-1 ">
+        <div className=" gird grid-cols-2  mb-2 line-clamp-1 ">
           <ArticleTags t={article.tags} />
-        </div> */}
-        {/* <Link href={`/article/${article.slug}`}>
-          <p className=" text-sm  leading-6  mb-2  line-clamp-1">
-            By <span className=" font-bold">{article.author} </span>published
-            about{" "}
-            <span className=" font-bold">{cleanDate(article.createdAt)}</span>
-          </p>
-        </Link> */}
+        </div>
         <Link href={`/article/${article.slug}`}>
           <div className="">
-            {article.category === "howto" && (
-              <div className=" flex items-center justify-start">
-                <GiftIcon className="h-8 text-green-600" />
-                <ArticleTags t={article.tags} />
-              </div>
-            )}
-            <p
-              className={`line-clamp-3 leading-7 mb-2 font-black  hover:text-red-600 text-red-800 ${textSize}`}
-            >
-              {article.title}
-            </p>
+
+            <Link href={`/article/${article.slug}`}>
+              <h2
+                className={`  ${!scroll ? "text-4xl" : "text-3xl"
+                  } font-black line-clamp-2 tracking-tight text-gray-900`}
+              >
+                {article.title}
+              </h2>
+            </Link>
           </div>
         </Link>{" "}
+
+        <p className=" text-2xl text-gray-600 h-24 line-clamp-3 ">{article.description}</p>
       </div>
     </div>
   );
