@@ -80,7 +80,7 @@ export default function NavBar() {
         </div>
         <div className="flex justify-center pb-5">
           <Link href={"/topics"}>
-            <button className=" w-1/2 flex  items-center  border-2  rounded-full ">
+            <button className=" md:w-1/2 flex  items-center  border-2  rounded-full ">
               <input
                 className="ml-4  flex-grow mr-2 bg-black text-black focus:outline-none py-1 transparent"
                 type="text"

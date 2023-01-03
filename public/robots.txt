@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.hotseatmag.com
+Host: https://hotseatmag.com
 
 # Sitemaps
-Sitemap: https://www.hotseatmag.com/sitemap.xml
+Sitemap: https://hotseatmag.com/sitemap.xml
