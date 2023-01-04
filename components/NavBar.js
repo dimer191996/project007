@@ -12,12 +12,12 @@ import { useRouter } from "next/router";
 
 function NavLink({ href, label }) {
   const router = useRouter();
-  const className = router.pathname === href ? 'text-red-600' : 'text-white';
+  const className = router.pathname === href ? 'border-b-4  border-red-600 ' : '';
 
   return (
     <Link href={href}>
-      <li className={`hover:text-red-700 ${className} text-2xl md:text-xl lg:text-1xl xl:text-3xl py-2 font-black cursor-pointer lg:px-4 items-center justify-center flex`}>
-        {label}
+      <li className={`hover:text-red-600 text-white  text-2xl  xl:text-3xl py-2 font-black cursor-pointer lg:px-4 items-center justify-center flex`}>
+        <span className={className}>{label}</span>
       </li>
     </Link>
   );
@@ -34,7 +34,7 @@ export default function NavBar() {
       icon: <HomeIcon className=" h-6 text-red-700" />,
     },
     {
-      name: "Reality-TV",
+      name: "RealityTV",
       link: "/reality-tv",
       icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
     },
@@ -54,7 +54,7 @@ export default function NavBar() {
       icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
     },
     {
-      name: "How To Do",
+      name: "Marketing",
       link: "/howto",
       icon: <VideoCameraIcon className=" text-blue-700 h-6" />,
     },
@@ -103,15 +103,15 @@ export default function NavBar() {
           </div>
         </div>
         {/* P menu */}
-        <div className="sm:flex hidden   border-black justify-center w-full lg:px-5">
-          <ul className=" sm:grid sm:grid-cols-1 md:grid md:grid-cols-6 md:space-x-6  md:items-center md:justify-end relative ">
+        <div className="sm:flex hidden   border-black justify-center  lg:px-5">
+          <ul className=" sm:grid sm:grid-cols-1 md:grid md:grid-cols-6 gap-x-0  md:items-center md:justify-end relative ">
             {navEl.map((el, index) => (
               <NavLink key={index} href={el.link} label={el.name} />
             ))}
           </ul>
         </div>
         {/* Mobile menu */}
-        {showMenu && <div className=" block sm:hidden border-black justify-center w-full lg:px-5">
+        {showMenu && <div className=" block sm:hidden pb-5 border-black justify-center w-full lg:px-5">
           <ul className=" sm:grid sm:grid-cols-1 md:grid md:grid-cols-6 md:space-x-6  md:items-center md:justify-end relative ">
             {navEl.map((el, index) => (
               <Link key={index} href={`${el.link}`}>

@@ -1,4 +1,4 @@
-import { ArticleJsonLd, NextSeo } from "next-seo";
+import { NewsArticleJsonLd , NextSeo } from "next-seo";
 
 let conanical = (category) => {
   switch (category) {
@@ -21,6 +21,25 @@ let conanical = (category) => {
 };
 const SeoArticle = ({ article, children }) => (
   <>
+    <NewsArticleJsonLd
+      url={"https://hotseatmag.com/article/"+article.slug}
+      title={article.title}
+      images={[
+        article.image,
+        article.image1,
+        article.image2
+      ]}
+      section={article.category}
+      keywords={article.tags}
+      datePublished={article.createdAt}
+      dateModified={article.updatedAt}
+      authorName={article.author}
+      publisherName="Dime Bwimba"
+      publisherLogo="https://res.cloudinary.com/dggjlyw5e/image/upload/v1634447165/THE_HOT_SEAT_1_yubb8j.png"
+      description={article.description}
+      body={article.sanitizedHTML + article.sanitizedHTML1 + article.sanitizedHTML2 + article.sanitizedHTML+article.sanitizedHTML3 + article.sanitizedHTML4}
+      isAccessibleForFree={true}
+    />
     <NextSeo
       title={article.title}
       titleTemplate={article.title}
