@@ -1,35 +1,46 @@
 import axios from "axios";
 import RSS from 'rss';
 import fs from 'fs';
+import { Feed } from 'feed';
 
 export async function getStaticProps() {
     const site_url = 'https://www.hotseatmag.com';
-    const allPosts = await axios(`${'https://www.hotseatmag.com/api'}/articles`).then(({ data }) => {
+    const allPosts = await axios(`${site_url}/articles`).then(({ data }) => {
         return data
     });
    const feedOptions = {
-    title: 'Blog posts | RSS Feed',
-    description: 'Welcome to this blog posts!',
+    title: 'WELCOME TO HOT SEAT MAGAZINE | RSS Feed',
+    description: 'WELCOME TO HOT SEAT MAGAZINE ARTICLES UPDATES!',
     site_url: site_url,
     feed_url: `${site_url}/rss.xml`,
-    image_url: `https://res.cloudinary.com/dggjlyw5e/image/upload/v1634447165/THE_HOT_SEAT_1_yubb8j.png`,
+    image: `${site_url}/logo.png`,
+    favicon: `${site_url}/favicon.png`,
     pubDate: new Date(),
     copyright: `All rights reserved ${new Date().getFullYear()}, HotSeatMag`,
-   };
+    feedLinks: {
+      rss2: `${site_url}/rss.xml`,
+      // other feed formats
+      json: `${site_url}/rss.json`,
+      atom: `${site_url}/atom.xml`,
+     },
+  };
   
-    const feed = new RSS(feedOptions);
+    const feed = new Feed(feedOptions);
   
-    allPosts.map((post) => {
-      feed.item({
+    allPosts.forEach((post) => {
+      feed.addItem({
        title: post.title,
+       id: `${site_url}/article/${post.slug}`,
+       link: `${site_url}/article/${post.slug}`,
        description: post.description,
-       url: `${site_url}/article/${post.slug}`,
-       date: post.date,
+       date: new Date(post.createdAt),
       });
      });
-  
-     fs.writeFileSync('./public/rss.xml', feed.xml({ indent: true }));
-
+    
+    fs.writeFileSync('./public/rss.xml', feed.rss2());
+    // fs.writeFileSync('./public/rss.json', feed.json1());
+    // fs.writeFileSync('./public/atom.xml', feed.atom1());
+    
      return {
         redirect: {
           destination: "/",

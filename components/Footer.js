@@ -1,9 +1,22 @@
 import Link from "next/link";
 import React from "react";
+import { MdRssFeed } from 'react-icons/md';
 export default function Footer() {
   return (
     <div>
+
       <footer className=" bg-gray-100 shadow-lg dark:bg-gray-800 my-32">
+        <div className="flex justify-center py-10"> 
+          <div className="">
+              <a
+                href="https://www.hotseatmag.com/rss.xml"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <MdRssFeed color="#ee802f" size="30px" />
+              </a>
+          </div>
+        </div>
         <div className="flex justify-center items-center">
           <div className=" lg:w-1/2 md:w-3/4 w-full  ">
             <ul className=" grid lg:grid-cols-3 md:grid-cols-3 grid-cols-2 mt-4  font-semibold   sm:justify-center sm:mt-0">
