@@ -4,7 +4,7 @@
 
 
 // export async function getStaticProps() {
-//     const site_url = 'http://127.0.0.1:3000';
+//     const site_url = 'https://www.hotseatmag.com';
 //     const allPosts = await axios(`${site_url}/api/articles`).then(({ data }) => {
 //       return data
 //     });
@@ -36,13 +36,14 @@
 //     fs.writeFileSync('./public/rss.xml', feed.rss2());
 
 //     return {
-//       props:{
-//         rss:[]
-//       }
+//       props:{ }
 //     }
 
 // }
 
-// export default function RssFeed({ rss }) {
-//   // Use the `rss` data as needed in your application
-// }
+export default function RssFeed({ rss }) {
+  return (
+    <div>hello world</div>
+  )
+  // Use the `rss` data as needed in your application
+}
