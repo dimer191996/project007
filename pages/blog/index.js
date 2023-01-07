@@ -42,9 +42,7 @@ export async function getStaticProps() {
     // fs.writeFileSync('./public/atom.xml', feed.atom1());
     
      return {
-        redirect: {
-          destination: "/",
-        },
+       props:[]
       }
     
  // ....
