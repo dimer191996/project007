@@ -15,6 +15,7 @@
     "@vercel/analytics": "^0.1.6",
     "axios": "^0.26.1",
     "feed": "^4.2.2",
+    "fs": "^0.0.1-security",
     "moment": "^2.29.1",
     "mongodb": "^4.9.1",
     "next": "12.1.0",
