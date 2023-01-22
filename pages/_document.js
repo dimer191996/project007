@@ -18,16 +18,12 @@ export default function Document() {
       <meta property="og:type" content="website" />
 
       <meta property="og:site_name" content="hotseatmag" />
-      <script
-        type="text/javascript"
-        data-cfasync="false"
-        dangerouslySetInnerHTML={{ __html: process.env.popsads }}
-      ></script>
+       {/* <script
+         type="text/javascript"
+         data-cfasync="false"
+         dangerouslySetInnerHTML={{ __html: process.env.popsads }}
+       ></script> */}
 
-      <script
-        type="text/javascript"
-        dangerouslySetInnerHTML={{ __html: process.env.zergnet }}
-      ></script>
       
 
        {/* <script
