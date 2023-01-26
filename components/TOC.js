@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
 const getClassName = (level) => {
@@ -14,6 +15,7 @@ const getClassName = (level) => {
 };
 
 const TableOfContent = () => {
+  const route = useRouter()
   const [headings, setHeadings] = useState([]);
   const [openTOC, setOpenTOC] = useState(true);
 
@@ -26,7 +28,7 @@ const TableOfContent = () => {
       })
     );
     setHeadings(elements);
-  }, []);
+  }, [route]);
   return (
     <div className=" mb-10 bg-gray-200 border-t-2 border-b-2 border-gray-600">
       <button onClick={() => setOpenTOC(!openTOC)} className="text-center w-full">

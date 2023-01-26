@@ -131,7 +131,7 @@ const Post = ({ article }) => {
               </div>
             </div>
           </section>
-          <TableOfContent/>
+        
           <div className="separator"></div>
           <ins
             className="adsbygoogle"
@@ -147,9 +147,8 @@ const Post = ({ article }) => {
             data-full-width-responsive="true"
           ></ins>
 
-          <div className="separator"></div>
-
-
+          <TableOfContent/>
+          
           <div className="px-4 md:px-0">
             <div className="mt-5">
               <div
