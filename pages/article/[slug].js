@@ -16,6 +16,7 @@ import Ads24 from "../../components/Ads24";
 import LinkedArticle from "../../components/LinkedArticle";
 import Head from 'next/head'
 import Script from 'next/script'
+import TableOfContent from "../../components/TOC";
 
 export async function getServerSideProps({ params }) {
   const article = await axios
@@ -82,9 +83,9 @@ const Post = ({ article }) => {
                 <div className="my-5 flex items-center">
                   <ArticleTags t={article.tags} />{" "}
                 </div>
-                <h2 itemprop="descrition" className=" font- text-xl text-gray-700  mb-5 ">
+                <p itemprop="descrition" className=" font- text-xl text-gray-700  mb-5 ">
                   {article.description}
-                </h2>
+                </p>
                 {article.sanitizedHTML && (
                   <YoutubeChannel title={article.title} video={article.video} />
                 )}
@@ -114,14 +115,14 @@ const Post = ({ article }) => {
                 </a>
               </div>
             </div>
-
+           
             <div className=" px-4 flex bg-white flex-row items-center justify-between ">
               <div className="flex flex-col   py-2 ">
                 <div className="  leading-4  font-semibold flex-grow">
-                  <h3 itemprop="name" className=" md:text-lg text-md">By {article.author}</h3>
+                  <i itemprop="name" className=" md:text-lg text-md">By {article.author}</i>
                 </div>
                 <div className="  leading-4  flex-grow">
-                  <h3 className="">{cleanDate(article.createdAt)}</h3>
+                  <i className="">{cleanDate(article.createdAt)}</i>
                 </div>
               </div>
               <div></div>
@@ -130,6 +131,7 @@ const Post = ({ article }) => {
               </div>
             </div>
           </section>
+          <TableOfContent/>
           <div className="separator"></div>
           <ins
             className="adsbygoogle"

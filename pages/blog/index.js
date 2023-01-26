@@ -23,7 +23,7 @@ export async function getStaticProps() {
         atom1: `${site_url}/latest.xml`,
       },
     });
-   if(!latest){alert("no data")}
+ 
     latest.forEach((post) => {
       feed.addItem({
         title: post.title,
@@ -36,7 +36,7 @@ export async function getStaticProps() {
     });
 
     fs.writeFileSync('./public/latest.xml', feed.atom1());
-
+    
     return {
       props:{ }
     }

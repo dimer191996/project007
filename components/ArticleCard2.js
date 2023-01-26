@@ -15,20 +15,20 @@ export default function ArticleCard2({ article, h = "h-64", scroll }) {
         </Link>
 
         <div className="absolute bottom-0 left-0 px-6">
-          <h3 className="font-semibold text-xs  uppercase text-green-100">
+          <span className="font-semibold text-xs  uppercase text-green-100">
             By {article?.author}
-          </h3>
+          </span>
          
         </div>
       </div>
 
       <Link href={`/article/${article.slug}`}>
-        <h2
+        <p
           className={`mt-4 mb-2  ${!scroll ? "text-3xl" : ""
             } font-black line-clamp-3 tracking-tight text-gray-900`}
         >
           {article?.title}
-        </h2>
+        </p>
       </Link>
       <p className=" text-2xl text-gray-600 h-24 line-clamp-3 ">{article?.description}</p>
     </div>

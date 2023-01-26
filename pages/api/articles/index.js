@@ -15,7 +15,7 @@ export default async (req, res) => {
         const db = client.db(process.env.MONGODB_DB);
         const Articles = db.collection("articles");
 
-        const articles = await Articles.find({}, { fields }).limit(10).sort({createdAt:-1}).toArray();
+        const articles = await Articles.find({}, { fields }).limit(20).sort({createdAt:-1}).toArray();
 
         return res.status(201).send(articles);
     } catch (error) {

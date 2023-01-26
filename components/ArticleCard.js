@@ -25,12 +25,12 @@ export default function ArticleCard({
           <div className="">
 
             <Link href={`/article/${article.slug}`}>
-              <h2
+              <p
                 className={`  ${!scroll ? "text-4xl" : "text-3xl"
                   } font-black line-clamp-2 tracking-tight text-gray-900`}
               >
                 {article.title}
-              </h2>
+              </p>
             </Link>
           </div>
         </Link>{" "}

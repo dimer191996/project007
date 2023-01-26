@@ -39,12 +39,12 @@ export default function ForYouArticles({ slug }) {
                     {" "}
                     <Link href={`/article/${article.slug}`}>
                       <div className=" cursor-pointer">
-                        <h2
+                        <p
                           className={`mb-2 font-black text-xl line-clamp-4 tracking-tight`}
                         >
                           <span className=" text-gray-600">Related -</span>
                           <span className=" text-red-800">{article.title}</span>
-                        </h2>
+                        </p>
                       </div>
                     </Link>
                   </div>

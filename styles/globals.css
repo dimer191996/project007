@@ -102,3 +102,22 @@ body::-webkit-scrollbar-thumb {
 .separator:not(:empty)::after {
   margin-left: 0.25em;
 }
+
+.head2{
+  font-size:15px;
+  font-weight: 500;
+  list-style-type: clip;
+  margin-left: 30px;
+  margin-right:10px;
+  padding-bottom:5px
+}
+.head3{
+  margin-left: 50px;
+  list-style-type: circle;
+
+}
+
+.head4{
+  margin-left: 10px;
+  list-style-type: square;
+}
