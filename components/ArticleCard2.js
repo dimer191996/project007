@@ -24,8 +24,8 @@ export default function ArticleCard2({ article, h = "h-64", scroll }) {
 
       <Link href={`/article/${article.slug}`}>
         <p
-          className={`mt-4 mb-2  ${!scroll ? "text-3xl" : ""
-            } font-black line-clamp-3 tracking-tight text-gray-900`}
+          className={`mt-4 mb-2 h-16  ${!scroll ? "text-3xl" : ""
+            } font-black line-clamp-2 tracking-tight text-gray-900`}
         >
           {article?.title}
         </p>

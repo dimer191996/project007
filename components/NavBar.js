@@ -16,7 +16,7 @@ function NavLink({ href, label }) {
 
   return (
     <Link href={href}>
-      <li className={`hover:text-red-600 text-white  text-2xl  xl:text-3xl py-2 font-black cursor-pointer lg:px-4 items-center justify-center flex`}>
+      <li className={`hover:text-red-600 text-white text-lg md:text-xl lg:text-2xl  xl:text-3xl py-2 font-black cursor-pointer lg:px-4 items-center justify-center flex`}>
         <span className={className}>{label}</span>
       </li>
     </Link>
@@ -31,6 +31,11 @@ export default function NavBar() {
     {
       name: "Home",
       link: "/",
+      icon: <HomeIcon className=" h-6 text-red-700" />,
+    },
+    {
+      name: "News",
+      link: "/news",
       icon: <HomeIcon className=" h-6 text-red-700" />,
     },
     {
@@ -79,7 +84,7 @@ export default function NavBar() {
           </Link>
         </div>
         <div className="flex justify-center pb-5">
-          <Link href={"/topics"}>
+          <Link href={"/search"}>
             <button className=" md:w-1/2 flex  items-center  border-2  rounded-full ">
               <input
                 className="ml-4  flex-grow mr-2 bg-black text-black focus:outline-none py-1 transparent"
@@ -104,7 +109,7 @@ export default function NavBar() {
         </div>
         {/* P menu */}
         <div className="sm:flex hidden   border-black justify-center  lg:px-5">
-          <ul className=" sm:grid sm:grid-cols-1 md:grid md:grid-cols-6 gap-x-0  md:items-center md:justify-end relative ">
+          <ul className=" sm:grid sm:grid-cols-1 md:grid md:grid-cols-7 gap-x-0  md:items-center md:justify-end relative ">
             {navEl.map((el, index) => (
               <NavLink key={index} href={el.link} label={el.name} />
             ))}

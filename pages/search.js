@@ -25,7 +25,7 @@ export default function () {
         <meta property="og:locale" content="en_US" />
         <meta
           property="og:description"
-          content="All the latest movie news, movie trailers & reviews - and the same for TV, too."
+          content="Search anything you want here | HotSeatMag"
         />
       </Head>
       <div className="py-3 items-center flex justify-center">
@@ -38,11 +38,11 @@ export default function () {
       </div>
       <div className=" flex  flex-col justify-center items-center  bg-white">
         <div className=" flex flex-col mb-6 pt-5   justify-center items-center">
-          <h2 className="m-0 p-0  text-2xl">
+          <h1 className="m-0 p-0  text-2xl">
             <span className="md:text-xl font-semibold">
-              Search Anything here
+              Search Anything Here
             </span>
-          </h2>
+          </h1>
         </div>
         <div className=" w-full flex lg:w-1/2   rounded-lg  bg-white">
           <input
@@ -79,11 +79,7 @@ export default function () {
                             {post.name}
                           </span>
                         </h2>
-                        <p className="text-sm font-bold line-clamp-3">
-                          {" "}
-                          <span className=" text-gray-400 ">
-                            {post.createdAt} -
-                          </span>{" "}
+                        <p className="text-sm font-bold line-clamp-3">                        
                           {post.description}
                         </p>
                       </li>

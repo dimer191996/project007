@@ -81,27 +81,9 @@ export default function Home({ }) {
             </div>
           </div>
         </div> */}
-
+        
         <div className="grid md:grid-cols-12 md:mx-0 lg:mx-10 ">
-          <div className="col-span-5 py-10">
-            <CategoriesTitle title={'Cinema, Movies & Stories'} />
-            <PopularArticle category={"short"} />
-            <div className="">
-              <div className="  flex justify-center">
-                <div className="w-full flex justify-center items-center rounded bg-white py-2 px-2">
-                  <h2 className="text-gray-700 mx-3 text-4xl font-bold">
-                    #1
-                  </h2>
-                  <h1 className="text-blacks text-2xl font-bold">Celebrity NEWS</h1>
-                </div>
-              </div>
-            </div>
-            <PopularArticle category={"celebrity"} />
-            <CategoriesTitle title={'Popular Reality TV NEWS'} />
-
-            <PopularArticle category={"tv"} />
-          </div>
-          <div className=" col-span-7">
+        <div className=" col-span-7">
             <div className=" flex justify-center  ">
               <div id={`${page}`} className=" px-2   ">
                 <div>
@@ -181,6 +163,17 @@ export default function Home({ }) {
               </div>
             </div>
           </div>
+          <div className="col-span-5 py-10">
+            <CategoriesTitle title={'Cinema, Movies & Stories'} />
+            <PopularArticle category={"short"} />
+            <CategoriesTitle title={'Celebrity NEWS'} />
+            <PopularArticle category={"celebrity"} />
+            <CategoriesTitle title={'Popular Reality TV NEWS'} />
+            <PopularArticle category={"tv"} />
+            <CategoriesTitle title={'World NEWS'} />
+            <PopularArticle category={"news"} />
+          </div>
+         
         </div>
       </section>
     </SeoPage>

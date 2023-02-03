@@ -90,42 +90,53 @@ const tagsPage = () => {
             {tag?.replace(/-/g, " ")}
           </h2>
         </div>
+
         <div className=" md:flex justify-center my-5 ">
           <div className="md:flex flex-row justify-center w-full lg:w-2/3 md:mx-4 ">
             <div className="md:w-3/4  mx-4">
-              <div className=" md:grid grid-cols-1 gap-4 mb-5">
-                <div className=" mb-5">
-                  <div className="  text-left">
-                    <h1 className=" border-t">
-                      <span className=" bg-red-700  text-white border-b  py-1 px-4">
-                        Popular
-                      </span>
-                    </h1>
-                  </div>
-                </div>
-                <PopularArticle category={articles[0]?.category} />
-                {articles.slice(0, 1).map((article) => (
-                  <ArticleCard2 article={article} />
-                ))}
-              </div>
               <div className="  grid grid-cols-1">
                 <div className=" col-span-6">
                   <div className=" col-span-7">
                     <ol class="relative border-l mx-2 border-gray-200 dark:border-gray-700">
-                      {articles.slice(1).map((el, index) => (
-                        
-                          <SmallCard
-                          key={index}
-                            imgSize=" w-1/2 "
-                            showTitle={false}
-                            article={el}
-                          />
-                         
+                      {articles.map((el, index) => (
+                        <ArticleCard2 key={index} article={el} />
                       ))}
                     </ol>
                   </div>
                 </div>
-                <div className=" col-span-6">
+               
+              <div className=" flex justify-center my-10 items-center">
+                {page !== 1 && (
+                  <ul className=" flex  mx-1  items-center bg-gray-100 hover:bg-gray-200 ease-in-out duration-500  justify-center rounded   ">
+                    <li
+                      disabled={page === 1}
+                      className={`px-2 py-2  flex  text-red-800 ${
+                        page === 1
+                          ? " text-gray-400 cursor-not-allowed"
+                          : "cursor-pointer "
+                      } `}
+                      onClick={handlePreviousPage}
+                    >
+                      <ChevronDoubleLeftIcon className=" h-6" />{" "}
+                      <span>Previous </span>
+                    </li>
+                  </ul>
+                )}
+                <ul className=" flex  w-full mx-1 items-center bg-gray-100 hover:bg-gray-200 ease-in-out duration-500  justify-center rounded   ">
+                  <li
+                    className={`md:px-2 flex py-2 text-blue-600 hover:text-blue-700 ${
+                      page === pageCount ? " text-gray-800" : "cursor-pointer "
+                    }`}
+                    disabled={page === pageCount}
+                    onClick={handleNextPage}
+                  >
+                    <a href={`#${page}`} className=" flex">
+                      <span>Load more</span>
+                      <ChevronDoubleRightIcon className=" h-6" />
+                    </a>
+                  </li>
+                </ul>
+              </div> <div className=" col-span-6">
                   <ins
                     class="adsbygoogle"
                     style={{ display: "block", backgroundColor: "#eeee" }}
@@ -139,38 +150,6 @@ const tagsPage = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className=" flex justify-center my-10 items-center">
-          {page !== 1 && (
-            <ul className=" flex lg:w-1/6 mx-1  items-center bg-gray-100 hover:bg-gray-200 ease-in-out duration-500  justify-center rounded   ">
-              <li
-                disabled={page === 1}
-                className={`px-2 py-2  flex  text-red-800 ${
-                  page === 1
-                    ? " text-gray-400 cursor-not-allowed"
-                    : "cursor-pointer "
-                } `}
-                onClick={handlePreviousPage}
-              >
-                <ChevronDoubleLeftIcon className=" h-6" />{" "}
-                <span>Previous </span>
-              </li>
-            </ul>
-          )}
-          <ul className=" flex  lg:w-1/6 w-full mx-1 items-center bg-gray-100 hover:bg-gray-200 ease-in-out duration-500  justify-center rounded   ">
-            <li
-              className={`md:px-2 flex py-2 text-blue-600 hover:text-blue-700 ${
-                page === pageCount ? " text-gray-800" : "cursor-pointer "
-              }`}
-              disabled={page === pageCount}
-              onClick={handleNextPage}
-            >
-              <a href={`#${page}`} className=" flex">
-                <span>Load more</span>
-                <ChevronDoubleRightIcon className=" h-6" />
-              </a>
-            </li>
-          </ul>
         </div>
       </section>
     </SeoPage>
