@@ -19,9 +19,7 @@ const Breadcrumb = () => {
       const parameter = pathnameSegment.replace(/[\[\]]/g, "");
       // Replace the dynamic route parameter with its actual value from the query object
       let text = query[parameter];
-      if (removeFromText) {
-        text = text.replace(pathnameSegments[0] + "-", "");
-      }
+
       return {
         text,
         link: `/${pathnameSegments

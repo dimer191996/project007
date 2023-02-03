@@ -17,7 +17,6 @@ import {
 const tagsPage = () => {
   const Router = useRouter();
   const { tag } = Router.query;
-  
 
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(0);
