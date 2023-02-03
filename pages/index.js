@@ -95,10 +95,7 @@ export default function Home({ }) {
                   {articles?.slice(3).map((data, index) => (
                     <div className="my-2 rounded overflow-hidden">
 
-                      <SmallCard
-                        showTitle={false}
-                        imgShow={true}
-                        imgSize=" h-auto w-2/3"
+                      <ArticleCard2
                         key={data._id}
                         article={data}
                       />
