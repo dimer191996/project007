@@ -5,7 +5,7 @@ import  fs from 'fs';
 
 export async function getStaticProps() {
     const site_url = 'https://www.hotseatmag.com/';
-    const latest = await axios(`${site_url}api/articles`).then(({ data }) => {
+    const latest = await axios(`${site_url}api/articles/latest`).then(({ data }) => {
       return data
     }).catch((error)=>{
       consol.log(error)
