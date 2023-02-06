@@ -44,7 +44,7 @@ const LastestCategorySection = ({articles, loading})=>{
           </card>
         </Link>
       </div>
-      <div className="mx-1 md:w-1/2 ">
+      <div className="md:mx-1 md:w-1/2 ">
       <Link href={`/article/${articles[2]?.slug}`} className="">
         <card className="w-full flex flex-col">
           <div className="relative h-[11rem] md:h-[23rem] ">
@@ -64,7 +64,7 @@ const LastestCategorySection = ({articles, loading})=>{
         <div className="w-full">
         <Link href={`/article/${articles[3]?.slug}`} className="">
           <card className="w-full flex flex-col">
-            <div className="relative mb-1 h-[11rem] ">
+            <div className="relative md:mb-1 h-[11rem] ">
               <ArticleMainImage article={articles[3]} />
               <div className="absolute w-full h-full bg-gradient-to-t from-black"></div>
               <div className="absolute right-2 bottom-2 pl-2">
@@ -80,7 +80,7 @@ const LastestCategorySection = ({articles, loading})=>{
         <div className=" w-full">
         <Link href={`/article/${articles[1]?.slug}`} className="">
           <card className="w-full flex flex-col">
-            <div className="relative mt-1 h-[11rem] ">
+            <div className="relative md:mt-1 h-[11rem] ">
               <ArticleMainImage article={articles[1]} />
               <div className="absolute w-full h-full bg-gradient-to-t from-black"></div>
               <div className="absolute right-2 bottom-2 pl-2">

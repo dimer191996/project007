@@ -11,23 +11,18 @@ export default function SmallCard({
     <div className="">
       <Link href={`/article/${article.slug}`}>
         {/* hover:scale-105 transition transform ease-out duration-200 */}
-        <div className=" flex flex-col space-x-2 mb-2 p-1  hover:bg-gray-50 ease-out duration-500  rounded-lg cursor-pointer">
+        <div className=" flex flex-col  mb-2 p-1  hover:bg-gray-50 ease-out duration-500  rounded-lg cursor-pointer">
           <div className="flex">
-              <div className=" relative h-[99.5px] w-[149px] md:h-[149px] md:w-[248px]">
+              <div className=" relative h-[99.5px] w-1/3 md:h-[149px] md:w-[248px]">
                 <ArticleMainImage article={article} />
               </div>
             <div
-              className="w-full ml-2"
+              className="w-2/3 ml-2"
             >
-               <div className=" flex items-center   ">
-             
-                    <ArticleTags t={article.tags} tagsN={1} />
-                    <div className="flex">
-                      <span className="px-2 font-bold">👁️  {article.views}</span>
-                    </div>
-                  
+               <div className=" flex items-center line-clamp-1   ">
+                    <ArticleTags t={article.tags} tagsN={1} />                  
                 </div>
-              <h2 className=" line-clamp-3  hover:text-red-700 md:text-2xl text-xl font-black">
+              <h2 className=" line-clamp-3  hover:text-red-700 md:text-2xl text-lg font-black">
                 {article.title}
               </h2>
               <div className="hidden md:flex">
