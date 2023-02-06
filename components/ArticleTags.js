@@ -9,7 +9,7 @@ export default function ArticleTags({ t , tagsN }) {
     let tagsEl = () => {
       return tagsArray.slice(-tagsN).map((el) => (
         <Link key={el} href={`/tag/${el}`}>
-          <span className="px-1 cursor-pointer text-xs font-semibold inline-block py-1 rounded text-red-600 bg-red-200  last:mr-0 mr-1">
+          <span className="px-1 cursor-pointer mb-1 text-sm font-semibold inline-block border-b border-red-700  text-gray-700 bg-white  last:mr-0 mr-1">
             #{el.replace(/-/g, "")}
           </span>
         </Link>

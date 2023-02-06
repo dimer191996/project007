@@ -25,7 +25,7 @@ export default async (req, res) => {
 
     const articles = await Articles.aggregate([
         {
-           $match: { category: { $in: ["tv", "short","celebrity"] } }
+           $match: { category: { $in: ["tv", "short","celebrity","news"] } }
         },
         {
            $sort: { createdAt: -1 }
@@ -52,7 +52,7 @@ export default async (req, res) => {
               updatedAt: 1
            }
         }
-     ]).toArray()
+     ]).sort({createdAt:-1}).toArray()
 
   
 

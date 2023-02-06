@@ -24,11 +24,10 @@ export default function ArticleMainImage({ article }) {
   return (
 
     <Image
-      src={article.image}
-      className=" rounded "
+      src={article && article.image ? article.image : "https://i.ibb.co/Zf7MMsH/blur-loading-image.webp"}
+     
       objectFit="cover"
-      width="500"
-      height="368"
+     
       layout="fill"
       placeholder="blur"
       sizes="320 640 750"
@@ -36,7 +35,7 @@ export default function ArticleMainImage({ article }) {
       position="relative"
       loading="lazy"
       blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
-      alt={article.title}
+      alt={article?.title}
     />
 
   );

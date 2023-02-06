@@ -3,6 +3,7 @@ import useSWR from "swr";
 import { fetcher } from "../lib/utils";
 import ArticleCard from "./ArticleCard";
 import ArticleCard2 from "./ArticleCard2";
+import SmallCard from "./SmallCard";
 
 export default function ({ category }) {
   const { data, error } = useSWR(
@@ -44,9 +45,9 @@ export default function ({ category }) {
   return (
     <div className="mx-5">
       {data?.articles?.map((article) => (
-        <ArticleCard
+        <SmallCard
           h={36}
-          imgShow={false}
+          imgShow={true}
           textSize="text-lg leading-normal"
           showTitle={false}
           key={article._id}

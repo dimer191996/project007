@@ -1,14 +1,29 @@
 import "../styles/globals.css";
 import Default from "../Layouts/Default";
 import Script from "next/script";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Router, { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
 import { Analytics } from '@vercel/analytics/react';
+import Loader from "../components/Loader";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    Router.events.on("routeChangeStart", (url)=>{
+      setIsLoading(true)
+    });
 
+    Router.events.on("routeChangeComplete", (url)=>{
+      setIsLoading(false)
+    });
+
+    Router.events.on("routeChangeError", (url) =>{
+      setIsLoading(false)
+    });
+
+  }, [Router])
   useEffect(() => {
     var ads = document.getElementsByClassName("adsbygoogle").length;
     for (var i = 0; i < ads; i++) {
@@ -62,6 +77,7 @@ function MyApp({ Component, pageProps }) {
         }}
       />
       <Default>
+        {isLoading && <Loader/>}
         <Component {...pageProps} />
         <Analytics />
       </Default>
