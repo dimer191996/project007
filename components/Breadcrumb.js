@@ -35,9 +35,9 @@ const Breadcrumb = () => {
   });
 
   return (<>
-   { items.length >= 1 ? <div className="flex justify-center ">
-      <nav class="lg:w-1/2 border-b  mt-10" aria-label="Breadcrumb">
-        <ol class="inline-flex items-start ">
+   { items.length >= 1 ? <nav className="flex  justify-center  " aria-label="Breadcrumb">
+      
+        <ol class="inline-flex items-start lg:w-1/2 border-b  mt-10">
           <li className=" flex items-center text-md font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
             <Link href={"/"}>Home </Link>
             <svg
@@ -81,8 +81,8 @@ const Breadcrumb = () => {
             </>
           ))}
         </ol>
-      </nav>
-    </div>:""}</>
+     
+    </nav>:""}</>
   );
 };
 
