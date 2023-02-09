@@ -7,16 +7,11 @@ import ShareArticle from "../../components/ShareArticle";
 import YoutubeChannel from "../../components/YoutubeChannel";
 import WithScreen from "../../Layouts/WithScreen";
 import ArticleMainImage from "../../components/ArticleMainImage";
-import Link from "next/link";
 import ArticleTags from "../../components/ArticleTags";
 import ForYouArticles from "../../components/ForYouArticles";
 import InstagramEmbed from "../../components/InstagramEmbed";
-import { ChevronDoubleRightIcon } from "@heroicons/react/solid";
-import Ads24 from "../../components/Ads24";
-import LinkedArticle from "../../components/LinkedArticle";
-import Head from 'next/head'
-import Script from 'next/script'
 import TableOfContent from "../../components/TOC";
+import Reactions from "../../components/Reactions";
 
 export async function getServerSideProps({ params }) {
   const article = await axios
@@ -132,7 +127,7 @@ const Post = ({ article }) => {
             </div>
           </section>
         
-          <div className="separator"></div>
+         
           <ins
             className="adsbygoogle"
             style={{
@@ -146,7 +141,7 @@ const Post = ({ article }) => {
             data-ad-format="auto"
             data-full-width-responsive="true"
           ></ins>
-
+          <div className="separator my-3"></div>
           <TableOfContent/>
           
           <div className="px-4 md:px-0">
@@ -156,7 +151,20 @@ const Post = ({ article }) => {
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML }}
               ></div>
               <div className="separator"></div>
-
+              <ins
+                className="adsbygoogle"
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  overflow: "hidden",
+                  backgroundColor: "#eeee",
+                }}
+                data-ad-layout="in-article"
+                data-ad-format="fluid"
+                data-ad-client="ca-pub-4491397756399283"
+                data-ad-slot="2168142036"
+                data-full-width-responsive="true"
+              ></ins>
               <div className="separator"></div>
               <div
                 id="chapter-1"
@@ -181,11 +189,20 @@ const Post = ({ article }) => {
                   }
                 />
               ) : (
-                <div>
-                  <div className="separator"></div>
-                  <div id="zergnet-widget-90952"></div>
-                  <div className="separator"></div>
-                </div>
+                <ins
+                className="adsbygoogle"
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  overflow: "hidden",
+                  backgroundColor: "#eeee",
+                }}
+                data-ad-layout="in-article"
+                data-ad-format="fluid"
+                data-ad-client="ca-pub-4491397756399283"
+                data-ad-slot="2168142036"
+                data-full-width-responsive="true"
+              ></ins>
               )}
               <div
                 id="chapter-3"
@@ -219,7 +236,9 @@ const Post = ({ article }) => {
                 <span className=" font-bold pr-3">Tags : </span>
                 <ArticleTags t={article.tags} />{" "}
               </div>
-              <div id="comment" className=" border-t border-b my-5">
+              {/* <div className="separator"></div>
+              <Reactions article={article}/> */}
+              <div id="comment" className=" border-b my-5">
                 <div className=" font-bold ">
                   <div
                     className="fb-comments"
@@ -239,24 +258,12 @@ const Post = ({ article }) => {
                   {article.related2 && <ForYouArticles slug={article.related2} />}
                 </p>
               </div>
-              <div id="zergnet-widget-90952"></div>
+            
             </div>
           </div>
 
         </div>
-        {/* {!showArticle ? (
-        <>
-        <div className=" flex my-5 justify-center relative items-center">
-          <div className="text-center text-white absolute font-bold">
-          {"Wait for the Code "} - {timer}
-          </div>
-          <progress className="w-full " value="0" max="50" id="progressBar"></progress>
-          </div>
-          </>
-        ):<p className="text-center">BXDRDDRTVVBGD</p>} */}
       </WithScreen>
-
-
       <MoreArticles category={article.category} />
 
 

@@ -76,6 +76,7 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
+      
       <Default>
         {isLoading && <Loader/>}
         <Component {...pageProps} />

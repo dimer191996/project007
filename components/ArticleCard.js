@@ -35,7 +35,7 @@ export default function ArticleCard({
           </div>
         </Link>{" "}
 
-        <p className=" text-2xl text-gray-600 h-24 line-clamp-3 ">{article.description}</p>
+        <p className=" lg:text-2xl text-gray-600 h-24 line-clamp-3 ">{article.description}</p>
       </div>
     </div>
   );
