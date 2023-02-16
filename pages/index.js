@@ -65,7 +65,7 @@ export default function Home({}) {
         "   Your source for Entertainment news, Stories , Celebrities, Reality Tv more...!"
       }
       hearder={
-        " Your source for entertainment , celebrities ,Reality Tv , and much more"
+        "Hot Seat Magazine | TV, Movies , Entertainment , Celebrity , News , Lifestyle "
       }
       tags={"Reality Tv"}
       keyword=""
