@@ -12,6 +12,7 @@ import ForYouArticles from "../../components/ForYouArticles";
 import InstagramEmbed from "../../components/InstagramEmbed";
 import TableOfContent from "../../components/TOC";
 import Reactions from "../../components/Reactions";
+import CategoriesTitle from "../../components/CategoriesTitle";
 
 export async function getServerSideProps({ params }) {
   const article = await axios
@@ -253,9 +254,8 @@ const Post = ({ article }) => {
             </div>
             <div>
               <div className=" space-y-2">
+                {article.related2 && <ForYouArticles slug={article.related2} />}
                 <p className=" text-3xl font-bold">
-                  Not sure what to read next ?
-                  {article.related2 && <ForYouArticles slug={article.related2} />}
                 </p>
               </div>
             
@@ -264,9 +264,8 @@ const Post = ({ article }) => {
 
         </div>
       </WithScreen>
+      <CategoriesTitle title={`More Latest ${article.category} Articles`}/>
       <MoreArticles category={article.category} />
-
-
     </SeoArticle>
   );
 };

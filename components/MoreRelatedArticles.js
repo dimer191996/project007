@@ -5,13 +5,13 @@ import moment from "moment";
 import Link from "next/link";
 import ArticleCard2 from "./ArticleCard2";
 
-export default function MoreArticles({ category }) {
+export default function MoreRelatedArticles({ category }) {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`${"/api/articles/article/more/"}${category}`)
+      .get(`${"/api/articles/article/more/related"}${category}`)
       .then(({ data }) => {
         setArticles(data.articles);
         setLoading(false);
