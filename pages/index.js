@@ -10,7 +10,6 @@ import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
 } from "@heroicons/react/solid";
-import Ads24 from "../components/Ads24";
 import ArticleCard2 from "../components/ArticleCard2";
 import Carousel from "../components/Carousel";
 import CategoriesTitle from "../components/CategoriesTitle";

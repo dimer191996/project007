@@ -5,28 +5,40 @@ import moment from "moment";
 import Link from "next/link";
 import ArticleCard2 from "./ArticleCard2";
 
-export default function MoreRelatedArticles({ category }) {
+export default function MoreRelatedArticles({ tags , currentArticle }) {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
-    axios
-      .get(`${"/api/articles/article/more/related"}${category}`)
-      .then(({ data }) => {
-        setArticles(data.articles);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setLoading(null);
-      });
-  }, []);
+    if(tags){    
+      let randomWord;
+      const tagsArray= tags.match(/[^,]+/g); // Match one or more comma-separated tags
+      const lastTag = tagsArray[tagsArray.length - 1].trim().replace(/-/g, ' ');
+      const words = lastTag.split(' '); // Split the last tag into an array of words
+      if (words.length === 1) {
+        randomWord = words[0];
+      } else {
+        const randomIndex = Math.floor(Math.random() * words.length); // Generate a random index
+        randomWord = words[randomIndex]; // Select a random word from the array
+      }
+      axios
+        .get(`${"/api/articles/article/more/related/"}${randomWord}`)
+        .then(({ data }) => {
+          setArticles(data.articles);
+          setLoading(false);
+        })
+        .catch((err) => {
+          setLoading(null);
+        });
+    }
+  }, [tags]);
 
   return (
     <div>
       {loading && (
-        <div className=" grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 mx-10 mb-10">
+        <div className=" grid lg:grid-cols-1 md:grid-cols-1 grid-cols-1 mb-10">
 
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13].map((data, index) => (
+          {[1, 2, 3, 4].map((data, index) => (
             <div
               key={index}
               className=" snap-center flex-none  h-64 w-auto rounded overflow-hidden m-2  "
@@ -44,20 +56,14 @@ export default function MoreRelatedArticles({ category }) {
         </div>
       )}
 
-      <div className=" grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-4 md:mx-20 lg:mx-10 mb-10">
+      <nav aria-label="Posts" className=" grid lg:grid-cols-1 md:grid-cols-1 grid-cols-1 gap-4 mb-10">
 
-        {articles?.slice(2).map((el, index) => (
-
-          <SmallCard key={index} article={el} />
-
+        {articles.map((el, index) => (
+          el.title !== currentArticle ? <SmallCard showIMG={false} key={index} article={el} />:""
+          
         ))}
 
-      </div>
-      <div className="text-center w-full py-4 border-t border-b">
-        <div className="font-bold text-lg">
-          <Link href={"/"}><div>{"Read More >>"}</div></Link>
-        </div>
-      </div>
+      </nav>
     </div>
   );
 }

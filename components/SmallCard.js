@@ -5,7 +5,7 @@ import ArticleTags from "./ArticleTags";
 import { EyeIcon, EyeOffIcon } from "@heroicons/react/solid";
 
 export default function SmallCard({
-  article,
+  article, showIMG=true
 }) {
   return (
     <div className="">
@@ -13,18 +13,18 @@ export default function SmallCard({
         {/* hover:scale-105 transition transform ease-out duration-200 */}
         <div className=" flex flex-col  mb-2 p-1  hover:bg-gray-50 ease-out duration-500  rounded-lg cursor-pointer">
           <div className="flex">
-              <div className=" relative h-[99.5px] w-1/3 md:h-[149px] md:w-[248px]">
+              {showIMG &&<div className=" relative h-[99.5px] w-1/3 md:h-[149px] md:w-[248px]">
                 <ArticleMainImage article={article} />
-              </div>
+              </div>}
             <div
-              className="w-2/3 ml-2"
+              className={` ${ !showIMG ? "w-full mx-1":"w-2/3 ml-2" }`}
             >
-               <div className=" flex items-center line-clamp-1   ">
+                <div className=" flex items-center line-clamp-1   ">
                     <ArticleTags t={article.tags} tagsN={1} />                  
                 </div>
-              <h2 className=" line-clamp-3  hover:text-red-700 md:text-2xl text-lg font-black">
+              <span className=" line-clamp-3  hover:text-red-700 md:text-2xl text-lg font-black">
                 {article.title}
-              </h2>
+              </span>
               <div className="hidden md:flex">
               <p className=" hidden text-gray-600  line-clamp-3 ">{article.description}</p>
               </div>

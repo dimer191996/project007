@@ -28,7 +28,8 @@ export default async (req, res) => {
     .sort({
       createdAt: -1,
     })
-    .limit(17)
+    .skip(6)
+    .limit(18)
     .toArray()
 
   return res.status(201).send({ articles });
