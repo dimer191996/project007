@@ -11,7 +11,6 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
 } from "@heroicons/react/solid";
-import Ads24 from "../../components/Ads24";
 import ArticleCard2 from "../../components/ArticleCard2";
 import TruncateText from "../../components/TruncateText";
 import usePaginatedFetch from "../../hooks/usePaginatedFetch";

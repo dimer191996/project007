@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Ads24 from "../../components/Ads24";
 import ArticleCard2 from "../../components/ArticleCard2";
-import PopularArticle from "../../components/PopularArticle";
 import SeoPage from "../../components/SeoPage";
-import SmallCard from "../../components/SmallCard";
 import useSWRInfinite from "swr";
 import { useRouter } from "next/router";
 import { fetcher } from "../../lib/utils";
