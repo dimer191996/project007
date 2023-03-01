@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  EyeOffIcon,
   HomeIcon,
   MenuIcon,
   SearchIcon,
@@ -103,8 +104,9 @@ export default function NavBar() {
             onClick={() => setShowMenu(!showMenu)}
             className="w-full text-2xl bg-red-700 text-white cursor-pointer font-bold flex items-center justify-center "
           >
-            MENU
-            <MenuIcon className="h-6" />
+            {!showMenu  ? "MENU" :"CLOSE MENU"} 
+            {!showMenu ? <MenuIcon className="h-6 mx-2" />:
+            <EyeOffIcon className="h-6 mx-2"/>}
           </div>
         </div>
         {/* P menu */}

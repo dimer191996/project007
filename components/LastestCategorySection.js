@@ -26,8 +26,8 @@ const LastestCategorySection = ({articles, loading})=>{
         );
       }
 
-    return(  <div className="flex justify-center">
-    <div className="md:flex w-full lg:w-3/4 p-2 ">
+    return(  <div className="flex justify-center bg-gray-900">
+    <div className="md:flex w-full lg:w-4/5 p-2 ">
       <div className=" md:w-1/2 ">
         <Link href={`/article/${articles[0]?.slug}`} className="">
           <card className="w-full flex flex-col">

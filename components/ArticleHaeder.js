@@ -23,10 +23,11 @@ export default function ArticleHaeder({ article }) {
           </div>
           <p
             itemprop="descrition"
-            className=" font- text-xl text-gray-700  mb-5 "
+            className=" font- text-xl text-gray-700  "
           >
             {article.description}
           </p>
+    
           {article.sanitizedHTML && (
             <YoutubeChannel title={article.title} video={article.video} />
           )}

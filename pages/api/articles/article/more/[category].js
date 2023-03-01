@@ -23,12 +23,10 @@ export default async (req, res) => {
     {
       category: req.query.category.toString(),
     },
-    fields
   )
     .sort({
       createdAt: -1,
     })
-    .skip(6)
     .limit(18)
     .toArray()
 

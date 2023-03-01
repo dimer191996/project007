@@ -1,4 +1,6 @@
 import React from 'react'
+import Ads from './Ads'
+import ArticleMainImage from './ArticleMainImage'
 import ArticleTags from './ArticleTags'
 import ForYouArticles from './ForYouArticles'
 import InstagramEmbed from './InstagramEmbed'
@@ -11,21 +13,15 @@ export default function ArticleBody({article}) {
         className="prose py-2  has-dropcap prose-xl mt-6  lg:prose-xl   prose-a:text-red-800"
         dangerouslySetInnerHTML={{ __html: article.sanitizedHTML }}
       ></div>
+      <div className=" md:flex justify-center md:p-2">
+        <div className="relative h-[20rem] w-full ">
+          <a href={article.image}>
+            <ArticleMainImage article={article} />
+          </a>
+        </div>
+      </div>
       <div className="separator"></div>
-      <ins
-        className="adsbygoogle"
-        style={{
-          display: "block",
-          textAlign: "center",
-          overflow: "hidden",
-          backgroundColor: "#eeee",
-        }}
-        data-ad-layout="in-article"
-        data-ad-format="fluid"
-        data-ad-client="ca-pub-4491397756399283"
-        data-ad-slot="2168142036"
-        data-full-width-responsive="true"
-      ></ins>
+      <Ads/>
       <div className="separator"></div>
       <div
         id="chapter-1"
@@ -50,20 +46,7 @@ export default function ArticleBody({article}) {
           }
         />
       ) : (
-        <ins
-        className="adsbygoogle"
-        style={{
-          display: "block",
-          textAlign: "center",
-          overflow: "hidden",
-          backgroundColor: "#eeee",
-        }}
-        data-ad-layout="in-article"
-        data-ad-format="fluid"
-        data-ad-client="ca-pub-4491397756399283"
-        data-ad-slot="2168142036"
-        data-full-width-responsive="true"
-      ></ins>
+       <Ads/>
       )}
       <div
         id="chapter-3"
@@ -72,20 +55,7 @@ export default function ArticleBody({article}) {
       ></div>
 
       <div className="separator"></div>
-      <ins
-        className="adsbygoogle"
-        style={{
-          display: "block",
-          textAlign: "center",
-          overflow: "hidden",
-          backgroundColor: "#eeee",
-        }}
-        data-ad-layout="in-article"
-        data-ad-format="fluid"
-        data-ad-client="ca-pub-4491397756399283"
-        data-ad-slot="2168142036"
-        data-full-width-responsive="true"
-      ></ins>
+     
       <div className="separator"></div>
 
       <div
@@ -93,10 +63,6 @@ export default function ArticleBody({article}) {
         className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
         dangerouslySetInnerHTML={{ __html: article.sanitizedHTML4 }}
       ></div>
-      <div className=" flex items-center my-5">
-        <span className=" font-bold pr-3">Tags : </span>
-        <ArticleTags t={article.tags} />{" "}
-      </div>
       {/* <div className="separator"></div>
       <Reactions article={article}/> */}
       <div id="comment" className=" border-b my-5">
