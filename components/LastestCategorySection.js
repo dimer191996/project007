@@ -5,12 +5,12 @@ import ArticleTags from "./ArticleTags"
 const LastestCategorySection = ({articles, loading})=>{
     if (loading) {
         return (
-          <div className="mt-4 mx-5 mb-3">
+          <div className=" bg-gray-900 p-5">
             <div className="">
               {[1].map((data, index) => (
                 <div
                   key={index}
-                  className=" snap-center flex-none  h-64 w-full rounded overflow-hidden m-2  "
+                  className=" snap-center flex-none  h-64 w-full rounded overflow-hidden  "
                 >
                   <div class="py-1">
                     <div class="animate-pulse flex space-x-4">

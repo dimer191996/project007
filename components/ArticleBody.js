@@ -14,7 +14,7 @@ export default function ArticleBody({article}) {
         dangerouslySetInnerHTML={{ __html: article.sanitizedHTML }}
       ></div>
       <div className=" md:flex justify-center md:p-2">
-        <div className="relative h-[20rem] w-full ">
+        <div className="relative h-[30rem] w-full ">
           <a href={article.image}>
             <ArticleMainImage article={article} />
           </a>

@@ -35,10 +35,10 @@ const Breadcrumb = () => {
   });
 
   return (<>
-   { items.length >= 1 ? <nav className="flex  justify-center  " aria-label="Breadcrumb">
+   { items.length >= 1 ? <nav className="flex  justify-center bg-gray-900  " aria-label="Breadcrumb">
       
-        <ol class="inline-flex items-start lg:w-1/2 border-b  mt-10">
-          <li className=" flex items-center text-md font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+        <ol class="inline-flex items-start lg:w-1/2 border-b  py-5">
+          <li className=" flex items-center text-md font-medium text-gray-100 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
             <Link href={"/"}>Home </Link>
             <svg
               aria-hidden="true"
