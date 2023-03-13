@@ -64,7 +64,6 @@ const Post = ({ article }) => {
          <ArticleHaeder article={article}/>
          <ArticleHeader2 article={article}/>         
           <Ads/>
-          <TableOfContent/>
           <ArticleBody article={article}/>
           <CategoriesTitle title={`Read more`}/>
           <MoreRelatedArticles currentArticle={article.title} tags={tags}/>
