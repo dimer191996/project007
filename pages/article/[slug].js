@@ -66,11 +66,11 @@ const Post = ({ article }) => {
           <Ads/>
           <TableOfContent/>
           <ArticleBody article={article}/>
-          <CategoriesTitle title={`Related Posts`}/>
+          <CategoriesTitle title={`Read more`}/>
           <MoreRelatedArticles currentArticle={article.title} tags={tags}/>
         </div>
       </WithScreen>
-      <CategoriesTitle title={`More Latest ${article.category} Posts`}/>
+      <CategoriesTitle title={`Recommended Stories`}/>
       <MoreArticles category={article.category} />
     </SeoArticle>
   );
