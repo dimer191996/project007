@@ -53,10 +53,11 @@ export default function ArticleBody({ article }) {
           )}
           <div
             id="chapter-2"
-            className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
+            className="prose prose-xl py-2 mb-5  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
             dangerouslySetInnerHTML={{ __html: article.sanitizedHTML1 }}
           ></div>
         </div>
+        <section>
         {storyContinue && (
           <>
             <div
@@ -64,19 +65,14 @@ export default function ArticleBody({ article }) {
               className="prose prose-xl py-2 mt-5  lg:prose-xl   first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
               dangerouslySetInnerHTML={{ __html: article.sanitizedHTML2 }}
             ></div>
-
-            <div className="separator"></div>
-              <Ads/>
-            <div className="separator"></div>
-
+          
+           {article.related1 && <ForYouArticles slug={article.related} />}
+              
             <div
               id="chapter-4"
               className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
               dangerouslySetInnerHTML={{ __html: article.sanitizedHTML3 }}
             ></div>
-            <div className="separator"></div>
-              <Ads/>
-            <div className="separator"></div>
 
             <div
               id="chapter-4"
@@ -85,8 +81,6 @@ export default function ArticleBody({ article }) {
             ></div>
           </>
         )}
-        {/* <div className="separator"></div>
-      <Reactions article={article}/> */}
         <div id="comment" className=" border-b my-5">
           <div className=" font-bold ">
             <div
@@ -99,6 +93,10 @@ export default function ArticleBody({ article }) {
             ></div>
           </div>
         </div>
+        </section>
+        {/* <div className="separator"></div>
+      <Reactions article={article}/> */}
+        
       </div>
     </div>
   );
