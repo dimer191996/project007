@@ -2,6 +2,7 @@ import React from "react";
 import ArticleTags from "./ArticleTags";
 import ShareArticle from "./ShareArticle";
 import YoutubeChannel from "./YoutubeChannel";
+import ArticleMainImage from "./ArticleMainImage";
 
 export default function ArticleHaeder({ article }) {
   return (
@@ -15,6 +16,13 @@ export default function ArticleHaeder({ article }) {
               {article.category}
             </span>
           </div>
+          <div className=" md:flex justify-center md:p-2">
+          <div className="relative h-[30rem] w-full ">
+            <a href={article.image}>
+              <ArticleMainImage article={article} />
+            </a>
+          </div>
+        </div> 
           <h1 itemprop="headline" className="font-black text-4xl ">
             {article.title}
           </h1>

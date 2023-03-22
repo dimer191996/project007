@@ -61,9 +61,11 @@ const Post = ({ article }) => {
     
       <WithScreen width=" relative w-full  lg:w-[45%] md:w-[55%] ">
         <div className="lg:mx-12  relative md:mx-0  sm:ml-0 ">
+        
          <ArticleHaeder article={article}/>
          <ArticleHeader2 article={article}/>         
           <Ads/>
+          <TableOfContent/>
           <ArticleBody article={article}/>
           <CategoriesTitle title={`Read more`}/>
           <MoreRelatedArticles currentArticle={article.title} tags={tags}/>
