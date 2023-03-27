@@ -17,7 +17,7 @@ const getClassName = (level) => {
 const TableOfContent = () => {
   const route = useRouter()
   const [headings, setHeadings] = useState([]);
-  const [openTOC, setOpenTOC] = useState(true);
+  const [openTOC, setOpenTOC] = useState(false);
 
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll("h2, h3, h4")).map(
