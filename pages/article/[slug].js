@@ -67,8 +67,9 @@ const Post = ({ article }) => {
           <Ads/>
           <TableOfContent/>
           <ArticleBody article={article}/>
-          <CategoriesTitle title={`Read more`}/>
+          <CategoriesTitle title={`Related Posts`}/>
           <MoreRelatedArticles currentArticle={article.title} tags={tags}/>
+          <Ads />
         </div>
       </WithScreen>
       <CategoriesTitle title={`Recommended Stories`}/>

@@ -40,7 +40,7 @@ export default function ArticleBody({ article }) {
             <>
               <div
                 id="Story Continues mt-5"
-                className=" h-[30%] bottom-0  absolute  w-full bg-gradient-to-t from-gray-100 opacity-95 "
+                className=" h-[20%] bottom-0  absolute  w-full bg-gradient-to-t from-gray-100 opacity-95 "
               ></div>
               <div className="absolute -bottom-5 w-full ">
                 <div className="flex justify-center">
@@ -48,8 +48,8 @@ export default function ArticleBody({ article }) {
                     href={'/article/'+article.slug+'?next=1'}
                     className=" cursor-pointer"
                   >
-                    <div className="py-2 cursor-pointer shadow-xl px-12 flex items-center space-x-4 justify-center bg-white w-full rounded-lg text-2xl font-bold border-black border-2">
-                      <CursorClickIcon className="h-6"/> <span>Next Paragraph</span>
+                    <div className="py-2 cursor-pointer shadow-xl px-12 flex items-center space-x-4 justify-center bg-blue-700 text-white w-full rounded-lg text-2xl font-bold">
+                      <CursorClickIcon className="h-6"/> <span>Keep reading 📖</span>
                     </div>
                   </Link>
                 </div>
