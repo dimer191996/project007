@@ -4,7 +4,7 @@ import ArticleMainImage from "./ArticleMainImage";
 import ArticleTags from "./ArticleTags";
 import ForYouArticles from "./ForYouArticles";
 import InstagramEmbed from "./InstagramEmbed";
-import { CursorClickIcon } from "@heroicons/react/solid";
+import { ArrowCircleDownIcon, ArrowCircleUpIcon, CursorClickIcon, LockOpenIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -39,17 +39,17 @@ export default function ArticleBody({ article }) {
           {!next==1 && (
             <>
               <div
-                id="Story Continues mt-5"
+                id="Story-Continues"
                 className=" h-[20%] bottom-0  absolute  w-full bg-gradient-to-t from-gray-100 opacity-95 "
               ></div>
               <div className="absolute -bottom-5 w-full ">
                 <div className="flex justify-center">
                   <Link
-                    href={'/article/'+article.slug+'?next=1'}
-                    className=" cursor-pointer"
+                    href={'/article/'+article.slug+'?next=1#chapter-3'}
+                    className=" cursor-pointer w-full"
                   >
                     <div className="py-2 cursor-pointer shadow-xl px-12 flex items-center space-x-4 justify-center bg-blue-700 text-white w-full rounded-lg text-2xl font-bold">
-                      <CursorClickIcon className="h-6"/> <span>Keep reading 📖</span>
+                      <CursorClickIcon className="h-6 animate-ping"/> <span>Keep reading</span> <ArrowCircleDownIcon className="h-6"/>
                     </div>
                   </Link>
                 </div>

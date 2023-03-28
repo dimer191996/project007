@@ -42,7 +42,7 @@ const TableOfContent = () => {
          
           <ul className="">
             {headings.map((heading) => (
-              <li key={heading.id} className={`${getClassName(heading.level)}`}>
+              <ol key={heading.id} className={`${getClassName(heading.level)}`}>
                 <a
                   href={`#${heading.id}`}
                   className="no-underline text-blue-700"
@@ -55,7 +55,7 @@ const TableOfContent = () => {
                 >
                   {heading.text}
                 </a>
-              </li>
+              </ol>
             ))}
           </ul>
         </nav>
