@@ -69,23 +69,13 @@ export default function ArticleBody({ article }) {
                 className="prose prose-xl py-2 mt-5  lg:prose-xl   first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML2 }}
               ></div>
-<ins class="adsbygoogle"
-    styles={{display:"block"}}
-     data-ad-format="fluid"
-     data-ad-layout-key="-gk+1e-62-j9+1m1"
-     data-ad-client="ca-pub-4491397756399283"
-     data-ad-slot="8687040549"></ins>
+<Ads/>
               <div
                 id="chapter-4"
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML3 }}
               ></div>
-<ins class="adsbygoogle"
-    styles={{display:"block"}}
-     data-ad-format="fluid"
-     data-ad-layout-key="-gk+1e-62-j9+1m1"
-     data-ad-client="ca-pub-4491397756399283"
-     data-ad-slot="8687040549"></ins>
+<Ads/>
               <div
                 id="chapter-4"
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
