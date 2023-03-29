@@ -47,7 +47,12 @@ import Ads from "./Ads";
         <div className="md:flex">
           <div className="">
             <div className="md:w-4/5 md:mx-20 lg:mx-10 mb-10">
-
+            <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-gk+1e-62-j9+1m1"
+     data-ad-client="ca-pub-4491397756399283"
+     data-ad-slot="8687040549"></ins>
               {articles?.slice(2).map((el, index) => (
 
                 <SmallCard key={index} article={el} />
