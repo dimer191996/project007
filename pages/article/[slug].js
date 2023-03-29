@@ -69,7 +69,7 @@ const Post = ({ article }) => {
           <ArticleBody article={article}/>
           <CategoriesTitle title={`Related Posts`}/>
           <MoreRelatedArticles currentArticle={article.title} tags={tags}/>
-          <Ads />
+        
         </div>
       </WithScreen>
       <CategoriesTitle title={`Recommended Stories`}/>

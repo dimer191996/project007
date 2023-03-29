@@ -70,7 +70,7 @@ export default function ArticleBody({ article }) {
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML2 }}
               ></div>
 <ins class="adsbygoogle"
-     style="display:block"
+    styles={{display:"block"}}
      data-ad-format="fluid"
      data-ad-layout-key="-gk+1e-62-j9+1m1"
      data-ad-client="ca-pub-4491397756399283"
@@ -81,7 +81,7 @@ export default function ArticleBody({ article }) {
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML3 }}
               ></div>
 <ins class="adsbygoogle"
-     style="display:block"
+    styles={{display:"block"}}
      data-ad-format="fluid"
      data-ad-layout-key="-gk+1e-62-j9+1m1"
      data-ad-client="ca-pub-4491397756399283"

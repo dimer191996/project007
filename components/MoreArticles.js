@@ -48,7 +48,7 @@ import Ads from "./Ads";
           <div className="">
             <div className="md:w-4/5 md:mx-20 lg:mx-10 mb-10">
             <ins class="adsbygoogle"
-     style="display:block"
+    styles={{display:"block"}}
      data-ad-format="fluid"
      data-ad-layout-key="-gk+1e-62-j9+1m1"
      data-ad-client="ca-pub-4491397756399283"

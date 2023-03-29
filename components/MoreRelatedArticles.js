@@ -58,7 +58,7 @@ export default function MoreRelatedArticles({ tags , currentArticle }) {
 
       <nav aria-label="Posts" className=" grid lg:grid-cols-1 md:grid-cols-1 grid-cols-1 gap-4 mb-10">
       <ins class="adsbygoogle"
-     style="display:block"
+    styles={{display:"block"}}
      data-ad-format="fluid"
      data-ad-layout-key="-gk+1e-62-j9+1m1"
      data-ad-client="ca-pub-4491397756399283"
