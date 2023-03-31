@@ -63,8 +63,9 @@ const Post = ({ article }) => {
         <div className="lg:mx-12  relative md:mx-0  sm:ml-0 ">
         
          <ArticleHaeder article={article}/>
+         <Ads/>
          <ArticleHeader2 article={article}/>         
-          <Ads/>
+          
           <TableOfContent/>
           <ArticleBody article={article}/>
           <CategoriesTitle title={`Related Posts`}/>

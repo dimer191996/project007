@@ -20,7 +20,7 @@ import Ads from "./Ads";
         .catch((err) => {
           setLoading(null);
         });
-    }, []);
+    }, [category]);
 
     return (
       <div>

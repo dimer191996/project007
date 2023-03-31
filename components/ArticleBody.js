@@ -21,7 +21,7 @@ export default function ArticleBody({ article }) {
           dangerouslySetInnerHTML={{ __html: article.sanitizedHTML }}
         ></div>
        
-        <div className="separator"></div>
+       
         {article.related1 && <ForYouArticles slug={article.related1} />}
 
         {!!article.video1 ? (

@@ -5,7 +5,7 @@ import ArticleTags from "./ArticleTags";
 import { EyeIcon, EyeOffIcon } from "@heroicons/react/solid";
 
 export default function SmallCard({
-  article, showIMG=true
+  article, showIMG=true, showDesc=true
 }) {
   return (
     <div className="">
@@ -25,18 +25,16 @@ export default function SmallCard({
               <span className=" line-clamp-3  hover:text-red-700 md:text-2xl text-lg font-black">
                 {article.title}
               </span>
-              <div className="hidden md:flex">
+              { showDesc && <div className="hidden md:flex">
               <p className=" hidden text-gray-600  line-clamp-3 ">{article.description}</p>
-              </div>
+              </div>}
              
             </div>
           </div>
 
         </div>
       </Link>
-      <div class="absolute w-3 h-3 bg-gray-50 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-
-
+   
 
     </div>
   );
