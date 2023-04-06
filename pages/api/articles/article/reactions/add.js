@@ -17,7 +17,7 @@ export default async (req, res) => {
         fingerprint:fingerprint,
         article_id: article._id,
         type: typeOfReaction,
-        createdAt: new Date.now()
+        createdAt: new Date()
       });
       console.log("done")
       return res
@@ -39,13 +39,13 @@ export default async (req, res) => {
       });
   } catch (error) {
     console.log(error)
-  //   return res
-  //     .status(500)
-  //     .send({
-  //       message: "Error Find",
-  //       error: true,
-  //       type: "error",
-  //       error_message: error,
-  //     });
+    return res
+      .status(500)
+      .send({
+        message: "Error Find",
+        error: true,
+        type: "error",
+        error_message: error,
+      });
    }
 };

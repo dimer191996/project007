@@ -17,7 +17,7 @@ function NavLink({ href, label }) {
 
   return (
     <Link href={href}>
-      <li className={`hover:text-red-600 text-white text-lg md:text-xl lg:text-2xl  xl:text-3xl py-2 font-black cursor-pointer lg:px-4 items-center justify-center flex`}>
+      <li className={`hover:text-red-600 text-white text-sm md:text-md lg:text-xl  xl:text-2xl py-2 font-black cursor-pointer lg:px-4 items-center justify-center flex`}>
         <span className={className}>{label}</span>
       </li>
     </Link>
@@ -73,7 +73,7 @@ export default function NavBar() {
         <div className="flex justify-center md:mb-5 md:pb-5">
 
           <Link href="/">
-            <div className="relative h-36 w-36  rounded-lg ">
+            <div className="relative h-20 w-20  rounded-lg ">
               <Image
                 src="https://res.cloudinary.com/dggjlyw5e/image/upload/v1634447165/THE_HOT_SEAT_1_yubb8j.png"
                 className=" p-2"
@@ -111,7 +111,7 @@ export default function NavBar() {
         </div>
         {/* P menu */}
         <div className="sm:flex hidden   border-black justify-center  lg:px-5">
-          <ul className=" sm:grid sm:grid-cols-1 md:grid md:grid-cols-7 gap-x-0  md:items-center md:justify-end relative ">
+          <ul className=" sm:grid sm:grid-cols-1 md:grid md:grid-cols-7 gap-x-0 text-sm  md:items-center md:justify-end relative ">
             {navEl.map((el, index) => (
               <NavLink key={index} href={el.link} label={el.name} />
             ))}

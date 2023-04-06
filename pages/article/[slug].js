@@ -14,7 +14,7 @@ import Ads from "../../components/Ads";
 export async function getServerSideProps({ params }) {
   const article = await axios
     .get(`${"https://www.hotseatmag.com/api/articles/article/"}${params.slug}`, {
-      timeout: 10000,
+      timeout: 5000,
     })
     .then((res) => res.data.article)
     .catch(({ err }) => console.log(err));
@@ -73,8 +73,7 @@ const Post = ({ article }) => {
         
         </div>
       </WithScreen>
-      <CategoriesTitle title={`Recommended Stories`}/>
-      <MoreArticles category={article.category} />
+      
     </SeoArticle>
   );
 };

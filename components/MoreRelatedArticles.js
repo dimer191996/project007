@@ -67,12 +67,7 @@ export default function MoreRelatedArticles({ tags , currentArticle }) {
           el.title !== currentArticle ? <SmallCard showIMG={false} key={index} article={el} />:""
           
         ))}
-      <ins class="adsbygoogle"
-    styles={{display:"block"}}
-     data-ad-format="fluid"
-     data-ad-layout-key="-gk+1e-62-j9+1m1"
-     data-ad-client="ca-pub-4491397756399283"
-     data-ad-slot="8687040549"></ins>
+     
       </nav>
     </div>
   );

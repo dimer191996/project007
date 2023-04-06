@@ -7,6 +7,7 @@ import InstagramEmbed from "./InstagramEmbed";
 import { ArrowCircleDownIcon, ArrowCircleUpIcon, CursorClickIcon, LockOpenIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Reactions from "./Reactions";
 
 export default function ArticleBody({ article }) {
   const route = useRouter()
@@ -33,7 +34,7 @@ export default function ArticleBody({ article }) {
             }
           />
         ) : (
-          <Ads />
+          ""
         )}
         <div className="relative ">
           {!next==1 && (
@@ -93,10 +94,11 @@ export default function ArticleBody({ article }) {
                 data-colorscheme="light"
               ></div>
             </div>
-          </div>
+          </div> 
+         
         </section>
-        {/* <div className="separator"></div>
-      <Reactions article={article}/> */}
+     
+        <Reactions article={article}/>
       </div>
     </div>
   );

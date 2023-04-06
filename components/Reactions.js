@@ -7,9 +7,13 @@ const Reactions = ({ article }) => {
   const [cookie, setCookie] = useCookies([]);
   const router = useRouter();
   const [reactions, setReaction] = useState(null);
-  const [extendedResult, updateExtendedResult] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [showReactonsPanel, setShowReactonsPanel] = useState(true);
+  const [data , setData] = useState({})
   useEffect(() => {
     if (article) {
+      setShowReactonsPanel(true)
+      setLoading(false)
       axios
         .get(`/api/articles/article/reactions/${article.slug}`)
         .then(({ data }) => setReaction(data))
@@ -20,6 +24,8 @@ const Reactions = ({ article }) => {
   }, [article]);
 
   async function setType(type, id, fingerprint) {
+    if(cookie.reaction?.id === id) return;
+    setLoading(true)
     const data = await axios
       .post("/api/articles/article/reactions/add", {
         articleId: id,
@@ -29,11 +35,14 @@ const Reactions = ({ article }) => {
       .then(({ data }) => {
         if (!data.error) {
           console.log("cookies fund");
-          setCookie(`${type}_${id}`, JSON.stringify({ type: type, id: id }), {
+          setCookie(`reaction`, JSON.stringify({ type: type, id: id }), {
             path: "/",
             maxAge: 3600, // Expires after 1hr
             sameSite: true,
           });
+          setLoading(false)
+          setShowReactonsPanel(false)
+          setData(data)
           return data;
         }
         console.log("somethign happen");
@@ -44,13 +53,13 @@ const Reactions = ({ article }) => {
   }
 
   return (
-    <div>
-      <div className="text-center border-b text-sm font-bold mb-4">How do you feel about this story ?</div>
-      <div className="text-center">
+    <div className="my-10">
+      <div className="text-center border-b text-sm font-bold mb-4">How do you feel about this story ? </div>
+     {!loading ? <div className="text-center">
         {!reactions ? (
           "Loading..."
         ) : (
-          <div className="grid grid-cols-4 gap-2">
+         showReactonsPanel ? <div className="grid grid-cols-4 gap-2">
             {[
               { type: "like", number:reactions?.like, icon:"👍" },
               { type: "dislike", number: reactions?.dislike, icon:"😤" },
@@ -69,9 +78,9 @@ const Reactions = ({ article }) => {
                 </button>
               </div>
             ))}
-          </div>
+          </div>: <div>{data.message + " ✔"}</div>
         )}
-      </div>
+      </div>:<div className="text-center"> ✨Processing ✨ </div> }
     </div>
   );
 };
