@@ -25,17 +25,6 @@ export default function ArticleBody({ article }) {
        
         {article.related1 && <ForYouArticles slug={article.related1} />}
 
-        {!!article.video1 ? (
-          <InstagramEmbed
-            instagramContent={
-              article.video1
-                ? `https://www.instagram.com/reel/${article.video1}/?utm_source=ig_embed&amp;utm_campaign=loading`
-                : "https://web.facebook.com/groups/1118449878512007"
-            }
-          />
-        ) : (
-          ""
-        )}
         <div className="relative ">
           {!next==1 && (
             <>
@@ -70,32 +59,17 @@ export default function ArticleBody({ article }) {
                 className="prose prose-xl py-2 mt-5  lg:prose-xl   first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML2 }}
               ></div>
-<Ads/>
               <div
                 id="chapter-4"
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML3 }}
               ></div>
-<Ads/>
               <div
                 id="chapter-4"
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML4 }}
               ></div>
             </>
-          <div id="comment" className=" border-b my-5">
-            <div className=" font-bold ">
-              <div
-                className="fb-comments"
-                data-href={`https://www.hotseatmag.com/article/${article.slug}`}
-                data-numposts="5"
-                data-width="100%"
-                data-height="20px"
-                data-colorscheme="light"
-              ></div>
-            </div>
-          </div> 
-         
         </section>
      
         <Reactions article={article}/>
