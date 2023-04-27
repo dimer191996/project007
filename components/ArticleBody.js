@@ -27,33 +27,13 @@ export default function ArticleBody({ article }) {
         {article.related1 && <ForYouArticles slug={article.related1} />}
 
         <div className="relative ">
-          {!next==1 && (
-            <>
-              <div
-                id="Story-Continues"
-                className=" h-[20%] bottom-0  absolute  w-full bg-gradient-to-t from-gray-100 opacity-95 "
-              ></div>
-              <div className="absolute -bottom-5 w-full ">
-                <div className="flex justify-center">
-                  <Link
-                    href={'/article/'+article.slug+'?next=1#chapter-3'}
-                    className=" cursor-pointer w-full"
-                  >
-                    <div className="py-2 cursor-pointer shadow-xl px-12 flex items-center space-x-4 justify-center bg-blue-700 text-white w-full rounded-lg text-2xl font-bold">
-                      <CursorClickIcon className="h-6 animate-ping"/> <span>Keep reading</span> <ArrowCircleDownIcon className="h-6"/>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </>
-          )}
-          <div
+                        <div
             id="chapter-2"
             className="prose prose-xl py-2 mb-5  lg:prose-xl  first-letter:text-2xl  first-letter:font-black  prose-a:text-red-800"
             dangerouslySetInnerHTML={{ __html: article.sanitizedHTML1 }}
           ></div>
         </div>
-        <section className={!next==1 ? " h-0 overflow-hidden": ""}>
+        <section>
             <>
               <div
                 id="chapter-3"
