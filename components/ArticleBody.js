@@ -8,6 +8,7 @@ import { ArrowCircleDownIcon, ArrowCircleUpIcon, CursorClickIcon, LockOpenIcon }
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Reactions from "./Reactions";
+import YoutubeChannel from "./YoutubeChannel";
 
 export default function ArticleBody({ article }) {
   const route = useRouter()
@@ -59,11 +60,15 @@ export default function ArticleBody({ article }) {
                 className="prose prose-xl py-2 mt-5  lg:prose-xl   first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML2 }}
               ></div>
+              <Ads/>
               <div
                 id="chapter-4"
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"
                 dangerouslySetInnerHTML={{ __html: article.sanitizedHTML3 }}
               ></div>
+   {article.sanitizedHTML && (
+            <YoutubeChannel title={article.title} video={article.video} />
+          )}
               <div
                 id="chapter-4"
                 className="prose prose-xl py-2  lg:prose-xl  first-letter:text-2xl  first-letter:font-black prose-a:text-red-800"

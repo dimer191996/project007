@@ -15,7 +15,7 @@ export default function ({ category }) {
     revalidateOnReconnect: false,
   });
   if (error) {
-    return <div>error = {JSON.stringify(error)}</div>;
+    return <div></div>;
   }
   return (
   <LastestCategorySection loading={isValidating} articles={data?.articles} />

@@ -10,6 +10,8 @@ import ArticleHaeder from "../../components/ArticleHaeder";
 import ArticleHeader2 from "../../components/ArticleHeader2";
 import ArticleBody from "../../components/ArticleBody";
 import Ads from "../../components/Ads";
+import ShareArticle from "../../components/ShareArticle";
+import ArticleHeader0 from "../../components/ArticleHeader0";
 
 export async function getServerSideProps({ params }) {
   const article = await axios
@@ -58,21 +60,26 @@ const Post = ({ article }) => {
 
   return (
     <SeoArticle article={article} tags={tagsArray} category={article.category}>
-    
       <WithScreen width=" relative w-full  lg:w-[45%] md:w-[55%] ">
+        <ArticleHeader0 article={article}/>
+      </WithScreen>    
+      <WithScreen width=" relative w-full  lg:w-[45%] md:w-[55%] ">
+        <ShareArticle slug={article.slug} />
         <div className="lg:mx-12  relative md:mx-0  sm:ml-0 ">
-        
-         <ArticleHaeder article={article}/>
+         
          <Ads/>
          <ArticleHeader2 article={article}/>         
           
           <TableOfContent/>
           <ArticleBody article={article}/>
-          <CategoriesTitle title={`Related Posts`}/>
-          <MoreRelatedArticles currentArticle={article.title} tags={tags}/>
-        
+          
         </div>
       </WithScreen>
+      <WithScreen width=" relative w-full  lg:w-[48%] md:w-[55%] ">
+
+      <CategoriesTitle title={`Related Posts`}/>
+          <MoreRelatedArticles currentArticle={article.title} tags={tags}/>
+        </WithScreen>
       
     </SeoArticle>
   );

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { BreadcrumbList, NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 const Breadcrumb = () => {
   const router = useRouter();
@@ -67,7 +66,7 @@ const Breadcrumb = () => {
                             className="text-sm font-medium  text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
                           >
                             <p className="line-clamp-1 cursor-pointer">
-                              {crumb.text}
+                               {crumb.text}
                             </p>
                           </Link>
                         </>

@@ -18,15 +18,19 @@ export default async (req, res) => {
   const client = await clientPromise;
   const db = client.db(process.env.MONGODB_DB);
   const Articles = db.collection("articles");
-  const nPerPage = 15;
+  const nPerPage = 10;
   const pageNumber = req.query.page || 1;
   const skip = (pageNumber - 1) * nPerPage;
   const countPromise = Articles.estimatedDocumentCount({});
 
   const articlesPromise = Articles.find(
     { category: { $ne: ["howto", "short"] } },
-    fields
+    {
+      _id:1,
+      title:1
+    }
   )
+    .project(fields)
     .sort({ createdAt: -1 })
     .limit(nPerPage)
     .skip(skip)
@@ -34,12 +38,14 @@ export default async (req, res) => {
 
   const [count, articles] = await Promise.all([countPromise, articlesPromise]);
 
-  const pageCount = count / nPerPage;
+  const pageCount = Math.ceil(count / nPerPage);
+  const remainingPages = pageCount - pageNumber;
 
   return res.status(201).send({
     pagination: {
       count,
       pageCount,
+      remainingPages,
     },
     articles,
   });

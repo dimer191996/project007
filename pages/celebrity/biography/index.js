@@ -1,15 +1,14 @@
-import { fetcher } from "../../lib/utils";
+import { fetcher } from "../../../lib/utils";
 import { useEffect, useState, useRef } from "react";
-import SeoPage from "../../components/SeoPage";
-import SmallCard from "../../components/SmallCard";
-import LatestHomeALLCategory from "../../components/LatestHomeALLCategory";
-import SkeletonCard from "../../components/SkeletonCard";
-import CategoriesTitle from "../../components/CategoriesTitle";
+import SeoPage from "../../../components/SeoPage";
+import SmallCard from "../../../components/SmallCard";
+import SkeletonCard from "../../../components/SkeletonCard";
+import CategoriesTitle from "../../../components/CategoriesTitle";
 
 export default function Home({}) {
   const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(1);
-  const [pageCount  , setPageCount] = useState()
+  const [pageCount, setPageCount] = useState();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -24,7 +23,7 @@ export default function Home({}) {
     const observer = new IntersectionObserver(
       (entries) => {
         const target = entries[0];
-        if (target.isIntersecting && !loading && !error && !(pageCount < 1)) {
+        if (target.isIntersecting && !loading && !error && !(pageCount <= 0)) {
           setPage((prevPage) => prevPage + 1);
         }
       },
@@ -43,14 +42,16 @@ export default function Home({}) {
         observer.unobserve(endOfPageRef.current);
       }
     };
-  }, [loading, error]);
+  }, [loading, error, !(pageCount === 0)]);
 
   const fetchArticles = async () => {
     setLoading(true);
     try {
-      const data = await fetcher(`/api/articles/pages?page=${page}&category=${'news'}`);
+      const data = await fetcher(
+        `/api/articles/article/more/related/bio?page=${page}`
+      );
       if (data && data.articles) {
-        setPageCount(data.pagination.remainingPages)
+        setPageCount(data.pagination.remainingPages);
         setArticles((prevArticles) => [...prevArticles, ...data.articles]);
         setError(false);
       } else {
@@ -74,36 +75,29 @@ export default function Home({}) {
   return (
     <SeoPage
       description={
-        " Summarize latest news and events in concise and engaging language to stay informed and on top of current events."
-        
+        "Discover the secrets behind your favorite celebs with our exclusive celebrity biographies. From scandals to success stories, we've got it all! "        
       }
-      hearder={
-        "Celebrity Breaking NEWS | Hot Seat Mag"
-      }
-      tags={"news"}
-      keyword="news"
-      category={"news"}
+      hearder={" Celebry Biography | HotSeatMag "}
+      tags={"Celebrity Biography"}
+      keyword="Celebrity Biography"
+      category={"celebrity/biography"}
     >
       <section className="">
-
         <div className="">
           <div className="flex justify-center">
             <div className="lg:w-3/4 md:flex">
-              <div className="md:w-3/4 w-full">
-                <div className=" flex justify-center  ">
-                  <div className=" px-2 w-full   ">
-                    <div>
-                       <h2 className="text-xl lg:text-4xl my-3 font-bold">
-                       Celebrity News
+              <div className=" flex justify-center  ">
+                <div className=" px-2 w-full   ">
+                  
+                    <div className="md:w-3/4 w-full">
+                    <h2 className="text-4xl my-3 font-bold">
+                    Celebrities Biographies
                     </h2>
-                    <p className=" my-4 border-b lg:text-xl">
-                      Get the latest scoop on your favorite stars! From breakups to makeups, 
-                      scandals to red-carpet fashion, we've got the hottest celebrities news covered.
-                    </p>
-                    </div>
-                    <CategoriesTitle title={"What's New"} />
+                    <h2 className=" my-4 border-b lg:text-xl">
+                    Unveiling the Untold Stories of Celebrities - Get the Juicy Details Now!
+                    </h2>
+                    <CategoriesTitle title={'What\'s New'}/>
 
-                    <div>
                       {articles.map((article, index) => (
                         <SmallCard key={article.id} article={article} />
                       ))}
@@ -122,13 +116,14 @@ export default function Home({}) {
                           </button>
                         </div>
                       )}
-                     { (pageCount === 0) && <div className="text-center">
+                      {pageCount === 0 && (
+                        <div className="text-center">
                           You've reached the end
-                      </div>}
+                        </div>
+                      )}
                       <div ref={endOfPageRef} style={{ height: "1px" }}></div>
-
                     </div>
-                  </div>
+                  
                 </div>
               </div>
               <div className="md:w-1/4"></div>

@@ -17,12 +17,11 @@ export default function Default({ children }) {
     <>
       <div className="">
         <NavBar />
-        <BreadCrumb/>
+        {/* <BreadCrumb/> */}
         <main className="container"> {children}</main>
         <Footer />
         <FloatingButton
-          hidebutton={() => setVisible(false)}
-          showbutton={() => setVisible(true)}
+          actionButton={() => setVisible(!visible)}
           hideHeader={visible}
         />
       </div>

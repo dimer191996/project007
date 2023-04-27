@@ -8,7 +8,7 @@ export default async (req, res) => {
   const Reaction = db.collection("reactions");
   const Article = db.collection("articles");
   console.log(`${articleId}_${typeOfReaction}`)
-  const article = await Article.findOne({ _id: ObjectId(articleId) });
+  const article = await Article.findOne({ _id: new ObjectId(articleId) });
 
   try {
     if (article) {

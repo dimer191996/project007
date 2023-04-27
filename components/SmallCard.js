@@ -2,7 +2,6 @@ import Link from "next/link";
 import React from "react";
 import ArticleMainImage from "./ArticleMainImage";
 import ArticleTags from "./ArticleTags";
-import { EyeIcon, EyeOffIcon } from "@heroicons/react/solid";
 
 export default function SmallCard({
   article, showIMG=true, showDesc=true
@@ -19,12 +18,12 @@ export default function SmallCard({
             <div
               className={` ${ !showIMG ? "w-full mx-1":"w-2/3 ml-2" }`}
             >
-                <div className=" flex items-center line-clamp-1   ">
-                    <ArticleTags t={article.tags} tagsN={1} />                  
-                </div>
-              <span className=" line-clamp-3  hover:text-red-700 md:text-2xl text-lg font-black">
+                {/* <div className=" flex items-center line-clamp-1   ">
+                                 
+                </div> */}
+              <p className=" line-clamp-3  hover:text-red-700 md:text-2xl text-lg font-black">
                 {article.title}
-              </span>
+              </p>
               { showDesc && <div className="hidden md:flex">
               <p className=" hidden text-gray-600  line-clamp-3 ">{article.description}</p>
               </div>}

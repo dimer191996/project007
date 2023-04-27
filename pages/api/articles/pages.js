@@ -30,8 +30,8 @@ export default async (req, res) => {
 
   const articlesPromise = Articles.find(
     {  category: req.query.category.toString() },
-    fields
-  )
+   
+  ).project(fields)
     .sort({ createdAt: -1 })
     .limit(nPerPage)
     .skip(skip)
@@ -39,12 +39,14 @@ export default async (req, res) => {
 
   const [count, articles] = await Promise.all([countPromise, articlesPromise]);
 
-  const pageCount = count / nPerPage;
+  const pageCount = Math.ceil(count / nPerPage);
+  const remainingPages = pageCount - pageNumber;
 
   return res.status(201).send({
     pagination: {
       count,
       pageCount,
+      remainingPages,
     },
     articles,
   });

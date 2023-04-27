@@ -1,6 +1,8 @@
 import moment from "moment";
 import React from "react";
 import ArticleMainImage from "./ArticleMainImage";
+import ArticleTags from "./ArticleTags";
+import YoutubeChannel from "./YoutubeChannel";
 
 export default function ArticleHeader2({ article }) {
   const cleanDate = (date) => {
@@ -9,6 +11,7 @@ export default function ArticleHeader2({ article }) {
   return (
     <section>
        <div className=" px-3">
+      
       <div className=" px-4 flex bg-white flex-row items-center justify-between ">
         <div className="flex flex-col   py-2 ">
           <div className="  leading-4  font-semibold flex-grow">
