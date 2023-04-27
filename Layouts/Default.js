@@ -20,10 +20,10 @@ export default function Default({ children }) {
         {/* <BreadCrumb/> */}
         <main className="container"> {children}</main>
         <Footer />
-        <FloatingButton
+        {/* <FloatingButton
           actionButton={() => setVisible(!visible)}
           hideHeader={visible}
-        />
+        /> */}
       </div>
     </>
   );
