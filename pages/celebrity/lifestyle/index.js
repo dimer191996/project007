@@ -75,7 +75,7 @@ export default function Home({}) {
   return (
     <SeoPage
       description={
-        "Shocking Celebrity Weight Loss Transformations You Won't Believe!"
+        "!"
       }
       hearder={" Celebrity Lifestyle | Hot Seat Mag "}
       tags={"Celebrity Lifestyle"}
@@ -89,11 +89,12 @@ export default function Home({}) {
               <div className=" flex justify-center w-full ">
                 <div className="md:w-3/4 w-full">
                 <h2 className="text-xl lg:text-4xl my-3 font-bold">
-                    Celebrities  Weight Loss
+                    Celebrities  Lifestyle
                     </h2>
                     <p className=" my-4 border-b">
-                    Learn about the jaw-dropping weight loss secrets of your favorite celebrities! From Beyoncé to Chris Pratt, 
-                    see the stunning before and after pics. Get inspired to transform your own body today! 
+                    Discover the scandalous and luxurious world of celebrities with 
+                    these 10 jaw-dropping lifestyle secrets. 
+                    You won't believe what they're really hiding
                     </p>
                     <CategoriesTitle title={"What's New"} />
                   {articles.map((article, index) => (
