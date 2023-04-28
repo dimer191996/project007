@@ -78,7 +78,7 @@ function MyApp({ Component, pageProps }) {
       />
       
       <Default>
-        {isLoading && <Loader/>}
+        {isLoading && ""}
         <Component {...pageProps} />
         <Analytics />
       </Default>

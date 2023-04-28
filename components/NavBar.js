@@ -95,8 +95,8 @@ export default function NavBar() {
   ];
   return (
     <>
-      <header className="bg-black py-4 sticky top-0 z-50">
-        <div className="flex justify-center ">
+      <header className="bg-black py-4 ">
+        <div className="flex justify-center mb-2 ">
           <div className="flex items-center justify-center w-full">
             <button className=" w-full md:w-1/2 px-3  flex  items-center   rounded-full ">
               <Link href="/">
