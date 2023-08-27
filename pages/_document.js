@@ -12,6 +12,7 @@ export default function Document() {
         name="facebook-domain-verification"
         content={process.env.FB_DOMAIN_VERIFY}
       />
+      <meta name="ezoic-site-verification" content="DCbHMQaGWYFvcEhygj3fnh7ubiUMYP" />
       <meta property="fb:app_id" content={process.env.FB_APP_ID} />
       <meta name="p:domain_verify" content={process.env.P_DOMAIN_VERIFY} />
       <meta property="og:locale" content="en_US" />
